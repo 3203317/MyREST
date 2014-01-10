@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DataSourceCmd_Err_1" xml:space="preserve">
+    <value>数据源服务执行失败，请重试！</value>
+  </data>
+  <data name="DataSourceCmd_Err_2" xml:space="preserve">
+    <value>获取数据源记录失败，请重试！</value>
+  </data>
+  <data name="DataSourceCmd_Sql" xml:space="preserve">
+    <value>select dstype,sqls from p_datasource where id=@id</value>
+  </data>
+  <data name="DataSourceCmd_Sql_1" xml:space="preserve">
+    <value>select t.* from (</value>
+  </data>
+  <data name="DataSourceCmd_Sql_2" xml:space="preserve">
+    <value>     @where) t where t.rowNum between (@current-1)*@pagesize+1 and @current*@pagesize</value>
+  </data>
+  <data name="DataSourceCmd_Sql_3" xml:space="preserve">
+    <value>  @current, @pagesize, @where</value>
+  </data>
+  <data name="ListDataSourcesCmd_Err" xml:space="preserve">
+    <value>获取数据源列表失败，请重试！</value>
+  </data>
+  <data name="ListDataSourcesCmd_Sql" xml:space="preserve">
+    <value>select a.id,a.dsdesc,d.codename dstype_text,a.sqls,a.testparams,a.addtime
+,c.username ad_s_user_name,b.codename isenable_text 
+from 
+p_datasource a, p_code b,s_user c,p_code d
+where 
+a.dstype=d.code and d.tab_p_codetype_id='DSTYPE' and
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id order by a.dstype,a.addtime asc</value>
+  </data>
+  <data name="ListWidgetParamsCmd_Err" xml:space="preserve">
+    <value>获取组件参数列表失败，请重试！</value>
+  </data>
+  <data name="ListWidgetParamsCmd_Sql" xml:space="preserve">
+    <value>select param_name+'|'+CAST(tab_s_widget_id AS varchar) id,param_name,param_desc,a.addtime
+,c.username ad_s_user_name,b.codename isenable_text from s_widget_param a, p_code b,s_user c 
+where 
+a.tab_s_widget_id=@widgetid and
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id</value>
+  </data>
+  <data name="ListWidgeTreeCmd_Err" xml:space="preserve">
+    <value>获取组件树列表失败，请重试！</value>
+  </data>
+  <data name="ListWidgeTreeCmd_Sql" xml:space="preserve">
+    <value>select a.code id,a.p_code p_id,a.codename nodename,1 nodetype,'' ttip,a.addtime,a.ad_s_user_id,a.editime,a.ed_s_user_id,a.isenable,a.invalid from p_code a where a.tab_p_codetype_id='WIDGETYPE' collate Chinese_PRC_CS_AI
+union ALL
+select 'w'+CAST(b.id AS varchar) id,b.tab_p_code_widgetype_id p_id,b.widget_name+'_v'+b.ver+'('+ b.widget_desc +')' nodename,2 nodetype,b.classpath ttip,b.addtime,b.ad_s_user_id,b.editime,b.ed_s_user_id,b.isenable,b.invalid from s_widget b</value>
+  </data>
+  <data name="ListPageTreeCmd_Err" xml:space="preserve">
+    <value>获取页面树列表失败，请重试！</value>
+  </data>
+  <data name="ListPageTreeCmd_Sql" xml:space="preserve">
+    <value>select a.code id,a.p_code p_id,a.codename nodename,1 nodetype,'' v0,'' v1,a.addtime,a.ad_s_user_id,a.editime,a.ed_s_user_id,a.isenable,a.invalid from p_code a where a.tab_p_codetype_id='PAGEFOLDER' collate Chinese_PRC_CS_AI
+union ALL
+select 'p'+CAST(b.id AS varchar) id,b.tab_p_code_pagefolder_id p_id,b.page_name+'('+ b.page_desc +')' nodename,2 nodetype,b.page_name v0,b.page_desc v1,b.addtime,b.ad_s_user_id,b.editime,b.ed_s_user_id,b.isenable,b.invalid from s_page b</value>
+  </data>
+  <data name="ListPageDssCmd_Err" xml:space="preserve">
+    <value>获取页数据源列表失败，请重试！</value>
+  </data>
+  <data name="ListPageDssCmd_Sql" xml:space="preserve">
+    <value>select e.id,a.dsdesc,d.codename dstype_text,a.sqls,a.testparams,e.params,a.addtime
+,c.username ad_s_user_name,b.codename isenable_text 
+from 
+p_datasource a, p_code b,s_user c,p_code d,s_page_ds e
+where 
+a.dstype=d.code and d.tab_p_codetype_id='DSTYPE' and
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and
+a.id=e.tab_p_ds_id and e.tab_s_page_id=@pageid
+order by a.dstype,a.addtime asc</value>
+  </data>
+  <data name="ListPageDsWdsCmd_Err" xml:space="preserve">
+    <value>获取页数据源组件列表失败，请重试！</value>
+  </data>
+  <data name="ListPageDsWdsCmd_Sql" xml:space="preserve">
+    <value>select 
+a.id,b.widget_name,b.classpath,b.ver,c.codename widgetype_text,b.widget_desc,a.funcdesc,b.addtime
+,e.username ad_s_user_name
+,d.codename isenable_text,b.id widget_id  from 
+
+s_page_ds_wg a,s_widget b,p_code c,p_code d,s_user e
+
+where 
+b.isenable=d.code and d.tab_p_codetype_id='ISENABLE' and
+b.tab_p_code_widgetype_id=c.code and c.tab_p_codetype_id='WIDGETYPE' and
+a.tab_s_widget_id=b.id and b.ad_s_user_id=e.id and
+a.tab_s_page_ds_id=@pagedsid</value>
+  </data>
+  <data name="ListPageDsWdParamsCmd_Err" xml:space="preserve">
+    <value>获取页数据源组件参数列表失败，请重试！</value>
+  </data>
+  <data name="ListPageDsWdParamsCmd_Sql" xml:space="preserve">
+    <value>select id,param_name,param_desc,relatparam from (select a.*,b.id tab_s_page_ds_wg_id from s_widget_param a, s_page_ds_wg b
+
+where
+b.tab_s_widget_id=a.tab_s_widget_id and
+b.id=@pagedswgid) t1 left join s_page_ds_wg_param t2
+on
+t1.id=t2.tab_s_widget_param_id and t1.tab_s_page_ds_wg_id=t2.tab_s_page_ds_wg_id</value>
+  </data>
+  <data name="ListPageCodeTreeCmd_Err" xml:space="preserve">
+    <value>获取页面代码生成树列表失败，请重试！</value>
+  </data>
+  <data name="ListPageCodeTreeCmd_Sql" xml:space="preserve">
+    <value>select tt.* from (SELECT 'd'+CAST(a.id AS varchar) id,'0' p_id,a.tab_p_ds_id nodename,'d' v0,a.params v1,'' v2,'' v3 from s_page_ds a WHERE a.tab_s_page_id=@pageid
+union all
+SELECT 'w'+CAST(t1.id AS varchar) id,'d'+CAST(t1.tab_s_page_ds_id AS varchar) p_id,t2.widget_name+'_'+CAST(t1.id AS varchar) nodename,
+'w' v0,
+t2.widget_name v1,
+t2.classpath v2,t2.ver v3 from (
+SELECT a.* FROM s_page_ds_wg a WHERE a.tab_s_page_ds_id IN (select id from s_page_ds where tab_s_page_id=@pageid)) t1,
+s_widget t2
+WHERE
+t1.tab_s_widget_id=t2.id
+
+UNION ALL
+select t1.ddd id,'w'+CAST(t1.id1 AS varchar) p_id,t1.param_name nodename,'p' v0,t2.relatparam v1,t1.param_desc v2,'' v3 from (
+SELECT 'p'+CAST(a.id AS varchar)+'_'+CAST(c.id AS varchar) ddd,a.id id1,c.* FROM s_page_ds_wg a,s_widget b,s_widget_param c,s_page d,s_page_ds e where a.tab_s_widget_id=b.id and c.tab_s_widget_id=b.id
+and a.tab_s_page_ds_id=e.id and e.tab_s_page_id=d.id and d.id=@pageid) t1 left join s_page_ds_wg_param t2
+on
+t1.id=t2.tab_s_widget_param_id and t1.id1=t2.tab_s_page_ds_wg_id /*ORDER BY t1.id1*/) tt order by tt.id</value>
+  </data>
+  <data name="ListTableTreeCmd_Err" xml:space="preserve">
+    <value>获取表树列表失败，请重试！</value>
+  </data>
+  <data name="ListTableTreeCmd_Sql" xml:space="preserve">
+    <value>SELECT a.id,0 p_id,a.alias FROM s_table a order by a.id</value>
+  </data>
+  <data name="SDSCmd_Err_1" xml:space="preserve">
+    <value>数据源服务执行失败，请重试！</value>
+  </data>
+  <data name="SDSCmd_Err_2" xml:space="preserve">
+    <value>获取数据源记录失败，请重试！</value>
+  </data>
+  <data name="SDSCmd_Sql" xml:space="preserve">
+    <value>select dstype,sqls from p_datasource where safetype=1 and id=@id</value>
+  </data>
+  <data name="SDSCmd_Sql_1" xml:space="preserve">
+    <value>select t.* from (</value>
+  </data>
+  <data name="SDSCmd_Sql_2" xml:space="preserve">
+    <value>@where) t where t.rowNum between (@current-1)*@pagesize+1 and @current*@pagesize</value>
+  </data>
+  <data name="SDSCmd_Sql_3" xml:space="preserve">
+    <value>@current, @pagesize, @where</value>
+  </data>
+</root>

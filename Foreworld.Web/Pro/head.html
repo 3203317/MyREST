@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+html,body {
+	margin:0;
+	padding: 0;
+	background: #F6FCFE url(images/topbodybg.jpg) repeat-x left 0;
+	font-size: 12px;
+}
+
+.txt14b01348D {
+	font-weight: bold;
+	color: #01348D;
+	font-size: 14px;
+}
+
+.inputtxt td {
+	font-size: 14px;
+	color: #555;
+	height: 35px;
+	line-height: 35px;
+}
+
+.inputstyle {
+	height: 22px;
+	line-height: 22px;
+}
+
+.inputtxt .txtgreen {
+	color: #009900;
+	font-size: 12px;
+}
+
+.inputtxt .txtred {
+	color: #FF0000;
+	font-size: 12px;
+}
+
+.btn1 {
+	background: url(images/btnbg.jpg) no-repeat;
+	width: 88px;
+	height: 33px;
+	border: 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.notice_a a {
+	color: #666;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.notice_a a:hover {
+	text-decoration: underline;
+	color: #333;
+}
+
+.top_a a {
+	font-size: 12px;
+	color: #999;
+	text-decoration: none;
+}
+
+.top_a a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+.top_a {
+	color: #999;
+	font-size: 12px;
+}
+
+.quit_a a {
+	font-size: 12px;
+	color: #666;
+	text-decoration: none;
+}
+
+.quit_a a:hover {
+	color: #333;
+	text-decoration: underline;
+}
+
+.quit_a {
+	color: #666;
+	font-size: 12px;
+}
+
+a.quit_a {
+	color: #ff6600;
+}
+
+.top_logo {
+	background: url(images/topbg.jpg) no-repeat left top;
+	text-align: left;
+}
+</style>
+
+<script>
+	var _showDefPage = function(){
+		top.dijit.byId(top.djConfig.mainId)._loadDefPage();
+	};
+	var _fun = function(){
+		top.dijit.byId(top.djConfig.mainId).openNewTab({ href: ["fun.html"] });
+	};
+	var _changePass = function(){
+		top.dijit.byId(top.djConfig.mainId).openNewTab({ href: ["password.html"] });
+	};
+	var _help = function(){
+		top.dijit.byId(top.djConfig.mainId).openNewTab({ href: ["help.html"] });
+	};
+	var _quit = function(){
+		top.dijit.byId(top.djConfig.mainId)._onLogout();
+	};
+</script>
+</head>
+
+<body>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="min-width: 960px;">
+		<tr>
+			<td class="top_logo">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="36%" height="66">&nbsp;</td>
+						<td width="25%" valign="top">&nbsp;</td>
+						<td width="39%" align="left"><table width="100%" border="0" cellspacing="1" cellpadding="1">
+								<tr>
+									<td height="14" align="right" class="top_a">
+									<a href="javascript:void(0);" onClick="_showDefPage()">首页</a>&nbsp;|
+									<a href="javascript:void(0);" onClick="_fun();">常用功能</a>&nbsp;|
+									<a href="javascript:void(0);" onClick="_changePass()">修改密码</a>&nbsp;|
+									<a href="javascript:void(0);" onClick="_help()">使用帮助</a>&nbsp;|
+									<a href="javascript:void(0);" onClick="_quit()" class="quit_a">安全退出</a></td>
+									<td align="right">&nbsp;</td>
+								</tr>
+								<tr>
+									<td height="30" align="right" class="quit_a">系统管理员 上午好 工作辛苦了！</td>
+									<td align="right">&nbsp;</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+alter view vs_orgrule as
+select 
+cast(a.tab_s_orgtype_pid as varchar)+','+cast(a.tab_s_orgtype_id as varchar) id,a.*,c.orgtypename tab_s_orgtype_pname,b.orgtypename tab_s_orgtype_name,
+c.orgtypename+'-'+ b.orgtypename orgrulename
+from 
+s_orgrule a,s_orgtype b,s_orgtype c
+where 
+a.tab_s_orgtype_id=b.id and a.tab_s_orgtype_pid=c.id
+
+
+alter view vs_org as
+select 1 id,0 p_id,a.corpname orgname,a.corpname orgdesc,1 tab_s_orgtype_id,0 sort,a.addtime,a.opt_s_user_id,a.isenable,a.invalid from w_website a
+union all
+select b.* from s_org b

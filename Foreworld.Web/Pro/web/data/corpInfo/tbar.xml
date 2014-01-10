@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="edit" type="button" img="edit.gif" imgdis="edit_dis.gif" text="编辑" enabled="false" />
+</toolbar>

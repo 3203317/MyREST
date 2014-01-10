@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="new" type="button" img="../new.gif" imgdis="../new_dis.gif" text="新增" />
+	<item id="edit" type="button" img="../edit.gif" imgdis="../edit_dis.gif" text="编辑" enabled="false" />
+	<item id="del" type="button" img="../del.gif" imgdis="../del_dis.gif" text="删除" enabled="false" />
+</toolbar>

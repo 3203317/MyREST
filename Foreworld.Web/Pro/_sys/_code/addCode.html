@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <TITLE></TITLE>
+  <style type="text/css">
+  </style>
+	<script type="text/javascript" src="_sys/_code/addCode.js?v1"></script>
+ </HEAD>
+
+ <BODY class="soria">
+	<form id="_fo_sys_code_addCodeFrm" data-dojo-type="dijit.form.Form">
+		<table>
+			<tr>
+				<td nowrap><label for="_fo_sys_code_addCodeFrm_codenameText">代码名称：</label></td>
+				<td><input id="_fo_sys_code_addCodeFrm_codenameText" name="codename" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props='required:true,trim:true,regExpGen:function(){return "^[\u4E00-\u9FA5]{1,10}$";}' invalidMessage="长度为1-10位中文字符"/></td>
+			</tr>
+			<tr>
+				<td nowrap><label for="_fo_sys_code_addCodeFrm_codedescText">代码描述：</label></td>
+				<td><input id="_fo_sys_code_addCodeFrm_codedescText" name="codedesc" data-dojo-type="dijit.form.ValidationTextBox" style="width:280px;" maxlength="100"/></td>
+			</tr>
+			<tr>
+				<td nowrap><label for="_fo_sys_code_addCodeFrm_codeText">编码：</label></td>
+				<td><input id="_fo_sys_code_addCodeFrm_codeText" name="code" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props='required:true,trim:true,regExpGen:function(){return "^[A-Z1-9][A-Z0-9_]{0,19}$";}' invalidMessage="长度为1-20位大写英文字母或数字"/></td>
+			</tr>
+			<tr>
+				<td nowrap><label for="_fo_sys_code_addCodeFrm_sortText">排序：</label></td>
+				<td><input id="_fo_sys_code_addCodeFrm_sortText" name="sort" data-dojo-type="dijit.form.NumberSpinner" value="1" constraints="{min:1,max:999,places:0}"/></td>
+			</tr>
+		</table>
+	</form>
+ </BODY>
+</HTML>

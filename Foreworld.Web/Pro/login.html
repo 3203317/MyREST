@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>系统登陆</title>
+		
+		<style type="text/css">
+			body {
+				margin:0;
+				padding:0;
+				font-family:"" Arial;
+				font-size:12px;
+				line-height:22px;
+				color:#333;
+				background:url(login/images/bg.jpg) no-repeat top center #3196CE;
+			}
+			div,form,img,ul,ol,li,dl,dt,dd {margin: 0; padding: 0; border:0; }
+			li,dl{list-style-type:none;}
+			a{ text-decoration:none;}
+
+
+			.login{ padding:0; margin:0; overflow:hidden; width:auto;}
+			.loginlab{width:574px;height:238px;margin:212px auto 0 auto;overflow: hidden;}
+			.lab_1{ width:574px; height:34px; margin:0 auto; line-height:34px;}
+			.dlts{color:#CC0000;width:574px; padding:4px 0 0 200px;  margin:0;height:30px; width:184px;line-height:30px;}
+			.lab{ width:574px; height:34px; margin:0 auto; line-height:34px; margin-top:8px;}
+			.name{ width:56px; float:left; color:#186e9e; font-size:14px; margin-left:50px; font-family:"黑体";}
+			.ename{ width:68px; float:left; color:#186e9e; font-size:14px; text-align:right; padding-right:26px;}
+			.namelb{width:264px; height:28px; border:1px #b6d1e2 solid; float:left; line-height:28px;}
+			.yzm{width:132px; height:28px; border:1px #b6d1e2 solid; float:left; line-height:28px;}
+			.djyzm{width:128px;color:#888888;float:left;text-decoration: underline;padding-left: 6px;}
+			.btnbg{ width:208px; margin:0 auto;}
+			.btn{ background:url(login/images/btnbg.gif) no-repeat; width:72px; height:34px; float:left; font-size:14px;text-align:center; margin-left:30px; }
+			.btn a{ color:#FFFFFF; font-weight:bold;}
+			.lab img {float: left; padding:5px 0 0 10px;}
+		</style>	
+
+	</head>
+
+	<body class="fore" scroll="no">
+		<div class="login">
+			<div class="loginlab">
+				<div class="dlts" id="span_errmsg" style="width: 300px"></div>
+				<!--div class="lab_1">
+					<span class="name">客户代码</span> <span class="ename">Customer</span> <input
+						type="text" id="customer" class="namelb">
+				</div-->
+				<form id="loginForm">
+					<div class="lab_1">
+						<span class="name">用户名</span> <span class="ename">UserID</span> <input type="text" name="UserName" id="text_username" class="namelb" value="admin"></input>
+					</div>
+					<div class="lab">
+						<span class="name">密&nbsp;码</span> <span class="ename">Password</span>
+						<input type="password" name="Password" id="text_password" class="namelb" value="123456"></input>
+					</div>
+					<div class="lab">
+						<span class="name">验证码</span> <span class="ename"> Code</span> <input type="text" name="VerifyCode" id="text_verifycode" class="yzm"><img
+							src="login/images/yzm.gif" /><span class="djyzm">点击图片，更换验证码</span>
+					</div>
+					<div class="lab">
+						<div class="btnbg">
+							<span class="btn"><a id="btn_submit" href="javascript:void(0);">登 录</a> </span> <span class="btn"><a
+								href="javascript:void(0)" id="btn_reset">取 消</a> </span>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--[if lt IE 10]> <script type="text/javascript" src="http://cdn:8082/cdn/js/html5shiv/3.6.2/html5.js"></script> <![endif]-->
+        <script type="text/javascript" src="http://cdn:8082/cdn/js/jquery/2.0.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://cdn:8082/cdn/js/underscore/1.5.1/underscore.min.js"></script>
+        <script type="text/javascript" src="http://cdn:8082/cdn/js/jquery/ext/ext.form.js"></script>
+		<script>
+			$(function(){
+				$("#btn_submit").click(function(){
+					var __formObj = $("#loginForm").serializeObjectForm();
+					console.log(__formObj);
+				});					
+				
+				$("#btn_reset").click(function(){
+					$("#loginForm")[0].reset();
+				});
+			})
+		</script>
+	</body>
+</html>

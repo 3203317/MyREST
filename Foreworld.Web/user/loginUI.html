@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<TITLE>用户登陆</TITLE>
+		<style type="text/css">
+		</style>		
+	</HEAD>
+	<BODY class="fore">
+		<form id="loginForm">
+			用户名：<input type="text" name="UserName" />
+			密码：<input type="password" name="Password" />
+			验证码：<input type="text" name="VerifyCode" />
+			<input type="button" id="btn_Submit" value="登陆" />
+			<input type="button" id="btn_Reset" value="重置" />
+		</form>
+		<!--[if lt IE 10]> <script type="text/javascript" src="http://cdn:8082/cdn/js/html5shiv/3.6.2/html5.js" charset="utf-8"></script> <![endif]-->
+        <script type="text/javascript" src="http://cdn:8082/cdn/js/jquery/2.0.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://cdn:8082/cdn/js/underscore/1.5.1/underscore.min.js"></script>
+        <script type="text/javascript" src="http://cdn:8082/cdn/js/jquery/ext/ext.form.js"></script>
+		<script>
+			$(function(){
+				$("#btn_Submit").click(function(){
+					var __formObj = {
+						data: $("#loginForm").serializeObjectForm()
+					};
+
+					$.ajax({
+						type: "post",
+						url: "../sysmanage/user/login.do",
+						dataType: "json",
+						async: true,
+						data: __formObj,
+						beforeSend: function($xhr){
+							$xhr.overrideMimeType("text/plain; charset=utf-8");
+						}
+					}).done(function($data){
+						console.log($data);
+						/*if($data.status == "failure"){
+							_span_errmsg.html($data.msg);
+						}else{				
+							location.href = "main.html?locale="+ config.locale +"#page/"+ config.page;
+						}*/
+					});
+				});					
+				
+				$("#btn_reset").click(function(){
+					$("#loginForm")[0].reset();
+				});
+			})
+		</script>
+	</BODY>
+</HTML>

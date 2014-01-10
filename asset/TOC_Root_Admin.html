@@ -1,0 +1,1133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 1.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="TOC_Root_Admin_files/main.css" type="text/css">
+<link rel="shortcut icon" href="http://download.cloud.com/releases/3.0.0/api_3.0.0/favicon.ico" type="image/x-icon">
+<title>CloudStack API Reference</title>
+</head>
+<body>
+<div id="insidetopbg">
+<div id="inside_wrapper">
+<div class="uppermenu_panel">
+<div class="uppermenu_box"></div>
+</div>
+<div id="main_master">
+<div id="inside_header">
+<div class="header_top">
+<a class="cloud_logo" href="http://cloudstack.org/"></a>
+<div class="mainemenu_panel"></div>
+</div>
+</div>
+<div id="main_content">
+<div class="inside_apileftpanel">
+<div class="inside_contentpanel" style="width:930px;">
+<h1>CloudStack API Documentation (v3.0)</h1>
+<div class="apiannouncement_box">
+<div class="apiannouncement_contentarea">
+<h3>Using the CloudStack API</h3>
+<p>For information about how the APIs work, and tips on how to use them, see the
+                                   <a href="http://docs.cloud.com/CloudStack_Documentation/Developer%27s_Guide%3A_CloudStack">Developer's Guide</a>.</p>
+</div>
+</div>
+<div class="api_leftsections">
+<h3>Root Admin API</h3>
+<span>Commands available through the developer API URL and the integration API URL.</span>
+<div class="api_legends">
+<p>
+<span class="api_legends_async">(A)</span> implies that the command is asynchronous.</p>
+<p>(*) implies element has a child.</p>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Network</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createNetworkOffering.html">createNetworkOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateNetworkOffering.html">updateNetworkOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteNetworkOffering.html">deleteNetworkOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listNetworkOfferings.html">listNetworkOfferings</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createNetwork.html">createNetwork</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteNetwork.html">deleteNetwork (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listNetworks.html">listNetworks</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/restartNetwork.html">restartNetwork (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateNetwork.html">updateNetwork (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createPhysicalNetwork.html">createPhysicalNetwork (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deletePhysicalNetwork.html">deletePhysicalNetwork (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listPhysicalNetworks.html">listPhysicalNetworks</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updatePhysicalNetwork.html">updatePhysicalNetwork (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSupportedNetworkServices.html">listSupportedNetworkServices</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addNetworkServiceProvider.html">addNetworkServiceProvider (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteNetworkServiceProvider.html">deleteNetworkServiceProvider (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listNetworkServiceProviders.html">listNetworkServiceProviders</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateNetworkServiceProvider.html">updateNetworkServiceProvider (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createStorageNetworkIpRange.html">createStorageNetworkIpRange (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteStorageNetworkIpRange.html">deleteStorageNetworkIpRange (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listStorageNetworkIpRange.html">listStorageNetworkIpRange</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateStorageNetworkIpRange.html">updateStorageNetworkIpRange (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addNetworkDevice.html">addNetworkDevice</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listNetworkDevice.html">listNetworkDevice</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteNetworkDevice.html">deleteNetworkDevice</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listF5LoadBalancerNetworks.html">listF5LoadBalancerNetworks</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSrxFirewallNetworks.html">listSrxFirewallNetworks</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listNetscalerLoadBalancerNetworks.html">listNetscalerLoadBalancerNetworks</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Load Balancer</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createLoadBalancerRule.html">createLoadBalancerRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteLoadBalancerRule.html">deleteLoadBalancerRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/removeFromLoadBalancerRule.html">removeFromLoadBalancerRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/assignToLoadBalancerRule.html">assignToLoadBalancerRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createLBStickinessPolicy.html">createLBStickinessPolicy (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteLBStickinessPolicy.html">deleteLBStickinessPolicy (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listLoadBalancerRules.html">listLoadBalancerRules</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listLBStickinessPolicies.html">listLBStickinessPolicies</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listLoadBalancerRuleInstances.html">listLoadBalancerRuleInstances</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateLoadBalancerRule.html">updateLoadBalancerRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addF5LoadBalancer.html">addF5LoadBalancer (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/configureF5LoadBalancer.html">configureF5LoadBalancer (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteF5LoadBalancer.html">deleteF5LoadBalancer (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listF5LoadBalancers.html">listF5LoadBalancers</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addNetscalerLoadBalancer.html">addNetscalerLoadBalancer (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteNetscalerLoadBalancer.html">deleteNetscalerLoadBalancer (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/configureNetscalerLoadBalancer.html">configureNetscalerLoadBalancer (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listNetscalerLoadBalancers.html">listNetscalerLoadBalancers</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Virtual Machine</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deployVirtualMachine.html">deployVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/destroyVirtualMachine.html">destroyVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/rebootVirtualMachine.html">rebootVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/startVirtualMachine.html">startVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/stopVirtualMachine.html">stopVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/resetPasswordForVirtualMachine.html">resetPasswordForVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/changeServiceForVirtualMachine.html">changeServiceForVirtualMachine</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateVirtualMachine.html">updateVirtualMachine</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/recoverVirtualMachine.html">recoverVirtualMachine</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listVirtualMachines.html">listVirtualMachines</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/getVMPassword.html">getVMPassword</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/migrateVirtualMachine.html">migrateVirtualMachine (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/assignVirtualMachine.html">assignVirtualMachine</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/restoreVirtualMachine.html">restoreVirtualMachine (A)</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Usage</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addTrafficType.html">addTrafficType (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteTrafficType.html">deleteTrafficType (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listTrafficTypes.html">listTrafficTypes</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateTrafficType.html">updateTrafficType (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listTrafficTypeImplementors.html">listTrafficTypeImplementors</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/generateUsageRecords.html">generateUsageRecords</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listUsageRecords.html">listUsageRecords</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listUsageTypes.html">listUsageTypes</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addTrafficMonitor.html">addTrafficMonitor</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteTrafficMonitor.html">deleteTrafficMonitor</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listTrafficMonitors.html">listTrafficMonitors</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Volume</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/attachVolume.html">attachVolume (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/detachVolume.html">detachVolume (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createVolume.html">createVolume (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteVolume.html">deleteVolume</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listVolumes.html">listVolumes</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/extractVolume.html">extractVolume (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/migrateVolume.html">migrateVolume (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createVolumeOnFiler.html">createVolumeOnFiler</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/destroyVolumeOnFiler.html">destroyVolumeOnFiler</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listVolumesOnFiler.html">listVolumesOnFiler</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>User</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createUser.html">createUser</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteUser.html">deleteUser</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateUser.html">updateUser</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listUsers.html">listUsers</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/disableUser.html">disableUser (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/enableUser.html">enableUser</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/registerUserKeys.html">registerUserKeys</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addVpnUser.html">addVpnUser (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/removeVpnUser.html">removeVpnUser (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listVpnUsers.html">listVpnUsers</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Template</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createTemplate.html">createTemplate (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/registerTemplate.html">registerTemplate</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateTemplate.html">updateTemplate</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/copyTemplate.html">copyTemplate (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteTemplate.html">deleteTemplate (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listTemplates.html">listTemplates</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateTemplatePermissions.html">updateTemplatePermissions</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listTemplatePermissions.html">listTemplatePermissions</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/extractTemplate.html">extractTemplate (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/prepareTemplate.html">prepareTemplate</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>ISO</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/attachIso.html">attachIso (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/detachIso.html">detachIso (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listIsos.html">listIsos</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/registerIso.html">registerIso</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateIso.html">updateIso</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteIso.html">deleteIso (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/copyIso.html">copyIso (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateIsoPermissions.html">updateIsoPermissions</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listIsoPermissions.html">listIsoPermissions</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/extractIso.html">extractIso (A)</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Firewall</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listPortForwardingRules.html">listPortForwardingRules</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createPortForwardingRule.html">createPortForwardingRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deletePortForwardingRule.html">deletePortForwardingRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createFirewallRule.html">createFirewallRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteFirewallRule.html">deleteFirewallRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listFirewallRules.html">listFirewallRules</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addSrxFirewall.html">addSrxFirewall (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteSrxFirewall.html">deleteSrxFirewall (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/configureSrxFirewall.html">configureSrxFirewall (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSrxFirewalls.html">listSrxFirewalls</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Router</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/startRouter.html">startRouter (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/rebootRouter.html">rebootRouter (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/stopRouter.html">stopRouter (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/destroyRouter.html">destroyRouter (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/changeServiceForRouter.html">changeServiceForRouter</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listRouters.html">listRouters</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createVirtualRouterElement.html">createVirtualRouterElement (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/configureVirtualRouterElement.html">configureVirtualRouterElement (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listVirtualRouterElements.html">listVirtualRouterElements</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Project</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createProject.html">createProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteProject.html">deleteProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateProject.html">updateProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/activateProject.html">activateProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/suspendProject.html">suspendProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listProjects.html">listProjects</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listProjectInvitations.html">listProjectInvitations</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateProjectInvitation.html">updateProjectInvitation (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteProjectInvitation.html">deleteProjectInvitation (A)</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Host</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addHost.html">addHost</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/reconnectHost.html">reconnectHost (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateHost.html">updateHost</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteHost.html">deleteHost</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/prepareHostForMaintenance.html">prepareHostForMaintenance (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/cancelHostMaintenance.html">cancelHostMaintenance (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listHosts.html">listHosts</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addSecondaryStorage.html">addSecondaryStorage</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateHostPassword.html">updateHostPassword</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Account</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createAccount.html">createAccount</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteAccount.html">deleteAccount (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateAccount.html">updateAccount</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/disableAccount.html">disableAccount (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/enableAccount.html">enableAccount</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listAccounts.html">listAccounts</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addAccountToProject.html">addAccountToProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteAccountFromProject.html">deleteAccountFromProject (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listProjectAccounts.html">listProjectAccounts</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Pool</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listStoragePools.html">listStoragePools</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createStoragePool.html">createStoragePool</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateStoragePool.html">updateStoragePool</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteStoragePool.html">deleteStoragePool</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createPool.html">createPool</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deletePool.html">deletePool</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/modifyPool.html">modifyPool</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listPools.html">listPools</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Security Group</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createSecurityGroup.html">createSecurityGroup</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteSecurityGroup.html">deleteSecurityGroup</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/authorizeSecurityGroupIngress.html">authorizeSecurityGroupIngress (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/revokeSecurityGroupIngress.html">revokeSecurityGroupIngress (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/authorizeSecurityGroupEgress.html">authorizeSecurityGroupEgress (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/revokeSecurityGroupEgress.html">revokeSecurityGroupEgress (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSecurityGroups.html">listSecurityGroups</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>System VM</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/startSystemVm.html">startSystemVm (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/rebootSystemVm.html">rebootSystemVm (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/stopSystemVm.html">stopSystemVm (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/destroySystemVm.html">destroySystemVm (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSystemVms.html">listSystemVms</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/migrateSystemVm.html">migrateSystemVm (A)</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Snapshot</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createSnapshot.html">createSnapshot (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSnapshots.html">listSnapshots</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteSnapshot.html">deleteSnapshot (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createSnapshotPolicy.html">createSnapshotPolicy</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteSnapshotPolicies.html">deleteSnapshotPolicies</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSnapshotPolicies.html">listSnapshotPolicies</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Storage</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createLunOnFiler.html">createLunOnFiler</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/destroyLunOnFiler.html">destroyLunOnFiler</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listLunsOnFiler.html">listLunsOnFiler</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/associateLun.html">associateLun</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/dissociateLun.html">dissociateLun</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>NAT</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/enableStaticNat.html">enableStaticNat</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createIpForwardingRule.html">createIpForwardingRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteIpForwardingRule.html">deleteIpForwardingRule (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listIpForwardingRules.html">listIpForwardingRules</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/disableStaticNat.html">disableStaticNat (A)</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Domain</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createDomain.html">createDomain</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateDomain.html">updateDomain</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteDomain.html">deleteDomain (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listDomains.html">listDomains</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listDomainChildren.html">listDomainChildren</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Zone</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createZone.html">createZone</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateZone.html">updateZone</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteZone.html">deleteZone</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listZones.html">listZones</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>VM Group</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createInstanceGroup.html">createInstanceGroup</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteInstanceGroup.html">deleteInstanceGroup</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateInstanceGroup.html">updateInstanceGroup</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listInstanceGroups.html">listInstanceGroups</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Service Offering</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createServiceOffering.html">createServiceOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteServiceOffering.html">deleteServiceOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateServiceOffering.html">updateServiceOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listServiceOfferings.html">listServiceOfferings</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Pod</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createPod.html">createPod</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updatePod.html">updatePod</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deletePod.html">deletePod</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listPods.html">listPods</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Disk Offering</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createDiskOffering.html">createDiskOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateDiskOffering.html">updateDiskOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteDiskOffering.html">deleteDiskOffering</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listDiskOfferings.html">listDiskOfferings</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Cluster</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addCluster.html">addCluster</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteCluster.html">deleteCluster</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateCluster.html">updateCluster</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listClusters.html">listClusters</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>VPN</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createRemoteAccessVpn.html">createRemoteAccessVpn (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteRemoteAccessVpn.html">deleteRemoteAccessVpn (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listRemoteAccessVpns.html">listRemoteAccessVpns</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>VLAN</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createVlanIpRange.html">createVlanIpRange</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteVlanIpRange.html">deleteVlanIpRange</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listVlanIpRanges.html">listVlanIpRanges</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>SSH</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/createSSHKeyPair.html">createSSHKeyPair</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteSSHKeyPair.html">deleteSSHKeyPair</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSSHKeyPairs.html">listSSHKeyPairs</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Limit</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateResourceLimit.html">updateResourceLimit</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateResourceCount.html">updateResourceCount</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listResourceLimits.html">listResourceLimits</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Hypervisor</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listHypervisors.html">listHypervisors</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateHypervisorCapabilities.html">updateHypervisorCapabilities</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listHypervisorCapabilities.html">listHypervisorCapabilities</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Ext Load Balancer</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addExternalLoadBalancer.html">addExternalLoadBalancer</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteExternalLoadBalancer.html">deleteExternalLoadBalancer</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listExternalLoadBalancers.html">listExternalLoadBalancers</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Ext Firewall</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addExternalFirewall.html">addExternalFirewall</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/deleteExternalFirewall.html">deleteExternalFirewall</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listExternalFirewalls.html">listExternalFirewalls</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Configuration</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/updateConfiguration.html">updateConfiguration</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listConfigurations.html">listConfigurations</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listCapabilities.html">listCapabilities</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Address</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/associateIpAddress.html">associateIpAddress (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/disassociateIpAddress.html">disassociateIpAddress (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listPublicIpAddresses.html">listPublicIpAddresses</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Swift</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/addSwift.html">addSwift</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listSwifts.html">listSwifts</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>Storage Pool</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/enableStorageMaintenance.html">enableStorageMaintenance (A)</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/cancelStorageMaintenance.html">cancelStorageMaintenance (A)</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Guest OS</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listOsTypes.html">listOsTypes</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listOsCategories.html">listOsCategories</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Event</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listEvents.html">listEvents</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listEventTypes.html">listEventTypes</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Async job</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/queryAsyncJobResult.html">queryAsyncJobResult</a>
+</li>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listAsyncJobs.html">listAsyncJobs</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>System Capacity</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listCapacity.html">listCapacity</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Registration</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/registerSSHKeyPair.html">registerSSHKeyPair</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Logout</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/logout.html">logout</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Login</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/login.html">login</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="apismallsections">
+<div class="apismallbullet_box">
+<h5>LDAP</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/ldapConfig.html">ldapConfig</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Cloud Identifier</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/getCloudIdentifier.html">getCloudIdentifier</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Certificate</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/uploadCustomCertificate.html">uploadCustomCertificate (A)</a>
+</li>
+</ul>
+</div>
+<div class="apismallbullet_box">
+<h5>Alert</h5>
+<ul>
+<li>
+<a href="http://download.cloud.com/releases/3.0.0/api_3.0.0/root_admin/listAlerts.html">listAlerts</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer_mainmaster">
+<p>Copyright 2011, 2012 Citrix Systems, Inc. All rights reserved </p>
+</div>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="TOC_Root_Admin_files/ga.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-16163918-1");
+pageTracker._setDomainName(".cloud.com");
+pageTracker._trackPageview();
+} catch(err) {}</script><script type="text/javascript" language="javascript">llactid=14481</script><script type="text/javascript" language="javascript" src="TOC_Root_Admin_files/trackalyze.js"></script><img src="TOC_Root_Admin_files/trackalyze.gif">
+<div class="clear"></div>
+</div>
+</div>
+
+
+</body></html>

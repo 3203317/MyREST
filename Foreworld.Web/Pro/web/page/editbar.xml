@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<toolbar>
+	<item id="save" type="button" img="save.gif" imgdis="save_dis.gif" text="保存" />
+</toolbar>

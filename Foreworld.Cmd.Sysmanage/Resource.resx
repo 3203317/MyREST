@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddModuleCmd_Err" xml:space="preserve">
+    <value>新模块添加失败，请重试！</value>
+    <comment>3005</comment>
+  </data>
+  <data name="AddModuleCmd_Sql" xml:space="preserve">
+    <value>insert into s_module (p_id,modulename,href,sort,icon,addtime,ad_s_user_id,isenable,invalid) values (@p_id, @modulename, @href, @sort, @icon, @addtime, @ad_s_user_id, @isenable, @invalid);
+select a.*,b.codename isenable_text,c.username ad_s_user_name from s_module a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=SCOPE_IDENTITY();</value>
+  </data>
+  <data name="DeleteModuleCmd_Err" xml:space="preserve">
+    <value>模块删除失败，请重试！</value>
+    <comment>3008</comment>
+  </data>
+  <data name="DeleteModuleCmd_Sql" xml:space="preserve">
+    <value>delete from s_module where id in (0@ids);</value>
+  </data>
+  <data name="ListCodesCmd_Err" xml:space="preserve">
+    <value>代码列表查询失败，请重试！</value>
+    <comment>3016</comment>
+  </data>
+  <data name="ListCodesCmd_Sql" xml:space="preserve">
+    <value>select a.code+','+a.tab_p_codetype_id id,a.*,b.codename isenable_text,c.username ad_s_user_name from p_code a, p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.tab_p_codetype_id=@tab_p_codetype_id order by a.sort asc</value>
+  </data>
+  <data name="ListCodeTypesCmd_Err" xml:space="preserve">
+    <value>代码类型列表查询失败，请重试！</value>
+    <comment>3012</comment>
+  </data>
+  <data name="ListCodeTypesCmd_Sql" xml:space="preserve">
+    <value>select a.*,b.codename isenable_text,c.username ad_s_user_name from p_codetype a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id order by a.id asc</value>
+  </data>
+  <data name="ListModulesCmd_Err" xml:space="preserve">
+    <value>模块列表查询失败，请重试！</value>
+    <comment>3007</comment>
+  </data>
+  <data name="ListModulesCmd_Sql" xml:space="preserve">
+    <value>select a.id, a.modulename, a.href,a.moduledesc, a.icon, a.sort, a.addtime,c.username ad_s_user_name, b.codename isenable_text,a.p_id 
+from s_module a,p_code b,s_user c 
+where 
+a.modtype=1 and a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id
+@appendSQL
+order by a.p_id,a.sort,a.id asc</value>
+  </data>
+  <data name="ListUserMenuTreeCmd_Err" xml:space="preserve">
+    <value>用户菜单树列表查询失败，请重试！</value>
+    <comment>3003</comment>
+  </data>
+  <data name="ListUserMenuTreeCmd_Sql" xml:space="preserve">
+    <value>exec p_userMenuTree 1,1,@userid</value>
+    <comment>获取用户菜单树列表，根据权限得到</comment>
+  </data>
+  <data name="ListUsersCmd_Err" xml:space="preserve">
+    <value>用户列表查询失败，请重试！</value>
+  </data>
+  <data name="ListUsersCmd_Sql" xml:space="preserve">
+    <value>select 
+a.id,a.username,a.sex,a.alias,a.firstname,a.lastname,
+a.firstname+a.lastname as realname,a.qq,a.email,a.idcard,a.mobile,a.fax,a.last_logoutime,
+a.addtime,a.opt_s_user_id,a.isenable,a.invalid,b.codename isenable_text 
+from 
+(
+select tt.* from (
+select 
+row_number() over(order by t.addtime desc) as rowNumber,t.* from s_user t where 1=1 @appendSQL
+) tt
+
+where tt.rowNumber between (@currentpage-1)*@pagesize+1 and @currentpage*@pagesize
+
+) a
+
+, p_code b where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE'</value>
+  </data>
+  <data name="LoginCmd_Err" xml:space="preserve">
+    <value>用户名或密码输入错误，请重试！</value>
+    <comment>3002</comment>
+  </data>
+  <data name="LoginCmd_Sql" xml:space="preserve">
+    <value>select 
+id, username, sex, firstname, lastname, firstname+lastname as realname, qq, email, idcard, mobile, fax, apikey, secretkey, addtime, ad_s_user_id, isenable, invalid 
+from 
+s_user 
+where 
+isenable=1 and username=@username and password=@password</value>
+  </data>
+  <data name="LogoutCmd_Sql" xml:space="preserve">
+    <value>update s_user set logoutime=@logoutime where id=@id</value>
+  </data>
+  <data name="ResetUserPasswordCmd_Err" xml:space="preserve">
+    <value>很抱歉，用户新密码重置失败，请重试！</value>
+  </data>
+  <data name="ResetUserPasswordCmd_Sql" xml:space="preserve">
+    <value>update s_user set password=@password where id=@id</value>
+    <comment>设置用户新密码</comment>
+  </data>
+  <data name="ResetUserPasswordCmd_Tip" xml:space="preserve">
+    <value>恭喜您，用户新密码重置成功！</value>
+  </data>
+  <data name="UpdateModuleCmd_Err" xml:space="preserve">
+    <value>模块信息更新失败，请重试！</value>
+    <comment>3006</comment>
+  </data>
+  <data name="UpdateModuleCmd_Sql" xml:space="preserve">
+    <value>update s_module set modulename=@modulename, href=@href, icon=@icon, sort=@sort, editime=@editime, ed_s_user_id=@ed_s_user_id where id=@id; 
+select a.*,b.codename isenable_text,c.username ad_s_user_name from s_module a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="VerifyUserKeysCmd_Err" xml:space="preserve">
+    <value>用户密钥验证失败，请重试！</value>
+    <comment>3027</comment>
+  </data>
+  <data name="VerifyUserKeysCmd_Sql" xml:space="preserve">
+    <value>select * from s_user where apikey=@apikey</value>
+  </data>
+  <data name="AddCodeTypeCmd_Err" xml:space="preserve">
+    <value>新代码类型添加失败，请重试！</value>
+    <comment>3009</comment>
+  </data>
+  <data name="AddCodeTypeCmd_Sql" xml:space="preserve">
+    <value>insert into p_codetype (id,codetypedesc,addtime,ad_s_user_id,isenable,invalid) values (@id, @codetypedesc, @addtime, @ad_s_user_id, @isenable, @invalid);
+select a.*,b.codename isenable_text,c.username ad_s_user_name from p_codetype a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="UpdateCodeTypeCmd_Err" xml:space="preserve">
+    <value>代码类型信息更新失败，请重试！</value>
+    <comment>3010</comment>
+  </data>
+  <data name="UpdateCodeTypeCmd_Sql" xml:space="preserve">
+    <value>update p_codetype set codetypedesc=@codetypedesc, editime=@editime, ed_s_user_id=@ed_s_user_id where id=@id;
+select a.*,b.codename isenable_text,c.username ad_s_user_name from p_codetype a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="DeleteCodeTypeCmd_Sql" xml:space="preserve">
+    <value>delete from p_codetype where id=@id</value>
+  </data>
+  <data name="DeleteCodeTypeCmd_Err" xml:space="preserve">
+    <value>代码类型删除失败，请重试！</value>
+    <comment>3011</comment>
+  </data>
+  <data name="AddCodeCmd_Err" xml:space="preserve">
+    <value>新代码添加失败，请重试！</value>
+    <comment>3013</comment>
+  </data>
+  <data name="AddCodeCmd_Sql" xml:space="preserve">
+    <value>insert into p_code (code,tab_p_codetype_id,p_code,codename,codedesc,sort,addtime,ad_s_user_id,isenable,invalid) values (@code, @tab_p_codetype_id, @p_code,@codename, @codedesc, @sort, @addtime, @ad_s_user_id, @isenable, @invalid);
+select a.code+','+a.tab_p_codetype_id id,a.*,b.codename isenable_text,c.username ad_s_user_name from p_code a, p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.tab_p_codetype_id=@tab_p_codetype_id and a.code=@code;</value>
+  </data>
+  <data name="DeleteCodeCmd_Sql" xml:space="preserve">
+    <value>delete from p_code where tab_p_codetype_id=@tab_p_codetype_id and code=@code;</value>
+  </data>
+  <data name="UpdateCodeCmd_Err" xml:space="preserve">
+    <value>代码信息更新失败，请重试！</value>
+    <comment>3014</comment>
+  </data>
+  <data name="UpdateCodeCmd_Sql" xml:space="preserve">
+    <value>update p_code set codename=@codename, codedesc=@codedesc, sort=@sort, editime=@editime, ed_s_user_id=@ed_s_user_id where tab_p_codetype_id=@tab_p_codetype_id and code=@code;
+select a.code+','+a.tab_p_codetype_id id,a.*,b.codename isenable_text,c.username ad_s_user_name from p_code a, p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.tab_p_codetype_id=@tab_p_codetype_id and a.code=@code;</value>
+  </data>
+  <data name="AddUserCmd_Err" xml:space="preserve">
+    <value>新用户添加失败，请重试！</value>
+    <comment>3001</comment>
+  </data>
+  <data name="AddUserCmd_Sql" xml:space="preserve">
+    <value>insert into s_user 
+(username,password,sex,alias,firstname,lastname,qq,email,idcard,mobile,fax,addtime,opt_s_user_id,isenable,invalid) 
+values 
+(@username,@password,@sex,@alias,@firstname,@lastname,@qq,@email,@idcard,@mobile,@fax,@addtime,@opt_s_user_id,@isenable,@invalid)
+select 
+a.id,a.username,a.sex,a.alias,a.firstname,a.lastname,
+a.firstname+a.lastname as realname,a.qq,a.email,a.idcard,a.mobile,a.fax,a.last_logoutime,
+a.addtime,a.opt_s_user_id,a.isenable,a.invalid,b.codename isenable_text 
+from 
+s_user a, p_code b 
+where 
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' 
+and a.id=SCOPE_IDENTITY();</value>
+  </data>
+  <data name="UpdateUserCmd_Err" xml:space="preserve">
+    <value>用户信息更新失败，请重试！</value>
+  </data>
+  <data name="UpdateUserCmd_Sql" xml:space="preserve">
+    <value>update s_user set 
+sex=@sex,alias=@alias,firstname=@firstname,lastname=@lastname,qq=@qq,email=@email,idcard=@idcard,mobile=@mobile,fax=@fax where id=@id;
+select 
+a.id,a.username,a.sex,a.alias,a.firstname,a.lastname,
+a.firstname+a.lastname as realname,a.qq,a.email,a.idcard,a.mobile,a.fax,a.last_logoutime,
+a.addtime,a.opt_s_user_id,a.isenable,a.invalid,b.codename isenable_text 
+from 
+s_user a, p_code b 
+where 
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.id=@id;</value>
+  </data>
+  <data name="DeleteUserCmd_Sql" xml:space="preserve">
+    <value>delete from s_user where id in (0@ids);</value>
+  </data>
+  <data name="AddRoleCmd_Err" xml:space="preserve">
+    <value>新角色添加失败，请重试！</value>
+    <comment>3017</comment>
+  </data>
+  <data name="AddRoleCmd_Sql" xml:space="preserve">
+    <value>insert into s_role (tab_s_rolegroup_id,rolename,roledesc,startime,endtime,addtime,ad_s_user_id,isenable,invalid) values (@tab_s_rolegroup_id,@rolename, @roledesc, DATEADD(s,@startime,'1970-01-01 00:00:00'), DATEADD(s,@endtime,'1970-01-01 00:00:00'), @addtime, @ad_s_user_id, @isenable, @invalid);
+select a.*,b.codename isenable_text,c.username ad_s_user_name from s_role a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=SCOPE_IDENTITY();</value>
+  </data>
+  <data name="DeleteRoleCmd_Err" xml:space="preserve">
+    <value>角色删除失败，请重试！</value>
+    <comment>3019</comment>
+  </data>
+  <data name="DeleteRoleCmd_Sql" xml:space="preserve">
+    <value>delete from s_role where id in (0@ids);</value>
+  </data>
+  <data name="ListRolesCmd_Err" xml:space="preserve">
+    <value>角色列表查询失败，请重试！</value>
+    <comment>3020</comment>
+  </data>
+  <data name="ListRolesCmd_Sql" xml:space="preserve">
+    <value>select a.id,a.rolename,a.roledesc,a.startime,a.endtime,a.addtime
+,c.username ad_s_user_name,b.codename isenable_text from s_role a, p_code b,s_user c 
+where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id order by a.id asc</value>
+  </data>
+  <data name="UpdateRoleCmd_Err" xml:space="preserve">
+    <value>角色信息更新失败，请重试！</value>
+    <comment>3018</comment>
+  </data>
+  <data name="UpdateRoleCmd_Sql" xml:space="preserve">
+    <value>update s_role set rolename=@rolename,roledesc=@roledesc,startime=DATEADD(s,@startime,'1970-01-01 00:00:00'),endtime=DATEADD(s,@endtime,'1970-01-01 00:00:00'), editime=@editime, ed_s_user_id=@ed_s_user_id where id=@id;
+select a.*,b.codename isenable_text,c.username ad_s_user_name from s_role a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="LoginByIdCmd_Sql" xml:space="preserve">
+    <value>select 
+id, username, sex, firstname, lastname, firstname+lastname as realname, qq, email, idcard, mobile, fax, apikey, secretkey, addtime, opt_s_user_id, isenable, invalid 
+from 
+s_user 
+where 
+isenable=1 and id=@id and password=@password</value>
+  </data>
+  <data name="ResetMyPasswordCmd_OldPassword_Err" xml:space="preserve">
+    <value>原始密码输入错误，请重试！</value>
+  </data>
+  <data name="ResetMyPasswordCmd_NewPassword_Err" xml:space="preserve">
+    <value>很抱歉，新密码重置失败，请重试！</value>
+  </data>
+  <data name="ResetMyPasswordCmd_Sql" xml:space="preserve">
+    <value>update s_user set password=@password where id=@id</value>
+  </data>
+  <data name="ResetMyPasswordCmd_Tip" xml:space="preserve">
+    <value>恭喜您，新密码重置成功！</value>
+  </data>
+  <data name="ResetMyPasswordCmd_Err" xml:space="preserve">
+    <value>操作异常，请重试！</value>
+  </data>
+  <data name="EmpowerRoleCmd_Err" xml:space="preserve">
+    <value>角色授权失败，请重试！</value>
+    <comment>3032</comment>
+  </data>
+  <data name="EmpowerRoleCmd_Sql" xml:space="preserve">
+    <value>insert into s_role_modopt (tab_s_modopt_id,tab_s_role_id,addtime,ad_s_user_id,isenable,invalid) values (@tab_s_modopt_id, @tab_s_role_id, @addtime, @ad_s_user_id, @isenable, @invalid);
+select a.*,b.codename isenable_text,c.username opt_s_user_name from s_role_modopt a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.tab_s_modopt_id=@tab_s_modopt_id and a.tab_s_role_id=@tab_s_role_id;</value>
+  </data>
+  <data name="UnEmpowerRoleCmd_Sql" xml:space="preserve">
+    <value>delete from s_role_modopt where tab_s_modopt_id=@tab_s_modopt_id and tab_s_role_id=@tab_s_role_id</value>
+  </data>
+  <data name="ListModOptsCmd_Sql" xml:space="preserve">
+    <value>select a.*,b.codename isenable_text,c.username opt_s_user_name from s_modopt a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.opt_s_user_id=c.id and a.tab_s_module_id=@tab_s_module_id order by a.tab_p_code_moptype_id asc</value>
+  </data>
+  <data name="ListModOptsCmd_Err" xml:space="preserve">
+    <value>模块操作列表查询失败，请重试！</value>
+  </data>
+  <data name="AddOrgCmd_Err" xml:space="preserve">
+    <value>新组织添加失败，请重试！</value>
+  </data>
+  <data name="AddOrgCmd_Sql" xml:space="preserve">
+    <value>insert into s_org (p_id,orgname,orgdesc,tab_s_orgtype_id,sort,addtime,opt_s_user_id,isenable,invalid) values (@p_id, @orgname, @orgdesc, @tab_s_orgtype_id, @sort, @addtime, @opt_s_user_id, @isenable, @invalid);
+select a.*,b.codename isenable_text,c.username opt_s_user_name from s_org a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.opt_s_user_id=c.id and a.id=SCOPE_IDENTITY();</value>
+  </data>
+  <data name="DeleteOrgCmd_Sql" xml:space="preserve">
+    <value>delete from s_org where id in (0@ids);</value>
+  </data>
+  <data name="ListOrgsCmd_Err" xml:space="preserve">
+    <value>组织列表查询失败，请重试！</value>
+  </data>
+  <data name="ListOrgsCmd_Sql" xml:space="preserve">
+    <value>select a.*,b.codename isenable_text,c.username opt_s_user_name 
+from s_org a,p_code b,s_user c 
+where 
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.opt_s_user_id=c.id
+@appendSQL
+order by a.p_id,a.sort,a.id asc</value>
+  </data>
+  <data name="UpdateOrgCmd_Err" xml:space="preserve">
+    <value>组织信息更新失败，请重试！</value>
+  </data>
+  <data name="UpdateOrgCmd_Sql" xml:space="preserve">
+    <value>update s_org set orgname=@orgname, orgdesc=@orgdesc, tab_s_orgtype_id=@tab_s_orgtype_id, sort=@sort where id=@id; 
+select a.*,b.codename isenable_text,c.username opt_s_user_name from s_org a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.opt_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="AddMyUrlCmd_Err" xml:space="preserve">
+    <value>新网址添加失败，请重试！</value>
+  </data>
+  <data name="AddMyUrlCmd_Sql" xml:space="preserve">
+    <value>insert into p_myurl (url,memo,tab_p_code_ispublic_id,addtime,opt_s_user_id,isenable,invalid) values (@url,@memo,@tab_p_code_ispublic_id, @addtime, @opt_s_user_id, @isenable, @invalid);
+select 
+a.*,b.codename isenable_text,c.username opt_s_user_name,d.codename ispublic_text 
+from 
+p_myurl a,p_code b,s_user c,p_code d
+where 
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' 
+and a.tab_p_code_ispublic_id=d.code and d.tab_p_codetype_id='ISPUBLIC' 
+and a.opt_s_user_id=c.id 
+and a.id=SCOPE_IDENTITY();</value>
+  </data>
+  <data name="ListMyUrlsCmd_Err" xml:space="preserve">
+    <value>网址列表查询失败，请重试！</value>
+  </data>
+  <data name="ListMyUrlsCmd_Sql" xml:space="preserve">
+    <value>select 
+a.*,b.codename isenable_text,c.username opt_s_user_name,d.codename ispublic_text 
+from 
+p_myurl a,p_code b,s_user c,p_code d
+where 
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' 
+and a.tab_p_code_ispublic_id=d.code and d.tab_p_codetype_id='ISPUBLIC' 
+and a.opt_s_user_id=c.id 
+and (a.tab_p_code_ispublic_id=1 or a.opt_s_user_id=@opt_s_user_id) 
+order by a.id desc</value>
+  </data>
+  <data name="DeleteMyUrlCmd_Sql" xml:space="preserve">
+    <value>delete from p_myurl where opt_s_user_id=@opt_s_user_id and id in (0@ids);</value>
+  </data>
+  <data name="UpdateMyUrlCmd_Err" xml:space="preserve">
+    <value>网址信息更新失败，请重试！</value>
+  </data>
+  <data name="UpdateMyUrlCmd_Sql" xml:space="preserve">
+    <value>update p_myurl set url=@url, memo=@memo, tab_p_code_ispublic_id=@tab_p_code_ispublic_id where opt_s_user_id=@opt_s_user_id and id=@id; 
+select 
+a.*,b.codename isenable_text,c.username opt_s_user_name,d.codename ispublic_text 
+from 
+p_myurl a,p_code b,s_user c,p_code d
+where 
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' 
+and a.tab_p_code_ispublic_id=d.code and d.tab_p_codetype_id='ISPUBLIC' 
+and a.opt_s_user_id=c.id 
+and a.opt_s_user_id=@opt_s_user_id and a.id=@id;</value>
+  </data>
+  <data name="AddUserCmd_Err_Code" xml:space="preserve">
+    <value>3001</value>
+  </data>
+  <data name="LoginCmd_Err_Code" xml:space="preserve">
+    <value>3002</value>
+  </data>
+  <data name="ListUserMenuTreeCmd_Err_Code" xml:space="preserve">
+    <value>3003</value>
+  </data>
+  <data name="ListUserMenuTreeCmd" xml:space="preserve">
+    <value>查询用户菜单树列表</value>
+  </data>
+  <data name="LoginCmd" xml:space="preserve">
+    <value>用户登陆成功</value>
+  </data>
+  <data name="LogoutCmd_Err" xml:space="preserve">
+    <value>用户退出失败</value>
+    <comment>3004</comment>
+  </data>
+  <data name="LogoutCmd_Err_Code" xml:space="preserve">
+    <value>3004</value>
+  </data>
+  <data name="LogoutCmd" xml:space="preserve">
+    <value>用户退出成功</value>
+  </data>
+  <data name="AddModuleCmd_Err_Code" xml:space="preserve">
+    <value>3005</value>
+  </data>
+  <data name="AddModuleCmd" xml:space="preserve">
+    <value>添加新模块[{0}]</value>
+  </data>
+  <data name="UpdateModuleCmd_Err_Code" xml:space="preserve">
+    <value>3006</value>
+  </data>
+  <data name="UpdateModuleCmd" xml:space="preserve">
+    <value>更新模块[{0}]</value>
+  </data>
+  <data name="DeleteModuleCmd" xml:space="preserve">
+    <value>删除模块[{0}]</value>
+  </data>
+  <data name="ListModulesCmd_Err_Code" xml:space="preserve">
+    <value>3007</value>
+  </data>
+  <data name="DeleteModuleCmd_Err_Code" xml:space="preserve">
+    <value>3008</value>
+  </data>
+  <data name="AddCodeTypeCmd" xml:space="preserve">
+    <value>添加新代码类型[{0}]</value>
+  </data>
+  <data name="AddCodeTypeCmd_Err_Code" xml:space="preserve">
+    <value>3009</value>
+  </data>
+  <data name="UpdateCodeTypeCmd_Err_Code" xml:space="preserve">
+    <value>3010</value>
+  </data>
+  <data name="UpdateCodeTypeCmd" xml:space="preserve">
+    <value>更新代码类型[{0}]</value>
+  </data>
+  <data name="DeleteCodeTypeCmd" xml:space="preserve">
+    <value>删除代码类型[{0}]</value>
+  </data>
+  <data name="DeleteCodeTypeCmd_Err_Code" xml:space="preserve">
+    <value>3011</value>
+  </data>
+  <data name="ListCodeTypesCmd_Err_Code" xml:space="preserve">
+    <value>3012</value>
+  </data>
+  <data name="AddCodeCmd_Err_Code" xml:space="preserve">
+    <value>3013</value>
+  </data>
+  <data name="AddCodeCmd" xml:space="preserve">
+    <value>添加新代码[{0}]</value>
+  </data>
+  <data name="UpdateCodeCmd_Err_Code" xml:space="preserve">
+    <value>3014</value>
+  </data>
+  <data name="UpdateCodeCmd" xml:space="preserve">
+    <value>更新代码[{0}]</value>
+  </data>
+  <data name="DeleteCodeCmd" xml:space="preserve">
+    <value>删除代码[{0}]</value>
+  </data>
+  <data name="DeleteCodeCmd_Err" xml:space="preserve">
+    <value>代码删除失败，请重试！</value>
+    <comment>3015</comment>
+  </data>
+  <data name="DeleteCodeCmd_Err_Code" xml:space="preserve">
+    <value>3015</value>
+  </data>
+  <data name="ListCodesCmd_Err_Code" xml:space="preserve">
+    <value>3016</value>
+  </data>
+  <data name="AddRoleCmd_Err_Code" xml:space="preserve">
+    <value>3017</value>
+  </data>
+  <data name="UpdateRoleCmd_Err_Code" xml:space="preserve">
+    <value>3018</value>
+  </data>
+  <data name="AddRoleCmd" xml:space="preserve">
+    <value>添加新角色[{0}]</value>
+  </data>
+  <data name="UpdateRoleCmd" xml:space="preserve">
+    <value>更新角色[{0}]</value>
+  </data>
+  <data name="DeleteRoleCmd_Err_Code" xml:space="preserve">
+    <value>3019</value>
+  </data>
+  <data name="ListRolesCmd_Err_Code" xml:space="preserve">
+    <value>3020</value>
+  </data>
+  <data name="DeleteRoleCmd" xml:space="preserve">
+    <value>删除角色[{0}]</value>
+  </data>
+  <data name="UploadMyPhotoCmd_Err" xml:space="preserve">
+    <value>照片上传失败，请重试！</value>
+    <comment>3021</comment>
+  </data>
+  <data name="UploadMyPhotoCmd_Err_Code" xml:space="preserve">
+    <value>3021</value>
+  </data>
+  <data name="UploadMyPhotoCmd_Sql" xml:space="preserve">
+    <value>update s_user set photo=@photo, phototype=@phototype where id=@id</value>
+  </data>
+  <data name="UploadMyPhotoCmd" xml:space="preserve">
+    <value>上传照片成功</value>
+  </data>
+  <data name="LookMyPhotoCmd_Err" xml:space="preserve">
+    <value>读取照片失败，请重试！</value>
+    <comment>3022</comment>
+  </data>
+  <data name="LookMyPhotoCmd_Err_Code" xml:space="preserve">
+    <value>3022</value>
+  </data>
+  <data name="LookMyPhotoCmd_Sql" xml:space="preserve">
+    <value>select photo from s_user where photo is not null and id=@id</value>
+  </data>
+  <data name="UploadMyPhotoCmd_noChoose_Err" xml:space="preserve">
+    <value>请选择照片</value>
+    <comment>3023</comment>
+  </data>
+  <data name="UploadMyPhotoCmd_noChoose_Err_Code" xml:space="preserve">
+    <value>3023</value>
+  </data>
+  <data name="UploadMyPhotoCmd_suffix_Err" xml:space="preserve">
+    <value>照片格式不正确</value>
+    <comment>3024</comment>
+  </data>
+  <data name="UploadMyPhotoCmd_suffix_Err_Code" xml:space="preserve">
+    <value>3024</value>
+  </data>
+  <data name="UploadMyPhotoCmd_fileLen_Err" xml:space="preserve">
+    <value>照片大小超出限制</value>
+    <comment>3025</comment>
+  </data>
+  <data name="UploadMyPhotoCmd_fileLen_Err_Code" xml:space="preserve">
+    <value>3025</value>
+  </data>
+  <data name="DownloadMyPhotoCmd_Err" xml:space="preserve">
+    <value>读取用户照片失败，请重试！</value>
+    <comment>3026</comment>
+  </data>
+  <data name="DownloadMyPhotoCmd_Err_Code" xml:space="preserve">
+    <value>3026</value>
+  </data>
+  <data name="DownloadMyPhotoCmd_Sql" xml:space="preserve">
+    <value>select * from s_user where photo is not null and id=@id</value>
+  </data>
+  <data name="VerifyUserKeysCmd_Err_Code" xml:space="preserve">
+    <value>3027</value>
+  </data>
+  <data name="ListRoleGroupsCmd_Sql" xml:space="preserve">
+    <value>select a.*,b.codename isenable_text,c.username ad_s_user_name from s_rolegroup a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id order by a.id asc</value>
+  </data>
+  <data name="ListRoleGroupsCmd_Err" xml:space="preserve">
+    <value>角色组列表查询失败，请重试！</value>
+    <comment>3029</comment>
+  </data>
+  <data name="ListRoleGroupsCmd_Err_Code" xml:space="preserve">
+    <value>3029</value>
+  </data>
+  <data name="AddRoleGroupCmd_Err" xml:space="preserve">
+    <value>新角色组添加失败，请重试！</value>
+    <comment>3028</comment>
+  </data>
+  <data name="AddRoleGroupCmd_Err_Code" xml:space="preserve">
+    <value>3028</value>
+  </data>
+  <data name="AddRoleGroupCmd_Sql" xml:space="preserve">
+    <value>insert into s_rolegroup (id,rolegroupdesc,addtime,ad_s_user_id,isenable,invalid) values (@id, @rolegroupdesc, @addtime, @ad_s_user_id, @isenable, @invalid);
+select a.*,b.codename isenable_text,c.username ad_s_user_name from s_rolegroup a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="AddRoleGroupCmd" xml:space="preserve">
+    <value>添加新角色组[{0}]</value>
+  </data>
+  <data name="DeleteRoleGroupCmd_Sql" xml:space="preserve">
+    <value>delete from s_rolegroup where id=@id</value>
+  </data>
+  <data name="DeleteRoleGroupCmd" xml:space="preserve">
+    <value>删除角色组[{0}]</value>
+  </data>
+  <data name="DeleteRoleGroupCmd_Err" xml:space="preserve">
+    <value>角色组删除失败，请重试！</value>
+    <comment>3030</comment>
+  </data>
+  <data name="DeleteRoleGroupCmd_Err_Code" xml:space="preserve">
+    <value>3030</value>
+  </data>
+  <data name="DeleteCodeTypeCmd_Sql2" xml:space="preserve">
+    <value>delete from p_code where tab_p_codetype_id = @id</value>
+  </data>
+  <data name="DeleteRoleGroupCmd_Sql2" xml:space="preserve">
+    <value>delete from s_role where tab_s_rolegroup_id=@id</value>
+  </data>
+  <data name="UpdateRoleGroupCmd" xml:space="preserve">
+    <value>更新角色组[{0}]</value>
+  </data>
+  <data name="UpdateRoleGroupCmd_Err" xml:space="preserve">
+    <value>角色组信息更新失败，请重试！</value>
+    <comment>3031</comment>
+  </data>
+  <data name="UpdateRoleGroupCmd_Err_Code" xml:space="preserve">
+    <value>3031</value>
+  </data>
+  <data name="UpdateRoleGroupCmd_Sql" xml:space="preserve">
+    <value>update s_rolegroup set rolegroupdesc=@rolegroupdesc, editime=@editime, ed_s_user_id=@ed_s_user_id where id=@id;
+select a.*,b.codename isenable_text,c.username ad_s_user_name from s_rolegroup a,p_code b,s_user c where a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id and a.id=@id;</value>
+  </data>
+  <data name="EmpowerRoleCmd_Err_Code" xml:space="preserve">
+    <value>3032</value>
+  </data>
+  <data name="UnEmpowerRoleCmd" xml:space="preserve">
+    <value>反授权角色[{0}]</value>
+  </data>
+  <data name="UnEmpowerRoleCmd_Err" xml:space="preserve">
+    <value>反授权角色失败，请重试！</value>
+    <comment>3033</comment>
+  </data>
+  <data name="UnEmpowerRoleCmd_Err_Code" xml:space="preserve">
+    <value>3033</value>
+  </data>
+  <data name="ListDataSourcesCmd_Err" xml:space="preserve">
+    <value>数据源列表失败，请重试！</value>
+    <comment>3034</comment>
+  </data>
+  <data name="ListDataSourcesCmd_Err_Code" xml:space="preserve">
+    <value>3034</value>
+  </data>
+  <data name="ListDataSourcesCmd_Sql" xml:space="preserve">
+    <value>select a.id,a.dsname,d.codename dstype_text,a.dsdesc,a.sqls,a.addtime
+,c.username ad_s_user_name,b.codename isenable_text 
+from 
+p_datasource a, p_code b,s_user c,p_code d
+where 
+a.dstype=d.code and d.tab_p_codetype_id='DSTYPE' and
+a.isenable=b.code and b.tab_p_codetype_id='ISENABLE' and a.ad_s_user_id=c.id order by a.id asc</value>
+  </data>
+</root>

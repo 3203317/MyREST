@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <TITLE></TITLE>
+  <style type="text/css">
+  </style>
+	<script type="text/javascript" src="_sys/_modmanage/add.js?v1"></script>
+ </HEAD>
+
+ <BODY class="soria">
+	<form id="_fo_sys_modmanage_addFrm" data-dojo-type="dijit.form.Form">
+		<table>
+			<tr>
+				<td nowrap><label for="_fo_sys_modmanage_addFrm_modulenameText">模块名称：</label></td>
+				<td><input id="_fo_sys_modmanage_addFrm_modulenameText" name="modulename" data-dojo-type="dijit.form.ValidationTextBox" data-dojo-props='required:true,trim:true,regExpGen:function(){return "^.{2,20}$";}' invalidMessage="长度为2-20位任意字符"/></td>
+			</tr>
+			<tr>
+				<td nowrap><label for="_fo_sys_modmanage_addFrm_iconText">图标：</label></td>
+				<td><input id="_fo_sys_modmanage_addFrm_iconText" name="icon" data-dojo-type="dijit.form.ValidationTextBox" maxlength="30"/></td>
+			</tr>
+			<tr>
+				<td nowrap><label for="_fo_sys_modmanage_addFrm_hrefText">模块地址：</label></td>
+				<td><input id="_fo_sys_modmanage_addFrm_hrefText" name="href" data-dojo-type="dijit.form.ValidationTextBox" style="width:280px;" maxlength="100"/></td>
+			</tr>
+			<tr>
+				<td nowrap><label for="_fo_sys_modmanage_addFrm_sortText">排序：</label></td>
+				<td><input id="_fo_sys_modmanage_addFrm_sortText" name="sort" data-dojo-type="dijit.form.NumberSpinner" value="1" constraints="{min:1,max:999,places:0}"/></td>
+			</tr>
+		</table>
+	</form>
+ </BODY>
+</HTML>

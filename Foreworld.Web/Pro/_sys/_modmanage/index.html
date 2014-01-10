@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <TITLE></TITLE>
+	<link rel="stylesheet" type="text/css" href="http://localhost:8083/resjs/commons/components/dojo/dojox/grid/resources/Grid.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8083/resjs/commons/components/dojo/dojox/grid/resources/soriaGrid.css" />
+  <style type="text/css">
+	#_fo_sys_modmanage{
+		height:100%;
+		width:100%;
+		font-size:12px;
+	}
+	#_fo_sys_modmanage_left{
+		width:200px;
+		height:100%;
+		margin:0;
+		padding:2px;
+	}
+	#_fo_sys_modmanage_center{
+		height:100%;
+		margin:0;
+		padding:0px;
+	}
+	#_fo_sys_modmanage_top{
+		margin:0;
+		padding:0px;
+	}
+  </style>
+	<script type="text/javascript" src="index.js?v14"></script>
+ </HEAD>
+
+ <BODY class="soria">
+	<div id="_fo_sys_modmanage" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props='liveSplitters:false,design:"sidebar",_splitterClass:"dojox.layout.ToggleSplitter"'>
+		<div id="_fo_sys_modmanage_left" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"left",splitter:true,minSize:150,maxSize:250'>
+			<div id="_fo_sys_modmanage_modTree" style="height:100%;width:100%;"></div>
+		</div>
+		<div id="_fo_sys_modmanage_top" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"top"'>
+			<div id="_fo_sys_modmanage_toolbar" data-dojo-type="dijit.Toolbar">
+				<div id="_fo_sys_modmanage_toolbar_addBtn" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconNewPage'">新增</div>
+				<div id="_fo_sys_modmanage_toolbar_editBtn" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconWikiword',disabled:true">编辑</div>
+				<div id="_fo_sys_modmanage_toolbar_delBtn" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconDelete',disabled:true">删除</div>
+				<div id="_fo_sys_modmanage_toolbar_editBtnTip" data-dojo-type="dijit.Tooltip" data-dojo-props="connectId:'_fo_sys_modmanage_toolbar_editBtn',position:['above','below']"></div>
+				<div id="_fo_sys_modmanage_toolbar_delBtnTip" data-dojo-type="dijit.Tooltip" data-dojo-props="connectId:'_fo_sys_modmanage_toolbar_delBtn',position:['above','below']"></div>
+			</div>
+		</div>
+		<div id="_fo_sys_modmanage_center" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"center"'>
+			<div id="_fo_sys_modmanage_modGrid"></div>
+		</div>
+	</div>
+ </BODY>
+</HTML>

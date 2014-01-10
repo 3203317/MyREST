@@ -1,0 +1,174 @@
+<!-- -->
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />    
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxPopup/codebase/skins/dhtmlxpopup_dhx_skyblue.css"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<TITLE>模块表单</TITLE>
+		<style type="text/css">
+			*{
+				font-size:12px;
+			}
+			html,body {
+				height:100%;
+				width:100%;
+				margin: 0;
+				padding: 0;
+				overflow:hidden;
+				font-size: 12px;
+				_font-size: 12px;
+				_font-family:"宋体";
+			}
+			tr{
+				height:25px;
+			}
+		</style>
+	</HEAD>
+	<BODY class="fore">		
+		<form id="form">
+			<input type="hidden" id="hid_id">
+			<table border="0" cellspacing="0" cellpadding="0" style="margin:10px">
+				<tr>
+					<td><label for="inp_name">模块名称：</label></td>
+					<td><input id="inp_name" name="name" placeholder="必填项"><span style="color:red">*</span></td>
+				</tr>
+				<tr>
+					<td><label for="inp_href">模块地址：</label></td>
+					<td><input id="inp_href" name="href"></td>
+				</tr>
+				<tr>
+					<td><label for="inp_icon">模块图标：</label></td>
+					<td><input id="inp_icon" name="icon"></td>
+				</tr>
+				<tr>
+					<td><label for="sel_sort">模块排序：</label></td>
+					<td><select id="sel_sort" name="sort">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+						<select></td>
+				</tr>
+				<tr>
+					<td><label for="area_desc">模块描述：</label></td>
+					<td><textarea id="area_desc" name="desc" style="width:200px;height:40px"></textarea></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button" value="保存" onclick="_checkForm();">
+						<input type="button" value="重置" onclick="_reset();"></td>
+				</tr>
+			</table>
+		</form>
+		<script>
+			var	cdnPath = "http://cdn:8082/cdn/js/";
+			var dhxPath = "dhtmlx/3.6/";
+			var require = {
+				waitSeconds: 3,
+				urlArgs: "v="+ (new Date()).getTime(),
+				deps: [
+					cdnPath + dhxPath +"dhtmlxPopup/codebase/dhtmlxcommon.js"
+				]
+			};
+			var config = {
+				waitSeconds: 3,
+				locale: top.location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "zh",
+				paths: {
+					jquery: cdnPath +"jquery/1.10.2/jquery.min",
+					i18n: cdnPath +"require/i18n",
+					dhtmlxpopup: cdnPath + dhxPath +"dhtmlxPopup/codebase/dhtmlxpopup"
+				}
+			};
+		</script>
+        <script src="http://cdn:8082/cdn/js/require/2.1.6/require.js"></script>
+		<SCRIPT LANGUAGE="JavaScript">
+		<!--
+			/* 私有函数或对象 */
+			var _reset,_data,_checkForm,_form,_popup,_submit;
+			/* 公共函数 */
+			var set,closeAndClear;
+			/* 表单对象 */
+			var _hid_id,_inp_name,_inp_href,_inp_icon,_sel_sort,_area_desc;
+			/**/
+			var console = console||{log:function(){return;}}
+			require.config(config);
+			require(["jquery",
+				"dhtmlxpopup"], function($){
+				_popup = new dhtmlXPopup({ mode: "right" });
+				_popup.attachHTML("模块名称不能为空！");
+
+				/*表单对象*/
+				_form = $("#form")[0];
+				_hid_id = $("#hid_id");
+				_inp_name = $("#inp_name");
+				_inp_href = $("#inp_href");
+				_inp_icon = $("#inp_icon");
+				_sel_sort = $("#sel_sort");
+				_area_desc = $("#area_desc");
+
+				/* 重置表单 */
+				_reset = function(){
+					_popup.hide();
+					if(_data){
+						_hid_id.val(_data.id);
+						_inp_name.val(_data.name);
+						_inp_href.val(_data.href);
+						_inp_icon.val(_data.icon);
+						_sel_sort.val(_data.sort);
+						_area_desc.val(_data.desc);
+					}else{
+						_form.reset();
+					}
+				};
+				/* set数据 */
+				set = function($data){
+					_data = $data;
+					_reset();
+				};
+				/* 关闭时，清理数据 */
+				closeAndClear = function(){
+					_data = null;
+					_popup.hide();
+					_form.reset();
+				};
+				/* 表单验证 */
+				_checkForm = function(){	
+					if("" == _inp_name.val().trim()){
+						_inp_name.focus();
+						if(!_popup.isVisible()){
+							var __widget = _inp_name[0];
+							var __x = getAbsoluteLeft(__widget);
+							var __y = getAbsoluteTop(__widget);
+							var __w = __widget.offsetWidth;
+							var __h = __widget.offsetHeight;
+							_popup.show(__x, __y, __w, __h);
+						}
+					}else{
+						_popup.hide();
+						_submit();
+					}
+				},
+				/* 表单提交 */
+				_submit = function(){
+					var __data = {
+						id: _hid_id.val(),
+						name: _inp_name.val(),
+						href: _inp_href.val(),
+						icon: _inp_icon.val(),
+						sort: _sel_sort.val(),
+						desc: _area_desc.val()
+					};
+
+					console.log(__data);
+				};
+			});
+		//-->
+		</SCRIPT>
+	</BODY>
+</HTML>

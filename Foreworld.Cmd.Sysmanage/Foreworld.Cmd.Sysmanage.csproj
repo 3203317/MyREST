@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0958A2A5-DBA0-4444-906E-31023319B47D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Foreworld.Cmd.Sysmanage</RootNamespace>
+    <AssemblyName>Foreworld.Cmd.Sysmanage</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\asset\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\asset\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.2.9222, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\NUnit 2.5.2\bin\net-1.1\framework\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocity, Version=0.5.0.0, Culture=neutral, PublicKeyToken=44382d1b57473eda, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\asset\NVelocity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeType\AddCodeTypeCmd.cs" />
+    <Compile Include="CodeType\DeleteCodeTypeCmd.cs" />
+    <Compile Include="CodeType\ListCodeTypesCmd.cs" />
+    <Compile Include="CodeType\UpdateCodeTypeCmd.cs" />
+    <Compile Include="Code\AddCodeCmd.cs" />
+    <Compile Include="Code\DeleteCodeCmd.cs" />
+    <Compile Include="Code\ListCodesCmd.cs" />
+    <Compile Include="Code\UpdateCodeCmd.cs" />
+    <Compile Include="Model\LoginForm.cs" />
+    <Compile Include="MyUrl\AddMyUrlCmd.cs" />
+    <Compile Include="MyUrl\DeleteMyUrlCmd.cs" />
+    <Compile Include="MyUrl\ListMyUrlsCmd.cs" />
+    <Compile Include="MyUrl\UpdateMyUrlCmd.cs" />
+    <Compile Include="Org\AddOrgCmd.cs" />
+    <Compile Include="Org\DeleteOrgCmd.cs" />
+    <Compile Include="Org\ListOrgsCmd.cs" />
+    <Compile Include="Org\UpdateOrgCmd.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Rest\MainRest.cs" />
+    <Compile Include="Rest\ModuleRest.cs" />
+    <Compile Include="Rest\UserRest.cs" />
+    <Compile Include="RoleGroup\AddRoleGroupCmd.cs" />
+    <Compile Include="RoleGroup\DeleteRoleGroupCmd.cs" />
+    <Compile Include="RoleGroup\ListRoleGroupsCmd.cs" />
+    <Compile Include="RoleGroup\UpdateRoleGroupCmd.cs" />
+    <Compile Include="Role\AddRoleCmd.cs" />
+    <Compile Include="Role\DeleteRoleCmd.cs" />
+    <Compile Include="Role\EmpowerRoleCmd.cs" />
+    <Compile Include="Role\ListRolesCmd.cs" />
+    <Compile Include="Role\UnEmpowerRoleCmd.cs" />
+    <Compile Include="Role\UpdateRoleCmd.cs" />
+    <Compile Include="Test\TestCodeCmd.cs" />
+    <Compile Include="Test\TestCodeTypeCmd.cs" />
+    <Compile Include="Test\TestModuleCmd.cs" />
+    <Compile Include="Test\TestMyUrlCmd.cs" />
+    <Compile Include="Test\TestOrgCmd.cs" />
+    <Compile Include="Test\TestRegex.cs" />
+    <Compile Include="Test\TestRoleCmd.cs" />
+    <Compile Include="Test\TestRoleGroupCmd.cs" />
+    <Compile Include="Test\TestUserCmd.cs" />
+    <Compile Include="Validator\CommonValidator.cs" />
+    <Compile Include="Validator\ResourceInterceptor.cs" />
+    <Compile Include="Validator\TicketInterceptor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Foreworld.Cmd.Privilege\Foreworld.Cmd.Privilege.csproj">
+      <Project>{4FE80799-2C62-4C87-89AE-5813A9862D75}</Project>
+      <Name>Foreworld.Cmd.Privilege</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foreworld.Cmd\Foreworld.Cmd.csproj">
+      <Project>{7A53E949-284E-4DA8-9C3B-4FF873C14B43}</Project>
+      <Name>Foreworld.Cmd</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foreworld.Db\Foreworld.Db.csproj">
+      <Project>{5D829C6F-AF01-4BE9-B708-B8C877F61C6C}</Project>
+      <Name>Foreworld.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foreworld.Log\Foreworld.Log.csproj">
+      <Project>{AB948F04-19A4-42AB-A25D-CE1B92E48E0D}</Project>
+      <Name>Foreworld.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foreworld.Utils\Foreworld.Utils.csproj">
+      <Project>{821BEBCB-9F3D-4EC8-A1B7-2BAA1985CE3B}</Project>
+      <Name>Foreworld.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="tpl\MainRest.IndexUI.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="tpl\UserRest.LoginUI.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="tpl\MainRest.WelcomeUI.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="tpl\ModuleRest.IndexUI.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

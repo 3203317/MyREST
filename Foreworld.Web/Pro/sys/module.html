@@ -1,0 +1,154 @@
+<!-- -->
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<TITLE>模块管理</TITLE>
+		<link rel="STYLESHEET" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxTabbar/codebase/dhtmlxtabbar.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxTree/codebase/dhtmlxtree.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxAccordion/codebase/skins/dhtmlxaccordion_dhx_skyblue.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxLayout/codebase/dhtmlxlayout.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxLayout/codebase/skins/dhtmlxlayout_dhx_skyblue.css">
+		<link rel="STYLESHEET" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxGrid/codebase/dhtmlxgrid.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxGrid/codebase/skins/dhtmlxgrid_dhx_skyblue.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxToolbar/codebase/skins/dhtmlxtoolbar_dhx_skyblue.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxWindows/codebase/dhtmlxwindows.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxWindows/codebase/skins/dhtmlxwindows_dhx_skyblue.css">
+		<style type="text/css">
+			html{
+				_padding:103px 0 37px 0;
+				_overflow:hidden;
+				overflow:hidden;
+			}
+			html,body {
+				height:100%;
+				width:100%;
+				margin: 0;
+				padding: 0;
+				overflow:hidden;
+				font-size: 12px;
+				_font-size: 12px;
+				_font-family:"宋体";
+			}
+			.fore .nav {
+				background: url("../images/current_titlebg.jpg") repeat-x scroll 0 0 transparent;
+				border-bottom: 1px solid #ADC7E0;
+				color: #666666;
+				font-family: Verdana,Arial,Helvetica,sans-serif;
+				height: 29px;
+				line-height: 29px;
+				padding-left: 10px;
+				width:100%;
+				z-index:49;
+				position: absolute;
+				font-size: 12px;
+				margin:0
+				padding:0;
+				min-width: 960px;
+				_font-size: 12px;
+				_font-family:"宋体";
+				_width:100%;
+			}
+			.fore .nav a {
+				color: #666666;
+				font-size: 12px;
+				text-decoration: none;
+			}
+			.fore #div_center {
+				width:100%;
+				overflow:hidden;
+				position:absolute;
+				z-index:20;
+				left:-1px;
+				top:29px;
+				bottom:0px;
+				_height:100%;
+			}
+		</style>
+	<!--[if lt IE 8 ]>		 
+		<style>
+			.fore #div_center {
+				top:0; 
+				left:-1px;
+				height:100%; 
+				max-height:100%; 
+				width:100%; 
+				overflow:auto;
+				position:absolute; 
+				z-index:3; 
+				border-top:29px solid #fff; 
+				border-bottom:-1px solid #fff;
+			}
+		</style>
+	<![endif]-->
+	</HEAD>
+	<BODY class="fore">		
+		<table border="0" cellspacing="0" cellpadding="0" class="nav">
+			<tr>
+				<td>当前位置：系统管理 &gt; <a href="javascript:void(0)" onclick="location.reload();">模块管理</a></td>
+			</tr>
+		</table>
+		<div id="div_tree" style="height:100%"></div>
+		<div id="div_center"></div>		
+		<!--[if lt IE 10]> <script type="text/javascript" src="http://cdn:8082/cdn/js/html5shiv/3.6.2/html5.js"></script> <![endif]-->
+		<script type="text/javascript" src="http://cdn:8082/cdn/js/dhtmlx/3.6/dhtmlxTabbar/codebase/dhtmlxcommon.js"></script>
+		<script>
+			var	cdnPath = "http://cdn:8082/cdn/js/";
+			var dhxPath = "dhtmlx/3.6/";
+			var require = {
+				waitSeconds: 3,
+				//urlArgs: "v="+ (new Date()).getTime(),
+				deps: [
+					cdnPath + dhxPath +"dhtmlxTabbar/codebase/dhtmlxcontainer.js",
+					cdnPath + dhxPath +"dhtmlxGrid/codebase/dhtmlxgrid.js"
+				],
+				callback: function(){
+					//console.log(arguments);
+				}
+			};
+			var config = {
+				waitSeconds: 3,
+				locale: top.location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "zh",
+				paths: {
+					jquery: cdnPath +"jquery/1.10.2/jquery.min",
+					i18n: cdnPath +"require/i18n",
+					underscore: cdnPath +"underscore/1.5.1/underscore.min",
+					backbone: cdnPath +"backbone/1.0.0/backbone.min",
+					dhtmlxtabbar: cdnPath + dhxPath +"dhtmlxTabbar/codebase/dhtmlxtabbar",
+					dhtmlxtree: cdnPath + dhxPath +"dhtmlxTree/codebase/dhtmlxtree",
+					dhtmlxtree_json: cdnPath + dhxPath +"dhtmlxTree/codebase/ext/dhtmlxtree_json",
+					dhtmlxaccordion: cdnPath + dhxPath +"dhtmlxAccordion/codebase/dhtmlxaccordion",
+					dhtmlxlayout: cdnPath + dhxPath +"dhtmlxLayout/codebase/dhtmlxlayout",
+					dhtmlxgrid: cdnPath + dhxPath +"dhtmlxGrid/codebase/dhtmlxgrid",
+					dhtmlxgridcell: cdnPath + dhxPath +"dhtmlxGrid/codebase/dhtmlxgridcell",
+					dhtmlxgrid_ext: cdnPath + dhxPath +"dhtmlxGrid/codebase/ext/dhtmlxgrid_ext",
+					dhtmlxgrid_filter: cdnPath + dhxPath +"dhtmlxGrid/codebase/ext/dhtmlxgrid_filter",
+					dhtmlxgrid_nxml: cdnPath + dhxPath +"dhtmlxGrid/codebase/ext/dhtmlxgrid_nxml",
+					dhtmlxgrid_start: cdnPath + dhxPath +"dhtmlxGrid/codebase/ext/dhtmlxgrid_start",
+					dhtmlxgrid_srnd: cdnPath + dhxPath +"dhtmlxGrid/codebase/ext/dhtmlxgrid_srnd",
+					dhtmlxgrid_selection: cdnPath + dhxPath +"dhtmlxGrid/codebase/ext/dhtmlxgrid_selection",
+					dhtmlxgrid_excell_cntr: cdnPath + dhxPath +"dhtmlxGrid/codebase/excells/dhtmlxgrid_excell_cntr",
+					dhtmlxtoolbar: cdnPath + dhxPath +"dhtmlxToolbar/codebase/dhtmlxtoolbar",
+					dhtmlxwindows: cdnPath + dhxPath +"dhtmlxWindows/codebase/dhtmlxwindows"
+				},
+				shim: {
+					dhtmlxtree_json: {
+						deps: ["dhtmlxtree"]
+					},
+					dhtmlxgrid_excell_cntr: {
+						deps: ["dhtmlxgridcell","dhtmlxgrid_nxml","dhtmlxgrid_start","dhtmlxgrid_srnd","dhtmlxgrid_selection","dhtmlxgrid_filter","dhtmlxgrid_ext"]
+					},
+					backbone: {
+                        deps: ["underscore"],
+                        exports: "Backbone"
+                    }
+				},
+				callback: function(){
+					//console.log(arguments);
+				}
+			};
+		</script>
+        <script data-main="module/modules" src="http://cdn:8082/cdn/js/require/2.1.6/require.js"></script>
+	</BODY>
+</HTML>

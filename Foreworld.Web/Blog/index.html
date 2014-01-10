@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>洪荒世界</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost:8083/resjs/commons/components/dojo/dojo/resources/dojo.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8083/resjs/commons/components/dojo/dijit/themes/fore/fore.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8083/resjs/commons/components/dojo/dojox/layout/resources/ToggleSplitter.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:8083/resjs/commons/components/dojo/dojox/layout/resources/GridContainer.css">
+
+		<style type="text/css">
+		html,body{
+			overflow: auto;
+		}
+		.cpane{
+			border:1px solid #666;
+			font:bold 12px Arial;
+			color:#666;
+			background:#FFF;
+			padding:10px;
+			height:100px;
+		}
+
+		.gridContainerZone > *{
+			margin: 10px !important;
+		}
+
+		.dj_ie6 .dropIndicator, .dj_ie6 .dijitContentpane, .dj_ie6 .dijitCalendar{
+			margin: 10px;
+		}
+		</style>
+
+	<style type="text/css">
+		.fore .foreDoufuHead{
+			background: #e7e7e7;
+			font-size: 14px;
+			font-weight: bold;
+			height: 33px;
+			line-height: 33px;
+			margin: 0;
+			padding-left: 10px;
+			text-align: left;
+		}
+		.fore .foreDoufuContent{
+			color: #666666;
+			line-height: 0;
+			padding-top: 0px;
+			text-align: left;
+		}
+		.fore .foreDoufuContent ul{
+			margin: 0;
+		}
+		.fore .foreDoufuContent a:link{
+			border-bottom: 0 dotted #D7D7D7;
+			color: #777777;
+			display: block;
+			height: 19px;
+			line-height: 19px;
+			margin: 2px 0;
+			overflow: hidden;
+			padding-bottom: 3px;
+			padding-left: 15px;
+			padding-top: 3px;
+			text-decoration: none;
+		}
+		.fore .foreDoufuContent a:hover{
+			color: #CC0000;
+			height: 19px;
+			line-height: 19px;
+			overflow: hidden;
+			padding-left: 15px;
+			text-decoration: none;
+		}
+	</style>
+
+
+	<script type="text/javascript">
+		var djConfig = {
+			locale : location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "zh",
+			async: true,
+			bindEncoding: "UTF-8",
+			packages: [{
+				name: "fore",
+				location: "http://localhost:8083/dojox/dojox"
+			}]
+		};
+	</script>
+	<script type="text/javascript" src="http://localhost:8083/resjs/commons/components/dojo/dojo/dojo.js" data-dojo-config="isDebug:false,parseOnLoad:true"></script>
+
+
+	<SCRIPT LANGUAGE="JavaScript">
+	<!--
+		require(["dojo/ready",
+			"dijit/_Widget",
+			"dojox/layout/GridContainer",
+			"dijit/layout/ContentPane",
+			"fore/doufu/Doufu"], function($ready){
+			$ready(function(){
+				dijit.byId("GC1").disableDnd();
+			});
+		});
+	//-->
+	</SCRIPT>
+</head>
+<body class="fore">
+
+	<div id="GC1" dojoType="dojox.layout.GridContainer"
+		nbZones="2"
+		hasResizableColumns="false"
+		isAutoOrganized="false"
+		doLayout="false"
+		withHandles="true"
+		colWidths="70,30"
+		dragRestriction="false"
+		acceptTypes="ContentPane,Doufu">
+		<div dojoType="dijit.layout.ContentPane" title="Intellectum" dndType="ContentPane" column="1">
+			Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemque rei publicae tuis vel doloribus vel suspicionibus anteferre. Ille quidem fructum omnis ante actae vitae hodierno die maximum cepit, cum summo consensu senatus, tum iudicio tuo gravissimo et maximo. Ex quo profecto intellegis quanta in dato beneficio sit laus, cum in accepto sit tanta gloria.
+			Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemque rei publicae tuis vel doloribus vel suspicionibus anteferre. Ille quidem fructum omnis ante actae vitae hodierno die maximum cepit, cum summo consensu senatus, tum iudicio tuo gravissimo et maximo. Ex quo profecto intellegis quanta in dato beneficio sit laus, cum in accepto sit tanta gloria.
+			<p></p>			
+			Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemque rei publicae tuis vel doloribus vel suspicionibus anteferre. Ille quidem fructum omnis ante actae vitae hodierno die maximum cepit, cum summo consensu senatus, tum iudicio tuo gravissimo et maximo. Ex quo profecto intellegis quanta in dato beneficio sit laus, cum in accepto sit tanta gloria.
+			Intellectum est enim mihi quidem in multis, et maxime in me ipso, sed paulo ante in omnibus, cum M. Marcellum senatui reique publicae concessisti, commemoratis praesertim offensionibus, te auctoritatem huius ordinis dignitatemque rei publicae tuis vel doloribus vel suspicionibus anteferre. Ille quidem fructum omnis ante actae vitae hodierno die maximum cepit, cum summo consensu senatus, tum iudicio tuo gravissimo et maximo. Ex quo profecto intellegis quanta in dato beneficio sit laus, cum in accepto sit tanta gloria.
+		</div>
+		<div dojoType="dijit.layout.ContentPane" class="cpane" label="Content Pane1" dndType="ContentPane" column="2">Content Pane n°1 !</div>
+		<div dojoType="dijit.layout.ContentPane" class="cpane" label="Content Pane2" dndType="ContentPane" column="2">Content Pane n°2 !</div>
+		<div dojoType="dijit.layout.ContentPane" class="cpane" label="Content Pane3" dndType="ContentPane" column="1">Content Pane n°3 !</div>
+		<div dojoType="fore.doufu.Doufu" column="2" data-dojo-props='baseClass: "foreDoufu", title: "Recent Article", dataUrl: "Recent_Article.json"' dndType="Doufu"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>首页</title>
+		<style type="text/css">
+			.fore a {
+				color: #757575;
+				outline: medium none;
+				text-decoration: none;
+			}
+			.fore #div_12gallery {
+				padding: 0 17px;
+				width: 350px;
+			}
+			.fore #div_12gallery li{
+				border: 1px solid #BFBFBF;
+				float: left;
+				margin: 0 9px 9px 0;
+				padding: 2px;
+				width: 62px;
+				height: 61px;
+				list-style-type: none;
+			}			
+			.fore #div_12gallery img{
+				width: 62px;
+				height: 61px;
+				cursor: pointer;
+			}
+			.fore .backcolr{
+				background-color: #884932 !important;
+			}
+			.fore .buttonone{
+				background: url("http://127.0.0.1:8082/cdn/yuanma/chahua2915/images/button1.png") repeat-x scroll center bottom transparent;
+				border: medium none;
+				border-radius: 3px 3px 3px 3px;
+				box-shadow: 0 1px 2px #CCCCCC;
+				color: #FFFFFF !important;
+				cursor: pointer;
+				display: inline-block;
+				font-size: 12px;
+				font-weight: bold;
+				padding: 7px 10px;
+			}
+		</style>
+	</head>
+	<body class="fore">
+		<div id="div_doufu"></div>
+		<div>
+			<h3 style="color: #884932 !important;font-size:18px">Image Gallery</h3>
+			<div id="div_12gallery"></div>
+			<a class='buttonone backcolr' href='gallery/'>View Gallery</a>
+			<div id="link_div">12</div>
+		</div>
+		<footer></footer>
+		<!--[if lt IE 10]> <script type="text/javascript" src="http://cdn:8082/cdn/js/html5shiv/3.6.2/html5.js"></script> <![endif]-->
+		<script>
+			var	cdnPath = "http://cdn:8082/cdn/js/";
+			var dhxPath = "dhtmlx/3.6/";
+			var require = {
+				waitSeconds: 3,
+				urlArgs: "v="+ (new Date()).getTime(),
+				deps: [
+				],
+				callback: function(){
+					//console.log(arguments);
+				}
+			};
+			var config = {
+				waitSeconds: 3,
+				locale: top.location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "zh",
+				paths: {
+					jquery: cdnPath +"jquery/1.10.2/jquery.min",
+					i18n: cdnPath +"require/i18n",
+					text: cdnPath +"require/text",
+					underscore: cdnPath +"underscore/1.5.1/underscore.min",
+					backbone: cdnPath +"backbone/1.0.0/backbone.min",
+					doufu: cdnPath +"xlo/0.9/layout/doufu",
+					doufuPhoto: cdnPath +"xlo/0.9/layout/doufuPhoto",
+					util: cdnPath +"xlo/0.9/util",
+					footer: "../pagelet/footer"
+				},
+				shim: {
+					backbone: {
+                        deps: ["underscore"],
+                        exports: "Backbone"
+                    }
+				},
+				callback: function(){
+					//console.log(arguments);
+				}
+			};
+		</script>
+        <script data-main="index/index" src="http://cdn:8082/cdn/js/require/2.1.6/require.js" charset="utf-8"></script>
+	</body>
+</html>
