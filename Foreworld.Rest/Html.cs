@@ -28,11 +28,6 @@ namespace Foreworld.Rest
     <BODY>
         <h1>Unknown Error Page.</h1>
         <h2>Please Visit <a href='http://www.foreworld.net'>http://www.foreworld.net</a>.</h2>
-        <script>
-            setTimeout(function(){
-                top.location.href = '../user/loginUI.html';
-            },1000);
-        </script>
     </BODY>
 </HTML>";
 
