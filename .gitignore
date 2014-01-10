@@ -41,6 +41,8 @@ local.properties
 *.user
 *.sln.docstates
 
+Foreworld.Web/App_Data/*.dll
+
 # Build results
 
 [Dd]ebug/
