@@ -8,7 +8,6 @@ namespace Foreworld.Log
     {
         public LogLayout()
         {
-            string a = "";
             this.AddConverter("property", typeof(LogInfoPatternConverter));
         }
     }
