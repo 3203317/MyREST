@@ -42,6 +42,7 @@ local.properties
 *.sln.docstates
 
 Foreworld.Web/App_Data/*.dll
+!Foreworld.Log/
 
 # Build results
 
@@ -72,12 +73,12 @@ build/
 *.tlh
 *.tmp
 *.tmp_proj
-*.log
+#*.log
 *.vspscc
 *.vssscc
 .builds
 *.pidb
-*.log
+#*.log
 *.scc
 
 # Visual C++ cache files
