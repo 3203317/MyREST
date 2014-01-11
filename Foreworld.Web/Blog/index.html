@@ -26,15 +26,13 @@
 	    <link rel="stylesheet" href="http://localhost:8082/olxjs/css/themes/olx/olx.css" media="screen"> -->
 	    <style type="text/css">
 	    	.container{
-	    		width: 1000px;
+	    		width: 1020px;
 	    	}
 	    	.navbar{
 	    		min-height: 31px;
 	    	}
 	    	.navbar-text{
-				margin-left: 0;
-				margin-right: 5px;
-				margin-top: 8px;
+				margin: 8px 5px 9px 0;
 	    	}
 	    	.navbar-header{
 	    		font-size: 10px;
@@ -45,11 +43,15 @@
 	    	.navbar-inverse{
 	    		background-color: #494949;
 	    	}
+			.navbar-nav > li > a {
+				padding-bottom: 6px;
+				padding-top: 5px;
+			}
 	    </style>
 	</head>
 	<body>
 
-		<div class="navbar navbar-inverse navbar-fixed-top" style="height:31px">
+		<div class="navbar navbar-inverse navbar-fixed-top" style="height:31px; background-color: #494949;">
 			<div class="container" style="height:31px">
 				<div class="navbar-header">
 					<p class="navbar-text"><span class="glyphicon glyphicon-globe"></span></p>
@@ -59,7 +61,7 @@
 				 <div class="collapse navbar-collapse" style="float:right;font-size:10px">
 					<ul class="nav navbar-nav">
 						<li class=""><a href="#">Calender</a></li>
-						<li class="active"><a href="#">Login Now</a></li>
+						<li class="active"><a href="#">Sign in</a></li>
 					</ul>
 				</div>
 			</div>
