@@ -12,18 +12,18 @@
 	    <link rel="stylesheet" href="http://localhost:8082/cdn/js/bootstrap/3.0.3/dist/css/bootstrap-theme.min.css" media="screen">
 
 		<!--[if lte IE 9]>
-		<link rel="stylesheet" type="text/css" href="http://localhost:8082/cdn/js/bsie/0.0.0/css/bootstrap-ie6.css">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8082/cdn/js/bsie/0.0.0/css/ie.css">
-		<link rel="stylesheet" type="text/css" href="http://localhost:8082/verybsie/css/bootstrap-verybsie.css">
+		<link rel="stylesheet" type="text/css" href="/cdn/js/bsie/0.0.0/css/bootstrap-ie6.css">
+		<link rel="stylesheet" type="text/css" href="/cdn/js/bsie/0.0.0/css/ie.css">
+		<link rel="stylesheet" type="text/css" href="/verybsie/css/bootstrap-verybsie.css">
 		<![endif]-->
 
 		<!--[if lte IE 7]>
-		<link rel="stylesheet" type="text/css" href="http://localhost:8082/verybsie/css/bootstrap-verybsie.css">
+		<link rel="stylesheet" type="text/css" href="/verybsie/css/bootstrap-verybsie.css">
 		<![endif]-->
 		
 	    <!-- Olx -->
-	    <!-- <link rel="stylesheet" href="http://localhost:8082/olxjs/css/olx.css" media="screen">
-	    <link rel="stylesheet" href="http://localhost:8082/olxjs/css/themes/olx/olx.css" media="screen"> -->
+	    <link rel="stylesheet" href="http://localhost:8082/olxjs/css/olx.css" media="screen">
+	    <link rel="stylesheet" href="http://localhost:8082/olxjs/css/themes/olx/olx.css" media="screen">
 	    <style type="text/css">
 	    	.container{
 	    		width: 1020px;
@@ -47,11 +47,45 @@
 				padding-bottom: 6px;
 				padding-top: 5px;
 			}
+
+			.service-sec {
+				background: url("../asset/images/church-icon.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+				float: right;
+				padding: 0 0px 0 56px;
+			}
+
+			.service-sec h5{
+				padding: 0 0 2px 0;
+			}
+
+			.service-sec p{
+				padding: 2px 0 0 0;
+			}
+
+			body{
+				color: #757575;
+				font-family: Arial,Helvetica,sans-serif;
+				font-size: 11px;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+			    color: #3C3C3C;
+			    font-family: 'Spinnaker',sans-serif;    
+			    font-weight: normal;
+			}
+
+			.navbar-inverse {
+				background-image: none;
+			}
+
+			body {
+				padding-top: 31px;
+			}
 	    </style>
 	</head>
 	<body>
 
-		<div class="navbar navbar-inverse navbar-fixed-top" style="height:31px; background-color: #494949;">
+		<header class="navbar navbar-inverse navbar-fixed-top" style="height:31px; background-color: #494949">
 			<div class="container" style="height:31px">
 				<div class="navbar-header">
 					<p class="navbar-text"><span class="glyphicon glyphicon-globe"></span></p>
@@ -60,14 +94,38 @@
 				</div>
 				 <div class="collapse navbar-collapse" style="float:right;font-size:10px">
 					<ul class="nav navbar-nav">
-						<li class=""><a href="#">Calender</a></li>
+						<li><a href="#" style="font-color:white">Calender</a></li>
 						<li class="active"><a href="#">Sign in</a></li>
 					</ul>
 				</div>
 			</div>
+		</header>
+
+		<div style="padding: 0px 0 100px 0;background-color:#D5D5D5">
+			<div class="container">
+				<div class="row" style="background-color:#D5D5D5">
+					<div class="col-md-5">
+						<img src="../asset/images/logo.png" style="margin-top:15px">
+					</div>
+					<div class="col-md-4">
+						<div class="service-sec">
+							<h5><b>Sunday Services</b></h5>
+							<h5><b>@ 9:30 & 11:00 am</b></h5>
+							<p>1521 Hurt Rd, Marietta GA 30008</p>
+						</div>
+					</div>
+					<div class="col-md-3" style='margin-top:5px;background: url("../asset/images/shadow-sep.png") no-repeat scroll left center rgba(0, 0, 0, 0);'>
+						<h5>Search Now</h5>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="">
+							<span class="input-group-addon"><div class="glyphicon glyphicon-search"></div></span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
-
+		<footer></footer>
 
 	
 		<!-- Bootstrap -->
