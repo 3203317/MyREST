@@ -28,9 +28,6 @@
 	    	.container{
 	    		width: 1020px;
 	    	}
-	    	.navbar{
-	    		min-height: 31px;
-	    	}
 	    	.navbar-text{
 				margin: 8px 5px 9px 0;
 	    	}
@@ -40,13 +37,6 @@
 	    	.navbar-inverse .navbar-text{
 				color: #FFFFFF;
 	    	}
-	    	.navbar-inverse{
-	    		background-color: #494949;
-	    	}
-			.navbar-nav > li > a {
-				padding-bottom: 6px;
-				padding-top: 5px;
-			}
 
 			.service-sec {
 				background: url("../asset/images/church-icon.png") no-repeat scroll left center rgba(0, 0, 0, 0);
@@ -81,11 +71,23 @@
 			body {
 				padding-top: 31px;
 			}
+
+			#top-nav{
+				height:31px; background-color: #494949;
+
+	    		background-color: #494949;
+	    		min-height: 31px;
+			}
+
+			#top-nav .navbar-nav > li > a {
+				padding-bottom: 6px;
+				padding-top: 5px;
+			}
 	    </style>
 	</head>
 	<body>
 
-		<header class="navbar navbar-inverse navbar-fixed-top" style="height:31px; background-color: #494949">
+		<div id="top-nav" class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container" style="height:31px">
 				<div class="navbar-header">
 					<p class="navbar-text"><span class="glyphicon glyphicon-globe"></span></p>
@@ -99,7 +101,7 @@
 					</ul>
 				</div>
 			</div>
-		</header>
+		</div>
 
 		<div style="padding: 0px 0 100px 0;background-color:#D5D5D5">
 			<div class="container">
