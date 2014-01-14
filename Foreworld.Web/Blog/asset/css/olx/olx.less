@@ -41,28 +41,28 @@ body {
 	div {
 		>div:last-child {
 			float: right;
-		}
 
-		>div:last-child >ul:first-child {
-			margin-right: 5px;
-		}
+			>ul:first-child {
+				margin-right: 5px;
 
-		>div:last-child >ul:first-child li {
-			background: url("images/dots.png") no-repeat scroll 5px 13px rgba(0, 0, 0, 0);
-		}
+				li {
+					background: url("images/dots.png") no-repeat scroll 5px 13px rgba(0, 0, 0, 0);
 
-		>div:last-child >ul:first-child >li:first-child {
-			background: none;
-		}
+					a {
+						color: white;
+						padding-right: 5px;
+					}
+				}
 
-		>div:last-child >ul:first-child li a {
-			color: white;
-			padding-right: 5px;
-		}
+				>li:first-child {
+					background: none;
+				}
+			}
 
-		>div:last-child >ul:last-child > li > a {
-			padding-left: 10px;
-			padding-right: 10px;
+			>ul:last-child > li > a {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
 		}
 	}	
 }
