@@ -28,7 +28,7 @@ namespace Foreworld.Cmd.Sysmanage.Validator
         <script>
             setTimeout(function(){
                 top.location.href = '../user/loginUI.html';
-            },1000);
+            },10);
         </script>
     </BODY>
 </HTML>";
