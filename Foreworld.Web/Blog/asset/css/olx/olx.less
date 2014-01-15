@@ -69,16 +69,36 @@ body {
 	background: url("images/gray-bg.gif") repeat-x scroll center bottom #DBDBDB;
 
 	.container {
+		/*padding-top: 15px;*/
 		background-color: red;
 
-		>div {
+		.row {
 			>div:first-child {
-				background: url("images/logo.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+				>div {
+					background: url("images/logo.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+
+					a {
+						text-decoration: none;
+					}
+				}
 			}
 
 			>div:nth-child(2) {
-				background: url("images/church-icon.png") no-repeat scroll left center rgba(0, 0, 0, 0);
-				padding: 0 20px 0 56px;
+				>div {
+					background: url("images/church-icon.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+					padding: 0 0 0 56px;
+					float: right;		
+				}
+			}
+
+			>div:last-child {
+				padding-top: 5px;
+				padding-bottom: 5px;
+
+				>div {
+					background: url("images/shadow-sep.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+					padding-left: 25px;
+				}
 			}
 		}
 	}
