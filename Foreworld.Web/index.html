@@ -1,97 +1,220 @@
-﻿<!DOCTYPE HTML>
-<html>
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 	<head>
-		<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>首页</title>
-		<style type="text/css">
-			.fore a {
-				color: #757575;
-				outline: medium none;
-				text-decoration: none;
+		<title>洪荒世界</title>
+		<meta charset="utf-8">
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+	    <!-- Bootstrap -->
+	    <link rel="stylesheet" href="http://localhost:8082/cdn/js/bootstrap/3.0.3/dist/css/bootstrap.css" media="screen">
+	    <link rel="stylesheet" href="http://localhost:8082/cdn/js/bootstrap/3.0.3/dist/css/bootstrap-theme.min.css" media="screen">
+
+		<!--[if lte IE 9]>
+		<link rel="stylesheet" type="text/css" href="/cdn/js/bsie/0.0.0/css/bootstrap-ie6.css">
+		<link rel="stylesheet" type="text/css" href="/cdn/js/bsie/0.0.0/css/ie.css">
+		<link rel="stylesheet" type="text/css" href="/verybsie/css/bootstrap-verybsie.css">
+		<![endif]-->
+
+		<!--[if lte IE 7]>
+		<link rel="stylesheet" type="text/css" href="/verybsie/css/bootstrap-verybsie.css">
+		<![endif]-->
+		
+	    <!-- Olx -->
+	    <style type="text/css">
+
+			/*.service-sec {
+				background: url("../asset/images/church-icon.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+				float: right;
+				padding: 0 0px 0 56px;
 			}
-			.fore #div_12gallery {
-				padding: 0 17px;
-				width: 350px;
+
+			.service-sec h5{
+				padding: 0 0 2px 0;
 			}
-			.fore #div_12gallery li{
-				border: 1px solid #BFBFBF;
-				float: left;
-				margin: 0 9px 9px 0;
-				padding: 2px;
-				width: 62px;
-				height: 61px;
-				list-style-type: none;
-			}			
-			.fore #div_12gallery img{
-				width: 62px;
-				height: 61px;
-				cursor: pointer;
+
+			.service-sec p{
+				padding: 2px 0 0 0;
+			}*/
+
+			/*h1, h2, h3, h4, h5, h6 {
+			    color: #3C3C3C;
+			    font-family: 'Spinnaker',sans-serif;    
+			    font-weight: normal;
 			}
-			.fore .backcolr{
-				background-color: #884932 !important;
-			}
-			.fore .buttonone{
-				background: url("http://127.0.0.1:8082/cdn/yuanma/chahua2915/images/button1.png") repeat-x scroll center bottom transparent;
-				border: medium none;
-				border-radius: 3px 3px 3px 3px;
-				box-shadow: 0 1px 2px #CCCCCC;
-				color: #FFFFFF !important;
-				cursor: pointer;
-				display: inline-block;
-				font-size: 12px;
-				font-weight: bold;
-				padding: 7px 10px;
-			}
-		</style>
+
+			.navbar-inverse {
+				background-image: none;
+			}*/
+	    </style>
+	    <link rel="stylesheet" href="asset/css/olx/olx.css?v3" media="screen">
 	</head>
-	<body class="fore">
-		<div id="div_doufu"></div>
-		<div>
-			<h3 style="color: #884932 !important;font-size:18px">Image Gallery</h3>
-			<div id="div_12gallery"></div>
-			<a class='buttonone backcolr' href='gallery/'>View Gallery</a>
-			<div id="link_div">12</div>
-		</div>
+	<body>
+
+		<!-- <div id="top-nav" class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<p class="navbar-text"><span class="glyphicon glyphicon-globe"></span></p>
+					<p class="navbar-text">Mauris iaculis risus quis mauris vulputate at condimentum massa luctus.</p>
+					<p class="navbar-text"><a href="#">Keep Reading</a></p>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Calender</a></li>
+						<li><a href="#">Sermons</a></li>
+						<li><a href="#">Service</a></li>
+						<li><a href="#">Map/Directions</a></li>
+						<li><a href="#">Giving</a></li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Login Now</a></li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+
+		<!-- <div style="padding: 0px 0 100px 0;background-color:#D5D5D5">
+			<div class="container">
+				<div class="row" style="background-color:#D5D5D5">
+					<div class="col-md-5">
+						<img src="../asset/images/logo.png" style="margin-top:15px">
+					</div>
+					<div class="col-md-4">
+						<div class="service-sec">
+							<h5><b>Sunday Services</b></h5>
+							<h5><b>@ 9:30 & 11:00 am</b></h5>
+							<p>1521 Hurt Rd, Marietta GA 30008</p>
+						</div>
+					</div>
+					<div class="col-md-3" style='margin-top:5px;background: url("../asset/images/shadow-sep.png") no-repeat scroll left center rgba(0, 0, 0, 0);'>
+						<h5>Search Now</h5>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="">
+							<span class="input-group-addon"><div class="glyphicon glyphicon-search"></div></span>
+						</div>
+					</div>
+				</div>
+				<div class="row" style="background-color:#D5D5D5">
+					<div class="col-md-12">
+						<ul class="nav navbar-nav" style="background-color:black;width:100%">
+							<li class="active">
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div> -->
+
+		<!-- <header id="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<div>
+							<a href="http://www.foreworld.net">
+								<h5>&nbsp;</h5>
+								<h5>&nbsp;</h5>
+								<p>&nbsp;</p>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div>
+							<h5>Sunday Services</h5>
+							<h5>@ 9:30 & 11:00 am</h5>
+							<p>1521 Hurt Rd, Marietta GA 30008</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div>
+							<h5>Search Now</h5>
+							<div class="input-group">
+								<input type="text" class="form-control" placeholder="" autofocus>
+								<span class="input-group-addon"><div class="glyphicon glyphicon-search"></div></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+				</div>
+			</div>
+		</header> -->
+		
+		<header id="banner" class="navbar navbar-inverse navbar-fixed-top" role="banner">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="http://www.foreworld.net">Foreworld 洪荒</a>
+				</div>
+
+				<div id="navbar-collapse" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="#">Home</a>
+						</li>
+						<li class="dropdown">
+							<a href="Blog/" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Essay</a></li>
+								<li><a href="#">Design pattern</a></li>
+								<li><a href="#">Plug-ins</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Leave a message</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Gallery</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="../about">Login Now</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
 		<footer></footer>
-		<!--[if lt IE 10]> <script type="text/javascript" src="http://cdn:8082/cdn/js/html5shiv/3.6.2/html5.js"></script> <![endif]-->
-		<script>
-			var	cdnPath = "http://cdn:8082/cdn/js/";
-			var dhxPath = "dhtmlx/3.6/";
-			var require = {
-				waitSeconds: 3,
-				urlArgs: "v="+ (new Date()).getTime(),
-				deps: [
-				],
-				callback: function(){
-					//console.log(arguments);
-				}
-			};
-			var config = {
-				waitSeconds: 3,
-				locale: top.location.search.match(/locale=([\w\-]+)/) ? RegExp.$1 : "zh",
-				paths: {
-					jquery: cdnPath +"jquery/1.10.2/jquery.min",
-					i18n: cdnPath +"require/i18n",
-					text: cdnPath +"require/text",
-					underscore: cdnPath +"underscore/1.5.1/underscore.min",
-					backbone: cdnPath +"backbone/1.0.0/backbone.min",
-					doufu: cdnPath +"xlo/0.9/layout/doufu",
-					doufuPhoto: cdnPath +"xlo/0.9/layout/doufuPhoto",
-					util: cdnPath +"xlo/0.9/util",
-					footer: "../pagelet/footer"
-				},
-				shim: {
-					backbone: {
-                        deps: ["underscore"],
-                        exports: "Backbone"
-                    }
-				},
-				callback: function(){
-					//console.log(arguments);
-				}
-			};
-		</script>
-        <script data-main="index/index" src="http://cdn:8082/cdn/js/require/2.1.6/require.js" charset="utf-8"></script>
+
+	
+		<!-- Bootstrap -->
+		<script type="text/javascript" src="http://localhost:8082/cdn/js/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://localhost:8082/cdn/js/bootstrap/3.0.3/dist/js/bootstrap.js"></script>
+
+		<!-- Olx -->
+		<script type="text/javascript" src="http://localhost:8082/olxjs/js/olx.js"></script>
+
+		<!--[if lte IE 9]>
+			<script type="text/javascript" src="http://localhost:8082/cdn/js/html5shiv/3.7.0/html5shiv.js"></script>
+			<script type="text/javascript" src="http://localhost:8082/cdn/js/respond/1.3.0/respond.min.js"></script>
+		<![endif]-->
+
+		<!--[if lte IE 7]>
+		<script type="text/javascript" src="http://localhost:8082/verybsie/js/bootstrap-verybsie.js"></script>
+		<![endif]-->
+
+		<!-- Own -->
+		<script type="text/javascript" src="index/index.js"></script>
+
 	</body>
 </html>
