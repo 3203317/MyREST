@@ -51,32 +51,39 @@
 }
 
 .olx-article {
-	margin-bottom: 20px;
-	border-bottom: 1px solid #DDDDDD;
-    padding: 0 0 20px 0;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	box-shadow: 0 0 2px #C2C2C2;
+	margin-bottom: 30px;
+	min-height: 20px;
+	padding: 19px;
+	position: relative;
 
-	>.thumbnail {
-		-moz-box-sizing: border-box;
-		border: 5px solid #E3E3E3;
-		border-radius: 3px;
-		float: left;
-		width: 100%;
-		padding: 0;
-		margin-bottom: 0;
-		background: url("../../images/32x32/picture.png") repeat;
+	.article-date {
+		background-color: #D9534F;
+		border-color: #D43F3A;
+		border-radius: 100px;
+		color: #FFFFFF;
+		height: 70px;
+		left: -20px;
+		padding-top: 10px;
+		position: absolute;
+		top: -20px;
+		width: 70px;
 
-		img {
-			max-width:100%;
-			height:auto;
+		.month {
+			display: block;
+			text-align: center;
+		}
+
+		.day {
+			display: block;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-top: -5px;
 		}
 	}
-
-    >h3 {
-    	a {
-    		color: #CC0000;
-    		text-decoration: none;
-    	}
-    }
 }
 
 .olx-btn {
