@@ -94,7 +94,6 @@
 			padding: 10px 15px 0;
 
 			>h3 {
-				font-size: 28px;
 				margin: 0 auto;
 				text-align: center;
 
@@ -270,6 +269,18 @@ a:hover {
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1010px) {
+	#banner_searchForm {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.navbar-brand {
+		font-size: 16px;
+	}
+}
+
 @media screen and (max-width: 640px) {
 	#footer {
 	    >div {
@@ -278,20 +289,12 @@ a:hover {
 			}
 	    }
 	}
-}
 
-@media screen and (min-width: 768px) and (max-width: 1010px) {
-	#banner_searchForm {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 640px) {
 	.olx-article {
 		.article-content {
 			.content-title {
 				>h3 {
-					font-size: 18px;
+					font-size: 16px;
 
 					>a {
 						color: #D9534F;
