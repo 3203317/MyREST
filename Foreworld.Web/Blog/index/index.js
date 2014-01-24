@@ -5,4 +5,8 @@ $(document).ready(function(){
 	$('.flexslider').flexslider({
 		animation: "slide"
 	});
+
+	$("#qrcode").pin({
+		minWidth: 940
+	})
 });
