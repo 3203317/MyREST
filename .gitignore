@@ -41,6 +41,7 @@ local.properties
 *.user
 *.sln.docstates
 
+PrecompiledWeb/
 Foreworld.Blog/App_Data/*.dll
 Foreworld.Web/App_Data/*.dll
 
