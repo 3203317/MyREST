@@ -66,6 +66,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foreworld.Cmd.Portal", "For
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foreworld.Cmd.Privilege", "Foreworld.Cmd.Privilege\Foreworld.Cmd.Privilege.csproj", "{4FE80799-2C62-4C87-89AE-5813A9862D75}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Foreworld.Blog", "Foreworld.Blog\", "{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "2.0"
+		Debug.AspNetCompiler.VirtualPath = "/Foreworld.Blog"
+		Debug.AspNetCompiler.PhysicalPath = "Foreworld.Blog\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Foreworld.Blog\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Foreworld.Blog"
+		Release.AspNetCompiler.PhysicalPath = "Foreworld.Blog\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Foreworld.Blog\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59744"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -230,6 +251,16 @@ Global
 		{4FE80799-2C62-4C87-89AE-5813A9862D75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FE80799-2C62-4C87-89AE-5813A9862D75}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4FE80799-2C62-4C87-89AE-5813A9862D75}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Debug|.NET.ActiveCfg = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Debug|.NET.Build.0 = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Debug|Any CPU.ActiveCfg = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|.NET.ActiveCfg = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|.NET.Build.0 = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|Any CPU.ActiveCfg = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|Mixed Platforms.Build.0 = Debug|.NET
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
