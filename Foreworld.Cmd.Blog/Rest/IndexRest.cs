@@ -29,7 +29,7 @@ namespace Foreworld.Cmd.Blog.Rest
         public ResultMapper IndexUI(Parameter @parameter)
         {
             IContext vltCtx = new VelocityContext();
-            vltCtx.Put("title", "欢迎页");
+            vltCtx.Put("title", "FOREWORLD 洪荒");
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
