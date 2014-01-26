@@ -69,6 +69,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Foreworld.Blog", "Foreworld.Blog\", "{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "2.0"
+		ProjectReferences = "{31740848-5613-4864-8AEA-473B2483D982}|URLRewriter.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Foreworld.Blog"
 		Debug.AspNetCompiler.PhysicalPath = "Foreworld.Blog\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Foreworld.Blog\"
