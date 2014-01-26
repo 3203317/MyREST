@@ -1,0 +1,379 @@
+@import "../default.less";
+
+.clearfix {
+	clear: both;
+}
+
+.flexslider {
+	border: 1px solid #DDDDDD;
+	padding: 5px;
+	background-color: #E3E3E3
+}
+
+.flexslider:hover {
+	background-color: #D43F3A;
+	opacity: 0.8
+}
+
+.olx-panel {	
+	.panel-body {
+		padding: 0;
+
+		.list-group {
+			margin-bottom: 0;
+
+			.list-group-item {
+				border-left: 0 none;
+				border-right: 0 none;
+				border-bottom: 0 none;
+			}
+			.list-group-item:first-child {
+				border-top: 0 none;
+			}
+		}
+	}
+}
+
+.olx-backTop:before {
+	content: "\e113";
+}
+
+.olx-backTop {
+	display: inline-block;
+	font-family: "Glyphicons Halflings";
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	bottom: 50px;
+	color: #3D4450;
+	cursor: pointer;
+	display: block;
+	font-size: 30px;
+	position: fixed;
+	right: 40px;
+	top: auto;
+	z-index: 999;
+	display: none;
+}
+
+.olx-nav-pills > li > a {
+	padding: 8px 15px;
+}
+
+.olx-list-group-item {
+	border: 0;
+}
+
+.olx-article {
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	box-shadow: 0 0 2px #C2C2C2;
+	margin-bottom: 30px;
+	min-height: 20px;
+	padding: 19px;
+	position: relative;
+	border: 1px solid #DDDDDD;
+
+	.olx-glyphicon-bookmark {
+		color: #D9534F;
+		font-size: 40px;
+		position: absolute;
+		right: 5%;
+		top: -10px;
+	}
+
+	.article-date {
+		background-color: #D9534F;
+		border-color: #D43F3A;
+		border-radius: 100px;
+		color: #FFFFFF;
+		height: 70px;
+		left: -20px;
+		padding-top: 10px;
+		position: absolute;
+		top: -20px;
+		width: 70px;
+
+		.month {
+			display: block;
+			text-align: center;
+		}
+
+		.day {
+			display: block;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			margin-top: -5px;
+		}
+	}
+
+	.article-content {
+		.content-title {
+			padding: 10px 15px 0;
+
+			>h3 {
+				margin: 0 auto;
+				text-align: center;
+
+				>a {
+					color: #555555;
+				}
+
+				>a:hover {  
+					color: #D9534F;
+					transition: all 0.25s ease-in-out 0s;
+				}
+			}
+		}
+
+		.content-tag {
+			text-align: center;
+			line-height: 24px;
+			margin: 20px;
+			font-size: 12px;
+
+			.olx-label {
+				background-color: #3D4450;
+				margin-right: 5px;
+				a {
+					color: #FFFFFF;
+				}
+			}
+
+			.olx-label:hover {
+				background-color: #D9534F;
+				transition: all 0.25s ease-in-out 0s;
+			}
+		}
+
+		.content-article {
+			.thumbnail {
+				-moz-box-sizing: border-box;				
+				float: left;
+				width: 100%;
+				padding: 0;
+				margin-bottom: 10px;
+				/*background: url("../../images/32x32/picture.png") repeat;*/
+
+				img {
+					max-width:100%;
+					height:auto;
+					border: 5px solid #E3E3E3;
+					border-radius: 3px;
+					margin-left: auto;
+					margin-right: auto;
+					transition: all 0.2s ease-in-out 0s;
+				}
+
+				img:hover {
+					opacity: 0.8;
+					border: 5px solid #D9534F;
+				}
+			}
+
+			.olx-alert {
+				background-color: #F6F6F6;
+				border: 1px solid #E5E5E5;
+				color: #666666;
+				font-size: 12px;
+			}
+		}
+
+		.content-footer {
+			.footer-tag {
+				float: left;
+				font-size: 12px;
+
+				.olx-tag {
+					background-color: #3D4450;
+					margin-right: 5px;
+
+					a {
+						color: #FFFFFF
+					}
+				}
+			}
+		}
+	}
+}
+
+.olx-btn {
+	background-color: #3D4450;
+	border-color: #080808;
+	color: #FFFFFF;
+}
+
+.olx-btn:hover, .olx-btn:focus, .olx-btn:active, .olx-btn.active {
+	background-color: #D2322D;
+	border-color: #AC2925;
+	color: #FFFFFF;
+	transition: all 0.25s ease-in-out 0s;
+}
+
+.badge {
+	background-color: #D9534F;
+}
+
+.navbar-brand {
+	font-weight: bold;
+}
+
+.alert-info {
+	background-image: linear-gradient(to bottom, #F5F5F5 0px, #E8E8E8 100%);
+	border-color: #DDDDDD;
+	color: #D9534F;
+}
+
+@font-face {
+	font-family: Spinnaker;
+	font-style:  normal;
+    font-weight: 400;
+	src: url("../../fonts/Spinnaker-Regular.ttf");
+}
+
+body {
+	font-family: "Microsoft Yahei",Helvetica,Arial,sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Microsoft Yahei",Helvetica,Arial,sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#header {
+	margin-top: 70px;
+}
+
+#banner {
+}
+
+#footer {
+	border-top: 1px solid #E5E5E5;
+	margin-top: 20px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
+
+    >div {
+	    >div {
+			p {
+				margin-bottom: 0;
+
+			    a {
+			    	color: #CC0000;
+			    	font-weight: bold;
+			    }
+			}
+
+			p:last-child {
+			    a {
+			    	color: black;
+			    }
+			}
+	    }
+
+		>div:first-child {
+			float: left;
+		}
+
+		>div:last-child {
+			float: right;
+		}
+    }
+}
+
+#qrcode {
+	margin-bottom: 20px;
+
+	img {
+		width: 100px;
+		height: 100px
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1010px) {
+	#banner_searchForm {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.navbar-brand {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	#footer {
+	    >div {
+			>div:last-child {
+				float: left;
+			}
+	    }
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.olx-article {
+		margin-bottom: 20px;
+
+		.article-content {
+			.content-title {
+				>h3 {
+					font-size: 16px;
+
+					>a {
+						color: #D9534F;
+					}
+				}
+			}
+
+			>a {
+				font-size: 12px;
+				width: 100%;
+			}
+
+			.content-footer {
+				.footer-tag {
+					display: none;
+				}
+
+				a {
+					width: 100%;
+				}
+			}
+		}
+
+		.article-date {
+			border-radius: 100px;
+			height: 50px;
+			left: -15px;
+			padding-top: 20px;
+			top: -10px;
+			width: 50px;			
+
+			.month {
+				display: block;
+				text-align: center;
+				font-size: 11px;
+				margin-top: -12px;
+			}
+
+			.day {
+				display: block;
+				text-align: center;
+				font-size: 18px;
+				font-weight: bold;
+				margin-top: -5px;
+			}
+		}
+	}
+}
