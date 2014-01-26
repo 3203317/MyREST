@@ -69,7 +69,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Foreworld.Blog", "Foreworld.Blog\", "{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFramework = "2.0"
-		ProjectReferences = "{31740848-5613-4864-8AEA-473B2483D982}|URLRewriter.dll;{AB948F04-19A4-42AB-A25D-CE1B92E48E0D}|Foreworld.Log.dll;{590E0ABC-88DD-484F-ACD0-14DEA28EBF65}|Foreworld.Rest.dll;"
+		ProjectReferences = "{31740848-5613-4864-8AEA-473B2483D982}|URLRewriter.dll;{AB948F04-19A4-42AB-A25D-CE1B92E48E0D}|Foreworld.Log.dll;{590E0ABC-88DD-484F-ACD0-14DEA28EBF65}|Foreworld.Rest.dll;{7A53E949-284E-4DA8-9C3B-4FF873C14B43}|Foreworld.Cmd.dll;{5D829C6F-AF01-4BE9-B708-B8C877F61C6C}|Foreworld.Db.dll;{821BEBCB-9F3D-4EC8-A1B7-2BAA1985CE3B}|Foreworld.Utils.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Foreworld.Blog"
 		Debug.AspNetCompiler.PhysicalPath = "Foreworld.Blog\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Foreworld.Blog\"
