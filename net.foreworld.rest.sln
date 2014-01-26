@@ -87,6 +87,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Foreworld.Blog", "Foreworld
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foreworld.Cmd.Blog", "Foreworld.Cmd.Blog\Foreworld.Cmd.Blog.csproj", "{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -261,6 +263,16 @@ Global
 		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|Any CPU.ActiveCfg = Debug|.NET
 		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
 		{0D0095DE-002A-4FC0-8761-CEFA7F6ADC00}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Release|.NET.ActiveCfg = Release|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3F98BA29-4A5D-4D7C-9ECC-06FD0CB9305F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
