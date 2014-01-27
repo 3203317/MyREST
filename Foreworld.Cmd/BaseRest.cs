@@ -49,7 +49,7 @@ namespace Foreworld.Cmd
             {
                 byte[] byte_3 = new byte[stream.Length];
                 stream.Read(byte_3, 0, byte_3.Length);
-                resultStr = Encoding.UTF8.GetString(byte_3); //将byte数组转换为string
+                resultStr = Encoding.UTF8.GetString(byte_3).Trim(); //将byte数组转换为string
             }
             return resultStr;
         }
