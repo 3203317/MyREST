@@ -122,6 +122,12 @@ namespace Foreworld.Cmd.Sysmanage.Test
             string __clsName = __sf.GetMethod().ReflectedType.Name;
             System.Diagnostics.Debug.WriteLine(__clsName);
 
+
+            System.Diagnostics.Debug.WriteLine("----------");
+            string abc = "#parse('pagelet/TopSearchForm.html');";
+            Regex rege = new Regex("#parse\\(\\'(.*)\\'\\);");
+            MatchCollection mmc = rege.Matches(abc);
+            Console.WriteLine(mmc[0].Groups[1].Value);
         }
     }
 }
