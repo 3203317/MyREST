@@ -29,6 +29,8 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("发布时间", OleDbType = OleDbType.DBTimeStamp)]
         public String PostTime { get; set; }
 
+        [Column("阅读次数")]
+        public Int32? ViewNums { get; set; }
 
     }
 }
