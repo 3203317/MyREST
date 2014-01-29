@@ -67,6 +67,7 @@
     <Compile Include="IValidator.cs" />
     <Compile Include="MockHttpContext.cs" />
     <Compile Include="MockSessionState.cs" />
+    <Compile Include="OleBaseDao.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="ParameterAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
