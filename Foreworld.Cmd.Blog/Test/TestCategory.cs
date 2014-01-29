@@ -14,8 +14,20 @@ using log4net;
 
 using Foreworld.Log;
 
+using System.Data.SqlClient;
+using System.Data;
+using Foreworld.Db;
+
+using System.Data.OleDb;
+
+using Foreworld.Cmd.Blog.Service;
+using Foreworld.Cmd.Blog.Service.Impl;
+
 namespace Foreworld.Cmd.Blog.Test
 {
+    using Category = Foreworld.Cmd.Blog.Model.Category;
+
+
     [TestFixture]
     class TestCategory
     {
@@ -29,7 +41,18 @@ namespace Foreworld.Cmd.Blog.Test
         [Test]
         public void test_CRUD()
         {
-            Console.WriteLine("Hello");
+            Console.WriteLine("Hello, World!!!");
+
+            CategoryService service = new CategoryServiceImpl();
+            List<Category> list = service.GetCategorys();
+
+            for (int i = 0, j = list.Count; i < j; i++)
+            {
+                Category ca = list[i];
+                Console.WriteLine(ca.CategoryName);
+            }
+
+            Console.WriteLine(list.Count);
         }
     }
 }
