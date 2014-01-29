@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Data.OleDb;
 
 namespace Foreworld.Cmd
 {
@@ -60,6 +61,7 @@ namespace Foreworld.Cmd
         }
 
         public SqlDbType SqlDbType { get; set; }
+        public OleDbType OleDbType { get; set; }
 
         public String DefaultValue { get; set; }
     }
