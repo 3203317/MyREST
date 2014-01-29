@@ -29,6 +29,16 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("发布时间", OleDbType = OleDbType.DBTimeStamp)]
         public String PostTime { get; set; }
 
+        public string PostTime_Month
+        {
+            get { return Convert.ToDateTime(PostTime).Month.ToString().PadLeft(2, '0'); }
+        }
+
+        public string PostTime_Day
+        {
+            get { return Convert.ToDateTime(PostTime).Day.ToString().PadLeft(2, '0'); }
+        }
+
         [Column("阅读次数")]
         public Int32? ViewNums { get; set; }
 

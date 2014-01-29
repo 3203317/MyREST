@@ -53,6 +53,9 @@ namespace Foreworld.Cmd.Blog.Test
             }
 
             Console.WriteLine(list.Count);
+
+            string sss = "2009-06-26 10:01:53";
+            Console.WriteLine(Convert.ToDateTime(sss).Month);
         }
     }
 }
