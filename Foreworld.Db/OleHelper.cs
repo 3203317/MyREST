@@ -112,5 +112,45 @@ namespace Foreworld.Db
                 return dataSet;
             }
         }
+
+        public static object ExecuteScalar(string connectionString, CommandType commandType, string commandText,
+                                          params OleDbParameter[] sqlParameters)
+        {
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new ArgumentNullException("connectionString");
+            }
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                connection.Open();
+                return ExecuteScalar(connection, commandType, commandText, sqlParameters);
+            }
+        }
+
+        public static object ExecuteScalar(OleDbConnection connection, CommandType commandType, string commandText,
+                                          params OleDbParameter[] sqlParameters)
+        {
+            if (connection == null)
+            {
+                throw new ArgumentNullException("connection");
+            }
+
+            OleDbCommand command = new OleDbCommand();
+
+            bool mustCloseConnection = false;
+
+            PrepareCommand(command, connection, null, commandType, commandText, sqlParameters, out mustCloseConnection);
+
+            object retval = command.ExecuteScalar();
+
+            command.Parameters.Clear();
+
+            if (mustCloseConnection)
+            {
+                connection.Close();
+            }
+
+            return retval;
+        }
     }
 }
