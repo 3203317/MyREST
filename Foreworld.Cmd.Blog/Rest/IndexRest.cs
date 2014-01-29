@@ -13,11 +13,22 @@ using NVelocity;
 using NVelocity.Context;
 
 using Foreworld.Log;
+using Foreworld.Cmd.Blog.Service;
+using Foreworld.Cmd.Blog.Service.Impl;
 
 namespace Foreworld.Cmd.Blog.Rest
 {
+    using Category = Foreworld.Cmd.Blog.Model.Category;
+
     public class IndexRest : BaseRest
     {
+        private CategoryService _categoryService;
+
+        public IndexRest()
+        {
+            _categoryService = new CategoryServiceImpl();
+        }
+
         private static readonly ILog _log = LogManager.GetLogger(typeof(IndexRest));
 
         /// <summary>
@@ -30,6 +41,7 @@ namespace Foreworld.Cmd.Blog.Rest
         {
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("title", "FOREWORLD 洪荒");
+            vltCtx.Put("categorys", _categoryService.GetCategorys());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
