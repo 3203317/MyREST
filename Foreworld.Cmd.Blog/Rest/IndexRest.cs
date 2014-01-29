@@ -23,10 +23,12 @@ namespace Foreworld.Cmd.Blog.Rest
     public class IndexRest : BaseRest
     {
         private CategoryService _categoryService;
+        private ArticleService _articleService;
 
         public IndexRest()
         {
             _categoryService = new CategoryServiceImpl();
+            _articleService = new ArticleServiceImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(IndexRest));
@@ -42,6 +44,7 @@ namespace Foreworld.Cmd.Blog.Rest
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
+            vltCtx.Put("articles", _articleService.GetArticles());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
