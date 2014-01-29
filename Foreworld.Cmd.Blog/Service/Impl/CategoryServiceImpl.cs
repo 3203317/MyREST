@@ -13,11 +13,11 @@ namespace Foreworld.Cmd.Blog.Service.Impl
 
     public class CategoryServiceImpl : BaseService, CategoryService
     {
-        private CategoryDao _moduleDao;
+        private CategoryDao _categoryDao;
 
         public CategoryServiceImpl()
         {
-            _moduleDao = new CategoryDaoImpl();
+            _categoryDao = new CategoryDaoImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(CategoryServiceImpl));
@@ -33,7 +33,7 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             Dictionary<string, string> __sort = new Dictionary<string, string>();
             __sort.Add(Category.CATEGORY_ORDER, "ASC");
 
-            List<Category> __list = _moduleDao.queryAll(null, __sort, __search);
+            List<Category> __list = _categoryDao.queryAll(null, __sort, __search);
             return __list;
         }
     }
