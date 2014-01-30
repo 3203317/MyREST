@@ -27,14 +27,18 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <param name="pageSize"></param>
         /// <param name="currentPage"></param>
         /// <returns></returns>
-        public List<Article> GetArticles(int pageSize, int currentPage)
+        public List<Article> GetArticles(uint pageSize, uint currentPage)
         {
-            Article __search = new Article();
+            Article search = new Article();
 
-            Dictionary<string, string> __sort = new Dictionary<string, string>();
-            __sort.Add(Article.POST_TIME, "DESC");
+            Pagination pagination = new Pagination();
+            pagination.Current = currentPage;
+            pagination.PageSize = pageSize;
 
-            List<Article> __list = _articleDao.queryAll(null, __sort, __search);
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Article.POST_TIME, "DESC");
+
+            List<Article> __list = _articleDao.queryAll(pagination, sort, search);
             return __list;
         }
     }

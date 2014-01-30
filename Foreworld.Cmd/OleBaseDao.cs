@@ -176,7 +176,7 @@ namespace Foreworld.Cmd
         /// <param name="sort"></param>
         /// <param name="search"></param>
         /// <returns></returns>
-        public List<T> queryAll(Pagination @page, Dictionary<string, string> @sort, S @search)
+        public List<T> queryAll(Pagination @pagination, Dictionary<string, string> @sort, S @search)
         {
             LogInfo __logInfo = new LogInfo();
             string __sql = string.Empty;
@@ -228,6 +228,10 @@ namespace Foreworld.Cmd
             __logInfo.Code = "SQL";
             _log.Debug(__logInfo);
 #endif
+            if (null != @pagination)
+            {
+                __sql = "select * from ( select top " + @pagination.PageSize + " * from ( select top (" + @pagination.Current + " * " + @pagination.PageSize + ") * from (" + __sql + ") ) )";
+            }
 
             DataSet __ds = null;
             List<T> __list = null;
