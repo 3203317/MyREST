@@ -87,11 +87,11 @@
 								<div class="footer-tag clearfix">
 									#foreach($articleTag in $article.Tags)
 									<span class="label label-success olx-tag">
-										<a rel="tag" title="查看 $articleTag.TagName 标签" href="archives/tag/$articleTag.TagName">$articleTag.TagName</a>
+										<a rel="tag" title="查看 $articleTag.TagName 标签" href="javascript:;">$articleTag.TagName</a>
 									</span>
 									#end
 								</div>
-								<a class="btn btn-danger pull-right" title="详细阅读 在ASP中调用DLL的方法" href="archives/763.html">
+								<a class="btn btn-danger pull-right" title="详细阅读 $article.ArticleTitle" href="javascript:;">
 									阅读全文
 									<span class="badge">$article.ViewNumsToFormat</span>
 								</a>
