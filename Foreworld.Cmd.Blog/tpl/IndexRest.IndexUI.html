@@ -134,12 +134,11 @@
 							</div>
 							<div class="content-footer">
 								<div class="footer-tag clearfix">
+									#foreach($articleTag in $article.Tags)
 									<span class="label label-success olx-tag">
-										<a rel="category tag" title="查看 设计模式 标签" href="archives/category/foreworld">设计模式</a>
+										<a rel="tag" title="查看 $articleTag.TagName 标签" href="archives/tag/$articleTag.TagName">$articleTag.TagName</a>
 									</span>
-									<span class="label label-success olx-tag">
-										<a rel="category tag" title="查看 Eclipse 标签" href="archives/category/foreworld">Eclipse</a>
-									</span>
+									#end
 								</div>
 								<a class="btn btn-danger pull-right" title="详细阅读 在ASP中调用DLL的方法" href="archives/763.html">
 									阅读全文

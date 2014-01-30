@@ -49,16 +49,20 @@ namespace Foreworld.Cmd.Blog.Model
         {
             get
             {
-                string[] tags = ArticleTag.Split(',');
+                string[] tags = ArticleTag.Trim().Split(',');
 
                 List<Tag> list = new List<Tag>();
 
                 for (int i = 0, j = tags.Length; i < j; i++)
                 {
-                    Tag tag_3 = new Tag();
-                    tag_3.TagName = tags[i];
+                    string tagName_3 = tags[i];
+                    if (!string.IsNullOrEmpty(tagName_3))
+                    {
+                        Tag tag_3 = new Tag();
+                        tag_3.TagName = tagName_3.Trim();
 
-                    list.Add(tag_3);
+                        list.Add(tag_3);
+                    }
                 }
 
                 return list;
