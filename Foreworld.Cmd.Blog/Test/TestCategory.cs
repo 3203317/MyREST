@@ -56,6 +56,8 @@ namespace Foreworld.Cmd.Blog.Test
 
             string sss = "2009-06-26 10:01:53";
             Console.WriteLine(Convert.ToDateTime(sss).Month);
+
+            Console.WriteLine(DateTime.Now.ToString("yyyy年MM月dd日"));
         }
     }
 }
