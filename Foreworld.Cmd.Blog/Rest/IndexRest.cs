@@ -45,7 +45,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
-            vltCtx.Put("articles", _articleService.GetArticles());
+            vltCtx.Put("articles", _articleService.GetArticles(10, 1));
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();

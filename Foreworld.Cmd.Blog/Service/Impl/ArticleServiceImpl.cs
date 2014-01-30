@@ -24,8 +24,10 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="pageSize"></param>
+        /// <param name="currentPage"></param>
         /// <returns></returns>
-        public List<Article> GetArticles()
+        public List<Article> GetArticles(int pageSize, int currentPage)
         {
             Article __search = new Article();
 

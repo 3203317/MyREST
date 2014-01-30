@@ -8,6 +8,6 @@ namespace Foreworld.Cmd.Blog.Service
 {
     public interface ArticleService : IService
     {
-        List<Article> GetArticles();
+        List<Article> GetArticles(int pageSize, int currentPage);
     }
 }
