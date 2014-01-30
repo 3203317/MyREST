@@ -42,6 +42,11 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("阅读次数")]
         public Int32? ViewNums { get; set; }
 
+        public String ViewNumsToFormat
+        {
+            get { return double.Parse(ViewNums.ToString()).ToString("#,#"); }
+        }
+
         [Column("文章标签")]
         public String ArticleTag { get; set; }
 
