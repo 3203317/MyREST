@@ -230,7 +230,8 @@ namespace Foreworld.Cmd
 #endif
             if (null != @pagination)
             {
-                __sql = "select * from ( select top " + @pagination.PageSize + " * from ( select top (" + @pagination.Current + " * " + @pagination.PageSize + ") * from (" + __sql + ") ) )";
+                uint a = @pagination.Current * @pagination.PageSize;
+                __sql = "select * from (select top " + @pagination.PageSize + " * from (select top " + a + " * from ( " + __sql + " )) order by posttime) order by posttime desc";
             }
 
             DataSet __ds = null;
