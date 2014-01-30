@@ -51,6 +51,20 @@ namespace Foreworld.Cmd
                 stream.Read(byte_3, 0, byte_3.Length);
                 resultStr = Encoding.UTF8.GetString(byte_3).Trim(); //将byte数组转换为string
             }
+
+            if (0 < resultStr.Length)
+            {
+                Regex regex_4 = new Regex("#parse\\(\\'(.*)\\.html\\'\\);");
+                MatchCollection matches_4 = regex_4.Matches(resultStr);
+
+                for (int i = 0, j = matches_4.Count; i < j; i++)
+                {
+                    string match_5 = matches_4[i].ToString();
+                    string tplName_5 = matches_4[i].Groups[1].Value.Replace('/', '.');
+
+                    resultStr = resultStr.Replace(match_5, GetVltTemplate(tplName_5));
+                }
+            }
             return resultStr;
         }
 
@@ -71,20 +85,7 @@ namespace Foreworld.Cmd
             else
             {
                 resultStr = GetVltTemplate(tplName);
-
-                if (0 < resultStr.Length)
-                {
-                    Regex regex_4 = new Regex("#parse\\(\\'(.*)\\.html\\'\\);");
-                    MatchCollection matches_4 = regex_4.Matches(resultStr);
-
-                    for (int i = 0, j = matches_4.Count; i < j; i++)
-                    {
-                        string match_5 = matches_4[i].ToString();
-                        string tplName_5 = matches_4[i].Groups[1].Value.Replace('/', '.');
-
-                        resultStr = resultStr.Replace(match_5, GetVltTemplate(tplName_5));
-                    }
-                }
+                this._vltTemplate.Add(tplName, resultStr);
             }
             return resultStr;
         }
