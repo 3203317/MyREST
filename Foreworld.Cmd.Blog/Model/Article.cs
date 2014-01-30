@@ -42,5 +42,28 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("阅读次数")]
         public Int32? ViewNums { get; set; }
 
+        [Column("文章标签")]
+        public String ArticleTag { get; set; }
+
+        public List<Tag> Tags
+        {
+            get
+            {
+                string[] tags = ArticleTag.Split(',');
+
+                List<Tag> list = new List<Tag>();
+
+                for (int i = 0, j = tags.Length; i < j; i++)
+                {
+                    Tag tag_3 = new Tag();
+                    tag_3.TagName = tags[i];
+
+                    list.Add(tag_3);
+                }
+
+                return list;
+            }
+        }
+
     }
 }
