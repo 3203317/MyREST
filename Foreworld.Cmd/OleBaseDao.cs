@@ -172,7 +172,121 @@ namespace Foreworld.Cmd
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="page"></param>
+        /// <param name="topNum"></param>
+        /// <param name="sort"></param>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public List<T> queryAll(uint @topNum, Dictionary<string, string> @sort, S @search)
+        {
+            LogInfo __logInfo = new LogInfo();
+            string __sql = string.Empty;
+
+            List<OleDbParameter> __sps = new List<OleDbParameter>();
+            OleDbParameter __sp = null;
+
+            foreach (PropertyInfo __propInfo_3 in _propInfos)
+            {
+                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
+
+                if (null != __objVal_4)
+                {
+                    __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+
+                    object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
+                    ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
+                    __sp = new OleDbParameter("@" + __propInfo_3.Name, __colAttr_5.OleDbType, __colAttr_5.Length);
+                    __sp.Value = __objVal_4;
+                    __sps.Add(__sp);
+#if DEBUG
+                    __logInfo.Msg = __sp + ": " + __sp.Value;
+                    __logInfo.Code = "SQLParam";
+                    _log.Debug(__logInfo);
+#endif
+                }
+            }
+
+            if (!string.Empty.Equals(__sql))
+            {
+                __sql = " WHERE 1=1" + __sql;
+            }
+
+            __sql = _querySql + __sql;
+
+            if (0 < @topNum)
+            {
+                __sql = __sql.Replace("SELECT ", "SELECT TOP " + @topNum + " ");
+            }
+
+            /* 排序 */
+            if (null != @sort)
+            {
+                __sql += " ORDER BY";
+                foreach (string __key_3 in @sort.Keys)
+                {
+                    __sql += " " + __key_3 + " " + @sort[__key_3] + ",";
+                }
+                __sql = __sql.Substring(0, __sql.Length - 1);
+            }
+
+#if DEBUG
+            __logInfo.Msg = __sql;
+            __logInfo.Code = "SQL";
+            _log.Debug(__logInfo);
+#endif
+
+            DataSet __ds = null;
+            List<T> __list = null;
+            try
+            {
+                __ds = OleHelper.ExecuteDataSet(ConnectionString, CommandType.Text, __sql, __sps.ToArray());
+
+                if (null != __ds)
+                {
+                    __list = new List<T>();
+
+                    DataTable __dt_3 = __ds.Tables[0];
+                    DataRowCollection __rows_3 = __dt_3.Rows;
+                    DataColumnCollection __columns_3 = __dt_3.Columns;
+
+                    for (int __i_3 = 0, __j_3 = __rows_3.Count, __k_3 = __columns_3.Count; __i_3 < __j_3; __i_3++)
+                    {
+                        DataRow __row_4 = __rows_3[__i_3];
+
+                        T __t = new T();
+
+                        foreach (PropertyInfo __propInfo_5 in _propInfos)
+                        {
+                            object __propVal_6 = __row_4[__propInfo_5.Name];
+
+                            if (!(__propVal_6 is System.DBNull))
+                            {
+                                _type.GetProperty(__propInfo_5.Name).SetValue(__t, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
+                            }
+                        }
+                        __list.Add(__t);
+                    }
+                }
+            }
+            catch (Exception @ex)
+            {
+                _log.Error(@ex.Message);
+            }
+            finally
+            {
+                if (null != __ds)
+                {
+                    __ds.Clear();
+                    __ds.Dispose();
+                }
+            }
+
+            return __list;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pagination"></param>
         /// <param name="sort"></param>
         /// <param name="search"></param>
         /// <returns></returns>
