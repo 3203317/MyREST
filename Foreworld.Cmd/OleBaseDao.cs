@@ -25,6 +25,7 @@ namespace Foreworld.Cmd
         }
 
         private String _querySql = null;
+        private String _fieldSql = null;
         private Type _type = null;
         private List<PropertyInfo> _propInfos = null;
         /* 数据库表名 */
@@ -40,7 +41,8 @@ namespace Foreworld.Cmd
                 _querySql += "," + __propInfo_3.Name;
             }
 
-            _querySql = "SELECT " + _querySql.Substring(1);
+            _fieldSql = _querySql.Substring(1);
+            _querySql = "SELECT " + _fieldSql;
 
             TableAttribute __tabAttr = (TableAttribute)(_type.GetCustomAttributes(typeof(TableAttribute), false)[0]);
             _querySql += " FROM " + __tabAttr.Name;
@@ -305,6 +307,13 @@ namespace Foreworld.Cmd
             LogInfo __logInfo = new LogInfo();
 
             string __sql = @querySql;
+            __sql = __sql.Replace("*", _fieldSql);
+
+#if DEBUG
+            __logInfo.Msg = __sql;
+            __logInfo.Code = "SQL";
+            _log.Debug(__logInfo);
+#endif
 
             DataSet __ds = null;
             List<T> __list = null;

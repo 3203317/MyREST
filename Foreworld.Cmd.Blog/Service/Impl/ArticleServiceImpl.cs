@@ -29,7 +29,7 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public List<Article> GetArticles(uint @pageSize, uint @currentPage)
         {
-            string querySql = "SELECT * FROM (SELECT TOP " + @pageSize + " * FROM (SELECT TOP " + (@pageSize * @currentPage) + " * FROM ( SELECT * FROM F_ARTICLE ORDER BY " + Article.POST_TIME + " DESC )) ORDER BY " + Article.POST_TIME + ") ORDER BY " + Article.POST_TIME + " DESC";
+            string querySql = "SELECT * FROM (SELECT TOP " + @pageSize + " * FROM (SELECT TOP " + (@pageSize * @currentPage) + " * FROM F_ARTICLE ORDER BY " + Article.POST_TIME + " DESC) ORDER BY " + Article.POST_TIME + " ASC) ORDER BY " + Article.POST_TIME + " DESC";
 
             List<Article> __list = _articleDao.queryAll(querySql);
             return __list;
