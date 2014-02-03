@@ -48,7 +48,9 @@
 					</section>
 					#foreach($article in $articles)
 					<div class="olx-article clearfix">
+					    #if("1" == $article.Bookmark)
 						<div class="glyphicon glyphicon-bookmark olx-glyphicon-bookmark"></div>
+						#end
 						<div class="article-date">
 							<span class="month">$article.PostTime_Month月</span>
 							<span class="day">$article.PostTime_Day</span>

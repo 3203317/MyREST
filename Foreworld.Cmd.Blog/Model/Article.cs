@@ -74,5 +74,8 @@ namespace Foreworld.Cmd.Blog.Model
             }
         }
 
+        [Column("书签")]
+        public Int32? Bookmark { get; set; }
+
     }
 }
