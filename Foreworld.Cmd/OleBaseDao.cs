@@ -397,6 +397,12 @@ namespace Foreworld.Cmd
             return __list;
         }
 
+
+        public List<T> queryAll(string @querySql)
+        {
+            return null;
+        }
+
         /// <summary>
         /// 
         /// </summary>
