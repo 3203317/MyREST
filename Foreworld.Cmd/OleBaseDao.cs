@@ -186,24 +186,27 @@ namespace Foreworld.Cmd
             List<OleDbParameter> __sps = new List<OleDbParameter>();
             OleDbParameter __sp = null;
 
-            foreach (PropertyInfo __propInfo_3 in _propInfos)
+            if (null != @search)
             {
-                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
-
-                if (null != __objVal_4)
+                foreach (PropertyInfo __propInfo_3 in _propInfos)
                 {
-                    __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+                    var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
 
-                    object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
-                    ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
-                    __sp = new OleDbParameter("@" + __propInfo_3.Name, __colAttr_5.OleDbType, __colAttr_5.Length);
-                    __sp.Value = __objVal_4;
-                    __sps.Add(__sp);
+                    if (null != __objVal_4)
+                    {
+                        __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+
+                        object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
+                        ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
+                        __sp = new OleDbParameter("@" + __propInfo_3.Name, __colAttr_5.OleDbType, __colAttr_5.Length);
+                        __sp.Value = __objVal_4;
+                        __sps.Add(__sp);
 #if DEBUG
-                    __logInfo.Msg = __sp + ": " + __sp.Value;
-                    __logInfo.Code = "SQLParam";
-                    _log.Debug(__logInfo);
+                        __logInfo.Msg = __sp + ": " + __sp.Value;
+                        __logInfo.Code = "SQLParam";
+                        _log.Debug(__logInfo);
 #endif
+                    }
                 }
             }
 
