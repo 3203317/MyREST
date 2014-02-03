@@ -25,6 +25,7 @@ namespace Foreworld.Cmd
         }
 
         private String _querySql = null;
+        /* 字段名逗号分割 */
         private String _fieldSql = null;
         private Type _type = null;
         private List<PropertyInfo> _propInfos = null;
