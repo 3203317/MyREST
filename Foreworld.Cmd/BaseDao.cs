@@ -168,14 +168,19 @@ namespace Foreworld.Cmd
             return (T)o;
         }
 
+        public List<T> queryAll(uint @topNum, Dictionary<string, string> @sort, S @search)
+        {
+            return null;
+        }
+
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="page"></param>
+        /// <param name="pagination"></param>
         /// <param name="sort"></param>
         /// <param name="search"></param>
         /// <returns></returns>
-        public List<T> queryAll(Pagination @page, Dictionary<string, string> @sort, S @search)
+        public List<T> queryAll(Pagination @pagination, Dictionary<string, string> @sort, S @search)
         {
             LogInfo __logInfo = new LogInfo();
             string __sql = string.Empty;

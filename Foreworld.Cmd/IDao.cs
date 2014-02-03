@@ -5,14 +5,15 @@ using System.Collections;
 
 namespace Foreworld.Cmd
 {
-
     public interface IDao<T, S>
     {
         T query(T @entity);
 
         T query(string @id);
 
-        List<T> queryAll(Pagination @page, Dictionary<string, string> @sort, S @search);
+        List<T> queryAll(uint @topNum, Dictionary<string, string> @sort, S @search);
+
+        List<T> queryAll(Pagination @pagination, Dictionary<string, string> @sort, S @search);
 
         long queryAllCount(S @search);
 
