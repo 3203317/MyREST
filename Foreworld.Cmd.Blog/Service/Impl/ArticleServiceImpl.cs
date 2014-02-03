@@ -31,8 +31,8 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         {
             string querySql = "SELECT * FROM (SELECT TOP " + @pageSize + " * FROM (SELECT TOP " + (@pageSize * @currentPage) + " * FROM F_ARTICLE ORDER BY " + Article.POST_TIME + " DESC) ORDER BY " + Article.POST_TIME + " ASC) ORDER BY " + Article.POST_TIME + " DESC";
 
-            List<Article> __list = _articleDao.queryAll(querySql);
-            return __list;
+            List<Article> list = _articleDao.queryAll(querySql);
+            return list;
         }
     }
 }
