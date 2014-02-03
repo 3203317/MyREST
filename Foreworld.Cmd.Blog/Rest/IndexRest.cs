@@ -38,7 +38,7 @@ namespace Foreworld.Cmd.Blog.Rest
         /// </summary>
         /// <param name="parameter"></param>
         /// <returns></returns>
-        [Resource]
+        [Resource(Public = true)]
         public ResultMapper IndexUI(Parameter @parameter)
         {
             IContext vltCtx = new VelocityContext();
