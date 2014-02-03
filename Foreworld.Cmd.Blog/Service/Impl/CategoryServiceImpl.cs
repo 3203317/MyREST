@@ -28,13 +28,13 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public List<Category> GetCategorys()
         {
-            Category __search = new Category();
+            Category search = new Category();
 
-            Dictionary<string, string> __sort = new Dictionary<string, string>();
-            __sort.Add(Category.CATEGORY_ORDER, "ASC");
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Category.CATEGORY_ORDER, "ASC");
 
-            List<Category> __list = _categoryDao.queryAll(null, __sort, __search);
-            return __list;
+            List<Category> list = _categoryDao.queryAll(0, sort, search);
+            return list;
         }
     }
 }
