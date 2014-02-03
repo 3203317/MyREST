@@ -292,67 +292,25 @@ namespace Foreworld.Cmd
         /// <returns></returns>
         public List<T> queryAll(Pagination @pagination, Dictionary<string, string> @sort, S @search)
         {
+            return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="querySql"></param>
+        /// <returns></returns>
+        public List<T> queryAll(string @querySql)
+        {
             LogInfo __logInfo = new LogInfo();
-            string __sql = string.Empty;
 
-            List<OleDbParameter> __sps = new List<OleDbParameter>();
-            OleDbParameter __sp = null;
-
-            foreach (PropertyInfo __propInfo_3 in _propInfos)
-            {
-                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
-
-                if (null != __objVal_4)
-                {
-                    __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
-
-                    object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
-                    ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
-                    __sp = new OleDbParameter("@" + __propInfo_3.Name, __colAttr_5.OleDbType, __colAttr_5.Length);
-                    __sp.Value = __objVal_4;
-                    __sps.Add(__sp);
-#if DEBUG
-                    __logInfo.Msg = __sp + ": " + __sp.Value;
-                    __logInfo.Code = "SQLParam";
-                    _log.Debug(__logInfo);
-#endif
-                }
-            }
-
-            if (!string.Empty.Equals(__sql))
-            {
-                __sql = " WHERE 1=1" + __sql;
-            }
-
-            __sql = _querySql + __sql;
-
-            /* 排序 */
-            if (null != @sort)
-            {
-                __sql += " ORDER BY";
-                foreach (string __key_3 in @sort.Keys)
-                {
-                    __sql += " " + __key_3 + " " + @sort[__key_3] + ",";
-                }
-                __sql = __sql.Substring(0, __sql.Length - 1);
-            }
-
-#if DEBUG
-            __logInfo.Msg = __sql;
-            __logInfo.Code = "SQL";
-            _log.Debug(__logInfo);
-#endif
-            if (null != @pagination)
-            {
-                uint a = @pagination.Current * @pagination.PageSize;
-                __sql = "select * from (select top " + @pagination.PageSize + " * from (select top " + a + " * from ( " + __sql + " )) order by posttime) order by posttime desc";
-            }
+            string __sql = @querySql;
 
             DataSet __ds = null;
             List<T> __list = null;
             try
             {
-                __ds = OleHelper.ExecuteDataSet(ConnectionString, CommandType.Text, __sql, __sps.ToArray());
+                __ds = OleHelper.ExecuteDataSet(ConnectionString, CommandType.Text, __sql);
 
                 if (null != __ds)
                 {
@@ -395,12 +353,6 @@ namespace Foreworld.Cmd
             }
 
             return __list;
-        }
-
-
-        public List<T> queryAll(string @querySql)
-        {
-            return null;
         }
 
         /// <summary>
