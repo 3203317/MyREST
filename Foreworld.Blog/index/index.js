@@ -16,7 +16,7 @@ $(document).ready(function(){
         var text = $that.text();
         $that.text("努力加载中...");
         var currentPage = $that.data("current-page") + 1;
-        var data = { data: JSON.stringify({ currentPage: currentPage }) };
+        var data = { data: JSON.stringify({ Current: currentPage }) };
         
         $.ajax({
 			url: $().olxUtilRandomUrl("index_loadmore.html"),

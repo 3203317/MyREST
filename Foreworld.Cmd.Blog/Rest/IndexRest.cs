@@ -65,8 +65,11 @@ namespace Foreworld.Cmd.Blog.Rest
         [Resource(Public = true)]
         public ResultMapper LoadMoreUI(Parameter @parameter)
         {
+            string dataStr = GetDataStr(@parameter);
+            Pagination pagination = JavaScriptConvert.DeserializeObject<Pagination>(dataStr);
+
             IContext vltCtx = new VelocityContext();
-            vltCtx.Put("articles", _articleService.GetArticles(10, 2));
+            vltCtx.Put("articles", _articleService.GetArticles(10, pagination.Current));
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
