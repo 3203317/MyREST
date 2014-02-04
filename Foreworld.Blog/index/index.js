@@ -11,19 +11,25 @@ $(document).ready(function(){
 	})
 	
 	$("#loadMore").click(function(){
-        //console.log($("#loadMore").data("current-page"));
-        var data = { currentPage: $("#loadMore").data("current-page") + 1 };
+        var that = this;
+        var $that = $(that);
+        var text = $that.text();
+        $that.text("努力加载中...");
+        var currentPage = $that.data("current-page") + 1;
+        var data = { data: JSON.stringify({ currentPage: currentPage }) };
+        
         $.ajax({
 			url: $().olxUtilRandomUrl("index_loadmore.html"),
 			type: "POST",
 			dataType: "html",
-			data: { data: JSON.stringify(data) }
+			data: data
 		}).done(function(responseText) {
 		    if("" != $.trim(responseText)){		    
-                $("#loadMore").data("current-page", "2");		    
+                $that.data("current-page", currentPage);		    
 			    $("#articleIntros").append(responseText);
 		    }			
 		}).complete(function(){
+            $that.text(text);
 		});
 	});
 });
