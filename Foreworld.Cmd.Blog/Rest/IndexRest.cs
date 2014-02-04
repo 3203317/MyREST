@@ -41,11 +41,15 @@ namespace Foreworld.Cmd.Blog.Rest
         [Resource(Public = true)]
         public ResultMapper IndexUI(Parameter @parameter)
         {
+            Pagination pagination = new Pagination();
+            pagination.PageSize = 10;
+            pagination.Current = 1;
+
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
-            vltCtx.Put("articles", _articleService.GetArticles(10, 1));
+            vltCtx.Put("articles", _articleService.GetArticles(pagination));
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
@@ -67,9 +71,10 @@ namespace Foreworld.Cmd.Blog.Rest
         {
             string dataStr = GetDataStr(@parameter);
             Pagination pagination = JavaScriptConvert.DeserializeObject<Pagination>(dataStr);
+            pagination.PageSize = 10;
 
             IContext vltCtx = new VelocityContext();
-            vltCtx.Put("articles", _articleService.GetArticles(10, pagination.Current));
+            vltCtx.Put("articles", _articleService.GetArticles(pagination));
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();

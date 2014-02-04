@@ -24,12 +24,11 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="pageSize"></param>
-        /// <param name="currentPage"></param>
+        /// <param name="pagination"></param>
         /// <returns></returns>
-        public List<Article> GetArticles(uint @pageSize, uint @currentPage)
+        public List<Article> GetArticles(Pagination @pagination)
         {
-            string querySql = "SELECT * FROM (SELECT TOP " + @pageSize + " * FROM (SELECT TOP " + (@pageSize * @currentPage) + " * FROM F_ARTICLE ORDER BY " + Article.POST_TIME + " DESC) ORDER BY " + Article.POST_TIME + " ASC) ORDER BY " + Article.POST_TIME + " DESC";
+            string querySql = "SELECT * FROM (SELECT TOP " + @pagination.PageSize + " * FROM (SELECT TOP " + (@pagination.PageSize * @pagination.Current) + " * FROM F_ARTICLE ORDER BY " + Article.POST_TIME + " DESC) ORDER BY " + Article.POST_TIME + " ASC) ORDER BY " + Article.POST_TIME + " DESC";
 
             List<Article> list = _articleDao.queryAll(querySql);
             return list;
