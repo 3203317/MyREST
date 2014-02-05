@@ -10,7 +10,7 @@ using Foreworld.Cmd.Blog.Dao.Impl;
 
 namespace Foreworld.Cmd.Blog.Service.Impl
 {
-    public class CommentServiceImpl : BaseService, CategoryService
+    public class CommentServiceImpl : BaseService, CommentService
     {
         private CommentDao _commentDao;
 

@@ -24,11 +24,13 @@ namespace Foreworld.Cmd.Blog.Rest
     {
         private CategoryService _categoryService;
         private ArticleService _articleService;
+        private CommentService _commentService;
 
         public IndexRest()
         {
             _categoryService = new CategoryServiceImpl();
             _articleService = new ArticleServiceImpl();
+            _commentService = new CommentServiceImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(IndexRest));
@@ -50,6 +52,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("articles", _articleService.GetArticles(pagination));
+            vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
