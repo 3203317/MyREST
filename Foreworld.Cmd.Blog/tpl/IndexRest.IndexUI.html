@@ -76,16 +76,9 @@
 						</div>
 						<div class="panel-body">
 							<div class="list-group">
-								<a href="#" class="list-group-item">win7 安装 mysql</a>
-								<a href="#" class="list-group-item">国产动漫和日本动漫开战</a>
-								<a href="#" class="list-group-item">RCP 添加全局快捷键</a>
-								<a href="#" class="list-group-item">win7 安装 mysql</a>
-								<a href="#" class="list-group-item">国产动漫和日本动漫开战</a>
-								<a href="#" class="list-group-item">RCP 添加全局快捷键</a>
-								<a href="#" class="list-group-item">win7 安装 mysql</a>
-								<a href="#" class="list-group-item">国产动漫和日本动漫开战</a>
-								<a href="#" class="list-group-item">RCP 添加全局快捷键</a>
-								<a href="#" class="list-group-item">win7 安装 mysql</a>
+							    #foreach($comment in $top10Comments)
+								<a href="archives/$comment.ArticleId/#$comment.Id" class="list-group-item">$comment.Content</a>
+								#end
 							</div>
 						</div>
 					</div>
