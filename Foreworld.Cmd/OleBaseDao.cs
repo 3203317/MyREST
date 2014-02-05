@@ -378,27 +378,31 @@ namespace Foreworld.Cmd
             string __sql = string.Empty;
 
             List<OleDbParameter> __sps = new List<OleDbParameter>();
-            OleDbParameter __sp = null;
 
-            foreach (PropertyInfo __propInfo_3 in _propInfos)
+            if (null != search)
             {
-                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
+                OleDbParameter __sp = null;
 
-                if (null != __objVal_4)
+                foreach (PropertyInfo __propInfo_3 in _propInfos)
                 {
-                    __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+                    var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
 
-                    object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
-                    ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
-                    __sp = new OleDbParameter("@" + __propInfo_3.Name, __colAttr_5.OleDbType, __colAttr_5.Length);
-                    __sp.Value = __objVal_4;
-                    __sps.Add(__sp);
+                    if (null != __objVal_4)
+                    {
+                        __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+
+                        object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
+                        ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
+                        __sp = new OleDbParameter("@" + __propInfo_3.Name, __colAttr_5.OleDbType, __colAttr_5.Length);
+                        __sp.Value = __objVal_4;
+                        __sps.Add(__sp);
+                    }
                 }
-            }
 
-            if (!string.Empty.Equals(__sql))
-            {
-                __sql = " WHERE 1=1" + __sql;
+                if (!string.Empty.Equals(__sql))
+                {
+                    __sql = " WHERE 1=1" + __sql;
+                }
             }
 
             __sql = "SELECT COUNT(1) FROM " + _dbTableName + __sql;

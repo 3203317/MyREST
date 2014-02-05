@@ -32,7 +32,7 @@ namespace Foreworld.Cmd
         protected string GetDataStr(Parameter @parameter)
         {
             HttpRequest request = @parameter.HttpContext.Request;
-            string dataStr = request.Form["data"];
+            string dataStr = request["data"];
             return null == dataStr ? string.Empty : dataStr.Trim();
         }
 

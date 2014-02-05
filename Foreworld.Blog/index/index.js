@@ -20,7 +20,7 @@ $(document).ready(function(){
         
         $.ajax({
 			url: $().olxUtilRandomUrl("index_loadmore.html"),
-			type: "POST",
+			type: "GET",
 			dataType: "html",
 			data: data
 		}).done(function(responseText) {
