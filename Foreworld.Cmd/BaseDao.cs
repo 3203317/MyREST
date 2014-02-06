@@ -11,7 +11,6 @@ using System.Collections;
 using log4net;
 using MySql.Data.MySqlClient;
 
-using Foreworld.Db;
 using Foreworld.Log;
 
 namespace Foreworld.Cmd
@@ -323,7 +322,7 @@ namespace Foreworld.Cmd
             List<T> __list = null;
             try
             {
-                __ds = OleHelper.ExecuteDataSet(ConnectionString, CommandType.Text, __sql);
+                __ds = MySqlHelper.ExecuteDataset(ConnectionString, __sql);
 
                 if (null != __ds)
                 {
