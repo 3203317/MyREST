@@ -9,7 +9,7 @@ namespace Foreworld.Cmd.Blog.Dao.Impl
 {
     using Category = Foreworld.Cmd.Blog.Model.Category;
 
-    public class CategoryDaoImpl : OleBaseDao<Category, Category>, CategoryDao
+    public class CategoryDaoImpl : BaseDao<Category, Category>, CategoryDao
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(CategoryDaoImpl));
     }

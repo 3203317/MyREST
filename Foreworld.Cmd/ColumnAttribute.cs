@@ -4,6 +4,8 @@ using System.Text;
 using System.Data;
 using System.Data.OleDb;
 
+using MySql.Data.MySqlClient;
+
 namespace Foreworld.Cmd
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
@@ -62,6 +64,7 @@ namespace Foreworld.Cmd
 
         public SqlDbType SqlDbType { get; set; }
         public OleDbType OleDbType { get; set; }
+        public MySqlDbType MySqlDbType { get; set; }
 
         public String DefaultValue { get; set; }
     }
