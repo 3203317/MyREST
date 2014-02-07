@@ -95,10 +95,9 @@
 						</div>
 						<div class="panel-body">
 							<div class="list-group">
-								<a target="_blank" href="http://www.bootcss.com" class="list-group-item olx-list-group-item">Bootstrap中文网</a>
-								<a target="_blank" href="http://www.verycd.com" class="list-group-item olx-list-group-item">VeryCD电驴</a>
-								<a target="_blank" href="http://www.qidian.com" class="list-group-item olx-list-group-item">起点中文网</a>
-								<a target="_blank" href="http://www.ziling.com" class="list-group-item olx-list-group-item">子陵论坛</a>
+							    #foreach($usefulLink in $usefulLinks)
+								<a target="_blank" href="$usefulLink.linkUrl" title="$usefulLink.linkName" class="list-group-item olx-list-group-item">$usefulLink.linkName</a>
+								#end
 							</div>
 						</div>
 					</div>

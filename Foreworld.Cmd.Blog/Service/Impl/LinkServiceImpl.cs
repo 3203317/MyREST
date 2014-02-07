@@ -33,7 +33,7 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             Link search = new Link();
             search.LinkType = 1;
 
-            List<Link> list = _linkDao.queryAll(null, sort, null);
+            List<Link> list = _linkDao.queryAll(null, sort, search);
             return list;
         }
 
@@ -49,7 +49,7 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             Link search = new Link();
             search.LinkType = 2;
 
-            List<Link> list = _linkDao.queryAll(null, sort, null);
+            List<Link> list = _linkDao.queryAll(null, sort, search);
             return list;
         }
     }
