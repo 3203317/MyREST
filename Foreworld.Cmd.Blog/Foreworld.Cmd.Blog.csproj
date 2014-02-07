@@ -60,6 +60,8 @@
     <Compile Include="Dao\Impl\ArticleDaoImpl.cs" />
     <Compile Include="Dao\Impl\CategoryDaoImpl.cs" />
     <Compile Include="Dao\Impl\CommentDaoImpl.cs" />
+    <Compile Include="Dao\Impl\LinkDaoImpl.cs" />
+    <Compile Include="Dao\LinkDao.cs" />
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Comment.cs" />
