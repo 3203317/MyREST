@@ -39,12 +39,11 @@
 					<section class="slider">
 						<div class="flexslider">
 							<ul class="slides">
+							    #foreach($topMark in $topMarks)
 								<li>
-									<a href="#"><img src="userData/admin/20140122/104601.jpg" /></a>
+									<a href="archives/${topMark.Id}.html"><img src="userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
 								</li>
-								<li>
-									<a href="#"><img src="userData/admin/20140122/110203.jpg" /></a>
-								</li>
+								#end
 							</ul>
 						</div>
 					</section>

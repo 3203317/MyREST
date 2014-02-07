@@ -9,5 +9,7 @@ namespace Foreworld.Cmd.Blog.Service
     public interface ArticleService : IService
     {
         List<Article> GetArticles(Pagination @pagination);
+
+        List<Article> GetTopMarks();
     }
 }

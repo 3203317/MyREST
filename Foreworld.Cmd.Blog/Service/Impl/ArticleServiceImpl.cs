@@ -34,5 +34,21 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             List<Article> list = _articleDao.queryAll(@pagination, sort, null);
             return list;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Article> GetTopMarks()
+        {
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Article.POST_TIME, "DESC");
+
+            Article search = new Article();
+            search.TopMark = 1;
+
+            List<Article> list = _articleDao.queryAll(null, sort, search);
+            return list;
+        }
     }
 }

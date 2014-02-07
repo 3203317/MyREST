@@ -58,6 +58,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("articles", _articleService.GetArticles(pagination));
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
+            vltCtx.Put("topMarks", _articleService.GetTopMarks());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();

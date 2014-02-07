@@ -78,7 +78,7 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("书签")]
         public Int32? Bookmark { get; set; }
 
-        [Column("置顶")]
+        [Column("置顶", MySqlDbType = MySqlDbType.Int32, Length = 2)]
         public Int32? TopMark { get; set; }
 
         [Column("文章图片")]
