@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Data.OleDb;
+
+using MySql.Data.MySqlClient;
 
 namespace Foreworld.Cmd.Blog.Model
 {
@@ -22,7 +23,7 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("作者")]
         public String Author { get; set; }
 
-        [Column("发布时间", OleDbType = OleDbType.DBTimeStamp)]
+        [Column("发布时间", MySqlDbType = MySqlDbType.Datetime)]
         public String PostTime { get; set; }
 
         [Column("发布IP")]

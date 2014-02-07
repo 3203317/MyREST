@@ -31,7 +31,7 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             Dictionary<string, string> sort = new Dictionary<string, string>();
             sort.Add(Category.CATEGORY_ORDER, "ASC");
 
-            List<Category> list = _categoryDao.queryAll(0, sort, null);
+            List<Category> list = _categoryDao.queryAll(null, sort, null);
             return list;
         }
     }

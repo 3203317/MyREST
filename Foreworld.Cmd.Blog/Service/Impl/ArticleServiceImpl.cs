@@ -28,17 +28,10 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public List<Article> GetArticles(Pagination @pagination)
         {
-            long recordCount = _articleDao.queryAllCount(null);
-            int pageCount = (int)Math.Ceiling(recordCount / (double)@pagination.PageSize);
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Article.POST_TIME, "DESC");
 
-            if (@pagination.Current > pageCount)
-            {
-                return null;
-            }
-
-            string querySql = "SELECT * FROM (SELECT TOP " + @pagination.PageSize + " * FROM (SELECT TOP " + (@pagination.PageSize * @pagination.Current) + " * FROM F_ARTICLE ORDER BY " + Article.POST_TIME + " DESC) ORDER BY " + Article.POST_TIME + " ASC) ORDER BY " + Article.POST_TIME + " DESC";
-
-            List<Article> list = _articleDao.queryAll(querySql);
+            List<Article> list = _articleDao.queryAll(@pagination, sort, null);
             return list;
         }
     }

@@ -23,10 +23,14 @@ namespace Foreworld.Cmd.Blog.Service.Impl
 
         public List<Comment> GetTop10Comments()
         {
+            Pagination pagination = new Pagination();
+            pagination.Current = 1;
+            pagination.PageSize = 10;
+
             Dictionary<string, string> sort = new Dictionary<string, string>();
             sort.Add(Comment.Post_Time, "DESC");
 
-            List<Comment> list = _commentDao.queryAll(10, sort, null);
+            List<Comment> list = _commentDao.queryAll(pagination, sort, null);
             return list;
         }
     }

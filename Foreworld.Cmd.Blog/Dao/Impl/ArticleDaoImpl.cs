@@ -8,7 +8,7 @@ using Foreworld.Cmd.Blog.Model;
 
 namespace Foreworld.Cmd.Blog.Dao.Impl
 {
-    public class ArticleDaoImpl : OleBaseDao<Article, Article>, ArticleDao
+    public class ArticleDaoImpl : BaseDao<Article, Article>, ArticleDao
     {
         private static readonly ILog _log = LogManager.GetLogger(typeof(ArticleDaoImpl));
     }
