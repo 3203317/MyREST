@@ -57,16 +57,9 @@
 						</div>
 						<div class="panel-body">
 							<div class="list-group">
-								<a href="#" class="list-group-item">win7 安装 mysql<span class="badge">14</span></a>
-								<a href="#" class="list-group-item">国产动漫和日本动漫开战 <span class="badge">2</span></a>
-								<a href="#" class="list-group-item">RCP 添加全局快捷键 <span class="badge">3</span></a>
-								<a href="#" class="list-group-item">win7 安装 mysql<span class="badge">14</span></a>
-								<a href="#" class="list-group-item">国产动漫和日本动漫开战 <span class="badge">2</span></a>
-								<a href="#" class="list-group-item">RCP 添加全局快捷键 <span class="badge">3</span></a>
-								<a href="#" class="list-group-item">win7 安装 mysql<span class="badge">14</span></a>
-								<a href="#" class="list-group-item">国产动漫和日本动漫开战 <span class="badge">2</span></a>
-								<a href="#" class="list-group-item">RCP 添加全局快捷键 <span class="badge">3</span></a>
-								<a href="#" class="list-group-item">win7 安装 mysql<span class="badge">14</span></a>
+							    #foreach($top10ViewNum in $top10ViewNums)							
+								<a href="archives/${top10ViewNum.Id}.html" class="list-group-item" title="$top10ViewNum.ArticleTitle">$top10ViewNum.ArticleTitle<span class="badge">$top10ViewNum.ViewNums</span></a>
+								#end
 							</div>
 						</div>
 					</div>

@@ -50,5 +50,22 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             List<Article> list = _articleDao.queryAll(null, sort, search);
             return list;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Article> GetTop10ViewNums()
+        {
+            Pagination pagination = new Pagination();
+            pagination.Current = 1;
+            pagination.PageSize = 10;
+
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Article.VIEW_NUMS, "DESC");
+
+            List<Article> list = _articleDao.queryAll(pagination, sort, null);
+            return list;
+        }
     }
 }

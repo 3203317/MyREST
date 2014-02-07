@@ -11,5 +11,7 @@ namespace Foreworld.Cmd.Blog.Service
         List<Article> GetArticles(Pagination @pagination);
 
         List<Article> GetTopMarks();
+
+        List<Article> GetTop10ViewNums();
     }
 }
