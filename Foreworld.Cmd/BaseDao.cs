@@ -97,11 +97,11 @@ namespace Foreworld.Cmd
 
                 if (null != __objVal_4)
                 {
-                    __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+                    __sql += " AND " + __propInfo_3.Name + "=?" + __propInfo_3.Name;
                     object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
                     ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
 
-                    __sp = new MySqlParameter("@" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
+                    __sp = new MySqlParameter("?" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
                     __sp.Value = __objVal_4;
                     __sps.Add(__sp);
                 }
@@ -206,11 +206,11 @@ namespace Foreworld.Cmd
 
                     if (null != __objVal_4)
                     {
-                        __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+                        __sql += " AND " + __propInfo_3.Name + "=?" + __propInfo_3.Name;
 
                         object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
                         ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
-                        __sp = new MySqlParameter("@" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
+                        __sp = new MySqlParameter("?" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
                         __sp.Value = __objVal_4;
                         __sps.Add(__sp);
 #if DEBUG
@@ -388,11 +388,11 @@ namespace Foreworld.Cmd
 
                     if (null != __objVal_4)
                     {
-                        __sql += " AND " + __propInfo_3.Name + "=@" + __propInfo_3.Name;
+                        __sql += " AND " + __propInfo_3.Name + "=?" + __propInfo_3.Name;
 
                         object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
                         ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
-                        __sp = new MySqlParameter("@" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
+                        __sp = new MySqlParameter("?" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
                         __sp.Value = __objVal_4;
                         __sps.Add(__sp);
                     }
