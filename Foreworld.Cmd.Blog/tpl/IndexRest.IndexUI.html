@@ -77,7 +77,7 @@
 						<div class="panel-body">
 							<div class="list-group">
 							    #foreach($comment in $top10Comments)
-								<a href="archives/$comment.ArticleId .html#$comment.Id" class="list-group-item">$comment.Content</a>
+								<a href="archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item">$comment.Content</a>
 								#end
 							</div>
 						</div>
