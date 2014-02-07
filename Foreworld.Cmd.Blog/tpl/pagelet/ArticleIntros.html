@@ -10,7 +10,7 @@
 	<div class="article-content">
 		<div class="content-title">
 			<h3>
-				<a href="#">$article.ArticleTitle</a>
+				<a href="archives/${comment.ArticleId}.html">$article.ArticleTitle</a>
 			</h3>
 		</div>
 		<div class="content-tag">
@@ -45,7 +45,7 @@
 				</span>
 				#end
 			</div>
-			<a class="btn btn-danger pull-right" title="详细阅读 $article.ArticleTitle" href="javascript:;">
+			<a class="btn btn-danger pull-right" title="详细阅读 $article.ArticleTitle" href="archives/${comment.ArticleId}.html">
 				阅读全文
 				<span class="badge">$article.ViewNumsToFormat</span>
 			</a>
