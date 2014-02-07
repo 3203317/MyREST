@@ -75,6 +75,8 @@
     <Compile Include="Service\Impl\ArticleServiceImpl.cs" />
     <Compile Include="Service\Impl\CategoryServiceImpl.cs" />
     <Compile Include="Service\Impl\CommentServiceImpl.cs" />
+    <Compile Include="Service\Impl\LinkServiceImpl.cs" />
+    <Compile Include="Service\LinkService.cs" />
     <Compile Include="Test\TestCategory.cs" />
     <Compile Include="Validator\CommonValidator.cs" />
   </ItemGroup>
