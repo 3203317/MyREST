@@ -30,11 +30,13 @@
 			</span>*#
 		</div>
 		<div class="content-article">
+            #if("" != ${article.ArticleImage})
 			<figure class="thumbnail clearfix">
 				<a href="archives/${article.Id}.html">
-					<img src="userData/admin/20140122/104601.jpg" alt="userData/admin/20140122/104601.jpg">
+					<img src="userData/${article.ArticleAuthor}/${article.ArticleImage}" alt="userData/${article.ArticleAuthor}/${article.ArticleImage}">
 				</a>
 			</figure>
+		    #end
 			<div class="alert olx-alert clearfix">$article.ArticleIntro</div>
 		</div>
 		<div class="content-footer">

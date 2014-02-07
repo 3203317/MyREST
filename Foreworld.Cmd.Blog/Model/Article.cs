@@ -78,5 +78,11 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("书签")]
         public Int32? Bookmark { get; set; }
 
+        [Column("置顶")]
+        public Int32? TopMark { get; set; }
+
+        [Column("文章图片")]
+        public String ArticleImage { get; set; }
+
     }
 }
