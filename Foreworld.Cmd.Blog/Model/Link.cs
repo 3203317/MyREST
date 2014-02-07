@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+using MySql.Data.MySqlClient;
+
 namespace Foreworld.Cmd.Blog.Model
 {
     [Table("F_LINK")]
@@ -27,7 +29,7 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("是否显示")]
         public Int32? IsShow { get; set; }
 
-        [Column("链接类型")]
+        [Column("链接类型", MySqlDbType = MySqlDbType.Int32, Length = 2)]
         public Int32? LinkType { get; set; }
     }
 }
