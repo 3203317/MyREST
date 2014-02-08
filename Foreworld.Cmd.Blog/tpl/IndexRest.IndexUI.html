@@ -56,11 +56,16 @@
 							<h3 class="panel-title">热门文章</h3>
 						</div>
 						<div class="panel-body">
-							<div class="list-group">
-							    #foreach($top10ViewNum in $top10ViewNums)							
-								<a href="archives/${top10ViewNum.Id}.html" class="list-group-item" title="$top10ViewNum.ArticleTitle">$top10ViewNum.ArticleTitle<span class="badge">$top10ViewNum.ViewNums</span></a>
+							<ul class="list-group olx-list-group">
+							    #foreach($top10ViewNum in $top10ViewNums)	
+							    <li class="list-group-item">					
+							        <span class="badge">$top10ViewNum.ViewNums</span>
+								    <a href="archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								        <div>$top10ViewNum.ArticleTitle</div>
+                                    </a>						        	
+								</li>
 								#end
-							</div>
+							</ul>
 						</div>
 					</div>
 
