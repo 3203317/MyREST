@@ -50,6 +50,7 @@ namespace Foreworld.Cmd.Blog.Rest
             pagination.Current = 1;
 
             IContext vltCtx = new VelocityContext();
+            vltCtx.Put("moduleName", "index");
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", "Bootstrap3");
@@ -109,6 +110,7 @@ namespace Foreworld.Cmd.Blog.Rest
             pagination.Current = 1;
 
             IContext vltCtx = new VelocityContext();
+            vltCtx.Put("moduleName", "archives");
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", "Bootstrap3");
