@@ -15,6 +15,58 @@
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>[置顶]</strong> $topMessage
 					</div>
+                    <div class="olx-article clearfix">	                    
+	                    <div class="article-content">
+                            <ol class="breadcrumb">
+                                <li><a href="#">首页</a></li>
+                                <li class="active">Data</li>
+                            </ol>
+		                    <div class="content-title">
+			                    <h3>
+				                    <a href="archives/${article.Id}.html">$article.ArticleTitle</a>
+			                    </h3>
+		                    </div>
+		                    <div class="content-tag">
+			                    <span class="label label-success olx-label">
+				                    <span class="glyphicon glyphicon-tag"></span>
+				                    <a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
+			                    </span>
+			                    <span class="label label-success olx-label">
+				                    <span class="glyphicon glyphicon-user"></span>
+				                    <a rel="category tag" title="由 洪荒世界 发布" href="javascript:;">洪荒世界</a>
+			                    </span>
+			                    <span class="label label-success olx-label"><span class="glyphicon glyphicon-eye-open"></span> <a>$article.ViewNumsToFormat人</a>
+			                    </span>
+			                    #*<span class="label label-success olx-label"><span class="glyphicon glyphicon-thumbs-up"></span> <a href="#">2,503</a>
+			                    </span>
+			                    <span class="label label-success olx-label"><span class="glyphicon glyphicon-thumbs-down"></span> <a href="#">2,503</a>
+			                    </span>*#
+		                    </div>
+		                    <div class="content-article">
+                                #if("" != ${article.ArticleImage})
+			                    <figure class="thumbnail clearfix">
+				                    <a href="archives/${article.Id}.html">
+					                    <img src="userData/${article.ArticleAuthor}/${article.ArticleImage}" alt="userData/${article.ArticleAuthor}/${article.ArticleImage}">
+				                    </a>
+			                    </figure>
+		                        #end
+			                    <div class="alert olx-alert clearfix">$article.ArticleIntro</div>
+		                    </div>
+		                    <div class="content-footer">
+			                    <div class="footer-tag clearfix">
+				                    #foreach($articleTag in $article.Tags)
+				                    <span class="label label-success olx-tag">
+					                    <a rel="tag" title="查看 $articleTag.TagName 标签" href="archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
+				                    </span>
+				                    #end
+			                    </div>
+			                    <a class="btn btn-danger pull-right" title="详细阅读 $article.ArticleTitle" href="archives/${article.Id}.html">
+				                    阅读全文
+				                    <span class="badge">$article.ViewNumsToFormat</span>
+			                    </a>
+		                    </div>
+	                    </div>						
+                    </div>
 				</div>
 				<div class="col-sm-12 col-md-4">
 
