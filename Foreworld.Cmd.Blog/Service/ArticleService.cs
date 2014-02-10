@@ -8,10 +8,12 @@ namespace Foreworld.Cmd.Blog.Service
 {
     public interface ArticleService : IService
     {
-        List<Article> GetArticles(Pagination @pagination);
+        List<Article> FindArticles(Pagination @pagination);
 
         List<Article> GetTopMarks();
 
         List<Article> GetTop10ViewNums();
+
+        Article FindById(string @id);
     }
 }

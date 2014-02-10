@@ -13,6 +13,7 @@ using NVelocity;
 using NVelocity.Context;
 
 using Foreworld.Log;
+using Foreworld.Cmd.Blog.Model;
 using Foreworld.Cmd.Blog.Service;
 using Foreworld.Cmd.Blog.Service.Impl;
 
@@ -58,7 +59,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
-            vltCtx.Put("articles", _articleService.GetArticles(pagination));
+            vltCtx.Put("articles", _articleService.FindArticles(pagination));
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
             vltCtx.Put("topMarks", _articleService.GetTopMarks());
@@ -87,7 +88,7 @@ namespace Foreworld.Cmd.Blog.Rest
             pagination.PageSize = 10;
 
             IContext vltCtx = new VelocityContext();
-            vltCtx.Put("articles", _articleService.GetArticles(pagination));
+            vltCtx.Put("articles", _articleService.FindArticles(pagination));
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
@@ -110,6 +111,11 @@ namespace Foreworld.Cmd.Blog.Rest
             Pagination pagination = new Pagination();
             pagination.PageSize = 10;
             pagination.Current = 1;
+
+            HttpRequest request = @parameter.HttpContext.Request;
+            string id = request.QueryString["id"];
+
+            Article article = _articleService.FindById(id);
 
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("moduleName", "archives");

@@ -26,13 +26,23 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// </summary>
         /// <param name="pagination"></param>
         /// <returns></returns>
-        public List<Article> GetArticles(Pagination @pagination)
+        public List<Article> FindArticles(Pagination @pagination)
         {
             Dictionary<string, string> sort = new Dictionary<string, string>();
             sort.Add(Article.POST_TIME, "DESC");
 
             List<Article> list = _articleDao.queryAll(@pagination, sort, null);
             return list;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Article FindById(string @id)
+        {
+            return null;
         }
 
         /// <summary>
