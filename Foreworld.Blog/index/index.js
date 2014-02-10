@@ -1,8 +1,7 @@
-﻿
-$(document).ready(function(){
+﻿$(document).ready(function(){
 	console.log("Hello, World!");
 
-	$('.flexslider').flexslider({
+	$(".flexslider").flexslider({
 		animation: "slide"
 	});
 
