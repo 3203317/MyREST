@@ -41,6 +41,16 @@ namespace Foreworld.Cmd.Blog.Model
             get { return Convert.ToDateTime(PostTime).Day.ToString().PadLeft(2, '0'); }
         }
 
+        public string PostTime_Date
+        {
+            get { return Convert.ToDateTime(PostTime).ToShortDateString(); }
+        }
+
+        public string PostTime_Time
+        {
+            get { return Convert.ToDateTime(PostTime).ToLongTimeString(); }
+        }
+
         [Column("阅读次数")]
         public Int32? ViewNums { get; set; }
 
