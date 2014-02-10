@@ -13,7 +13,7 @@ namespace Foreworld.Cmd.Blog.Model
         public const string POST_TIME = "PostTime";
         public const string VIEW_NUMS = "ViewNums";
 
-        [Column("主键", Id = true, Length = 33, Nullable = false, Unique = true)]
+        [Column("主键", Id = true, Length = 32, Nullable = false, Unique = true, MySqlDbType = MySqlDbType.VarChar)]
         public String Id { get; set; }
 
         [Column("文章标题")]
