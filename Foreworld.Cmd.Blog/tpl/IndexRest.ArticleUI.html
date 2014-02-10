@@ -23,13 +23,13 @@
                             </ol>
 		                    <div class="content-title">
 			                    <h3>
-				                    <a href="archives/${article.Id}.html">$article.ArticleTitle</a>
+				                    <a href="${virtualPath}archives/${article.Id}.html">$article.ArticleTitle</a>
 			                    </h3>
 		                    </div>
 		                    <div class="content-tag">
 			                    <span class="label label-success olx-label">
 				                    <span class="glyphicon glyphicon-tag"></span>
-				                    <a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
+				                    <a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="${virtualPath}archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
 			                    </span>
 			                    <span class="label label-success olx-label">
 				                    <span class="glyphicon glyphicon-user"></span>
@@ -45,7 +45,7 @@
 		                    <div class="content-article">
                                 #if("" != ${article.ArticleImage})
 			                    <figure class="thumbnail clearfix">
-				                    <a href="archives/${article.Id}.html">
+				                    <a>
 					                    <img src="${virtualPath}userData/${article.ArticleAuthor}/${article.ArticleImage}" alt="${virtualPath}userData/${article.ArticleAuthor}/${article.ArticleImage}">
 				                    </a>
 			                    </figure>
@@ -56,7 +56,7 @@
 			                    <div class="footer-tag clearfix">
 				                    #foreach($articleTag in $article.Tags)
 				                    <span class="label label-success olx-tag">
-					                    <a rel="tag" title="查看 $articleTag.TagName 标签" href="archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
+					                    <a rel="tag" title="查看 $articleTag.TagName 标签" href="${virtualPath}archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
 				                    </span>
 				                    #end
 			                    </div>
@@ -75,7 +75,7 @@
 							    #foreach($top10ViewNum in $top10ViewNums)	
 							    <li class="list-group-item">					
 							        <span class="badge">$top10ViewNum.ViewNums</span>
-								    <a href="archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								    <a href="${virtualPath}archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
 								        <div>$top10ViewNum.ArticleTitle</div>
                                     </a>						        	
 								</li>
@@ -91,7 +91,7 @@
 						<div class="panel-body">
 							<div class="list-group">
 							    #foreach($comment in $top10Comments)
-								<a href="archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
+								<a href="${virtualPath}archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
 								#end
 							</div>
 						</div>
