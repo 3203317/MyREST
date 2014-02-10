@@ -58,6 +58,8 @@ namespace Foreworld.Cmd.Blog.Test
             Console.WriteLine(Convert.ToDateTime(sss).Month);
 
             Console.WriteLine(DateTime.Now.ToString("yyyy年MM月dd日"));
+
+            Console.WriteLine(Guid.NewGuid().ToString().Replace("-", ""));
         }
     }
 }
