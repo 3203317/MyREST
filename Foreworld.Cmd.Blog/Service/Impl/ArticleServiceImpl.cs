@@ -42,7 +42,9 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public Article FindById(string @id)
         {
-            return null;
+            Article article = new Article();
+            article.Id = @id;
+            return _articleDao.query(article);
         }
 
         /// <summary>
