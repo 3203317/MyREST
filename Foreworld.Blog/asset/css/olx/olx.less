@@ -371,7 +371,11 @@ a:hover {
 }
 
 #comments_info {
-	>div {
+	font-size: 12px;
+
+	>div:first-child {
+		float: left;
+
 		.btn {
 			font-size: 12px;
 		}
@@ -379,6 +383,24 @@ a:hover {
 			span {
 				color: red
 			}
+		}
+	}
+	>div:last-child {
+		float: right;
+		line-height: 31px;
+
+		.a-default {
+			color: #999999
+		}
+		.a-default:hover {
+			color: #333333
+		}
+		.a-active {
+			color: #DD3322;
+		}
+
+		a {
+			margin: 0 2px;
 		}
 	}
 }
