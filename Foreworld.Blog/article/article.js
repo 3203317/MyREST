@@ -2,6 +2,7 @@
 	console.log("Hello, World!");
 
 	$("#qrcode").pin({
-		minWidth: 940
+		minWidth: 940,
+		top: 60
 	})
 });

@@ -6,7 +6,8 @@
 	});
 
 	$("#qrcode").pin({
-		minWidth: 940
+		minWidth: 940,
+		top: 60
 	})
 	
 	$("#loadMore").click(function(){
