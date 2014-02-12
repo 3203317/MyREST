@@ -15,7 +15,7 @@ namespace Foreworld.Cmd
 
         List<T> queryAll(Pagination @pagination, Dictionary<string, string> @sort, S @search);
 
-        List<T> queryAll(string @querySql);
+        List<T> queryAll(string @querySql, S @search);
 
         long queryAllCount(S @search);
 

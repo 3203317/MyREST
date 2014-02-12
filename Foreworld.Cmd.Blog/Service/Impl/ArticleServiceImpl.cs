@@ -87,15 +87,15 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public Article FindNextById(string @id)
         {
-            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime<(SELECT PostTime FROM F_ARTICLE WHERE ID = '" + @id + "') ORDER BY PostTime DESC LIMIT 1";
+            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime<(SELECT PostTime FROM F_ARTICLE WHERE ID = ?Id) ORDER BY PostTime DESC LIMIT 1";
 
-            List<Article> list = _articleDao.queryAll(sql);
-            if (null == list || 0 == list.Count)
-            {
-                return null;
-            }
+            Article article = new Article();
+            article.Id = @id;
 
-            Article article = list[0];
+            List<Article> list = _articleDao.queryAll(sql, article);
+            if (null == list || 0 == list.Count) return null;
+
+            article = list[0];
             return article;
         }
 
@@ -106,15 +106,15 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public Article FindPrevById(string @id)
         {
-            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime>(SELECT PostTime FROM F_ARTICLE WHERE ID = '" + @id + "') ORDER BY PostTime LIMIT 1";
+            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime>(SELECT PostTime FROM F_ARTICLE WHERE ID = ?Id) ORDER BY PostTime LIMIT 1";
 
-            List<Article> list = _articleDao.queryAll(sql);
-            if (null == list || 0 == list.Count)
-            {
-                return null;
-            }
+            Article article = new Article();
+            article.Id = @id;
 
-            Article article = list[0];
+            List<Article> list = _articleDao.queryAll(sql, article);
+            if (null == list || 0 == list.Count) return null;
+
+            article = list[0];
             return article;
         }
     }

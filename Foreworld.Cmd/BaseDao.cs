@@ -304,13 +304,39 @@ namespace Foreworld.Cmd
         /// 
         /// </summary>
         /// <param name="querySql"></param>
+        /// <param name="search"></param>
         /// <returns></returns>
-        public List<T> queryAll(string @querySql)
+        public List<T> queryAll(string @querySql, S @search)
         {
             LogInfo __logInfo = new LogInfo();
 
             string __sql = @querySql;
             __sql = __sql.Replace("*", _fieldSql);
+
+            List<MySqlParameter> __sps = new List<MySqlParameter>();
+            MySqlParameter __sp = null;
+
+            if (null != @search)
+            {
+                foreach (PropertyInfo __propInfo_3 in _propInfos)
+                {
+                    var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@search, null);
+
+                    if (null != __objVal_4)
+                    {
+                        object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
+                        ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
+                        __sp = new MySqlParameter("?" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
+                        __sp.Value = __objVal_4;
+                        __sps.Add(__sp);
+#if DEBUG
+                        __logInfo.Msg = __sp + ": " + __sp.Value;
+                        __logInfo.Code = "SQLParam";
+                        _log.Debug(__logInfo);
+#endif
+                    }
+                }
+            }
 
 #if DEBUG
             __logInfo.Msg = __sql;
@@ -322,7 +348,7 @@ namespace Foreworld.Cmd
             List<T> __list = null;
             try
             {
-                __ds = MySqlHelper.ExecuteDataset(ConnectionString, __sql);
+                __ds = MySqlHelper.ExecuteDataset(ConnectionString, __sql, __sps.ToArray());
 
                 if (null != __ds)
                 {
