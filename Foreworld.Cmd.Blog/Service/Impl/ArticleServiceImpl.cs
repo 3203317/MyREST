@@ -79,5 +79,43 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             List<Article> list = _articleDao.queryAll(pagination, sort, null);
             return list;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Article FindNextById(string @id)
+        {
+            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime<(SELECT PostTime FROM F_ARTICLE WHERE ID = '" + @id + "') ORDER BY PostTime DESC LIMIT 1";
+
+            List<Article> list = _articleDao.queryAll(sql);
+            if (null == list || 0 == list.Count)
+            {
+                return null;
+            }
+
+            Article article = list[0];
+            return article;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Article FindPrevById(string @id)
+        {
+            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime>(SELECT PostTime FROM F_ARTICLE WHERE ID = '" + @id + "') ORDER BY PostTime LIMIT 1";
+
+            List<Article> list = _articleDao.queryAll(sql);
+            if (null == list || 0 == list.Count)
+            {
+                return null;
+            }
+
+            Article article = list[0];
+            return article;
+        }
     }
 }

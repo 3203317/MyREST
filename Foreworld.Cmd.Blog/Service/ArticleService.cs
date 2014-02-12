@@ -15,5 +15,9 @@ namespace Foreworld.Cmd.Blog.Service
         List<Article> GetTop10ViewNums();
 
         Article FindById(string @id);
+
+        Article FindNextById(string @id);
+
+        Article FindPrevById(string @id);
     }
 }

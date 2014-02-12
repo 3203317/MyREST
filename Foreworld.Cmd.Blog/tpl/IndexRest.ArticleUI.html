@@ -63,8 +63,12 @@
 				                    #end
 			                    </div> 
                                 <div class="btn-group article-btn-group">
-                                    <a href="#" class="btn btn-default">上一篇</a>
-                                    <a href="#" class="btn btn-default">下一篇</a>
+                                    #if ($!nextArticle)
+                                    <a class="btn btn-default" href="${virtualPath}archives/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">上一篇</a>
+                                    #end
+                                    #if ($!prevArticle)
+                                    <a class="btn btn-default" href="${virtualPath}archives/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">下一篇</a>
+                                    #end
                                 </div>
 		                    </div>
 		                    <div class="alert alert-success article-alert">
