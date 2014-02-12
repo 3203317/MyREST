@@ -19,63 +19,15 @@
 	                    <div class="article-content">
                             <ol class="breadcrumb">
                                 <li><div class="glyphicon glyphicon-home"></div> <a href="${virtualPath}index.html">首页</a></li>
-                                <li class="active">${article.ArticleTitle}</li>
+                                <li class="active">档案馆</li>
                             </ol>
-		                    <div class="content-title">
-			                    <h3>
-				                    <a href="${virtualPath}archives/${article.Id}.html">$article.ArticleTitle</a>
-			                    </h3>
-		                    </div>
-		                    <div class="content-tag">
-			                    <span class="label label-success olx-label"><span class="glyphicon glyphicon-calendar"></span> <a title="创建于 $article.PostTime_Time">$article.PostTime_Date</a>
-			                    </span>
-			                    <span class="label label-success olx-label">
-				                    <span class="glyphicon glyphicon-tag"></span>
-				                    <a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="${virtualPath}archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
-			                    </span>
-			                    <span class="label label-success olx-label">
-				                    <span class="glyphicon glyphicon-user"></span>
-				                    <a rel="category tag" title="由 洪荒世界 发布" href="javascript:;">洪荒世界</a>
-			                    </span>
-			                    <span class="label label-success olx-label"><span class="glyphicon glyphicon-eye-open"></span> <a>$article.ViewNumsToFormat人</a>
-			                    </span>
-			                    #*<span class="label label-success olx-label"><span class="glyphicon glyphicon-thumbs-up"></span> <a href="#">2,503</a>
-			                    </span>
-			                    <span class="label label-success olx-label"><span class="glyphicon glyphicon-thumbs-down"></span> <a href="#">2,503</a>
-			                    </span>*#
-		                    </div>
+		                    
 		                    <div class="content-article">
-                                #if("" != ${article.ArticleImage})
-			                    <figure class="thumbnail clearfix">
-				                    <a>
-					                    <img src="${virtualPath}userData/${article.ArticleAuthor}/${article.ArticleImage}" alt="${virtualPath}userData/${article.ArticleAuthor}/${article.ArticleImage}">
-				                    </a>
-			                    </figure>
-		                        #end
-			                    <div class="alert olx-alert clearfix">$article.ArticleContent</div>
+                                
+			                    <div class="alert olx-alert clearfix">
+			                        <p>2013年</p>
+			                    </div>
 		                    </div>
-		                    <div class="content-footer">
-			                    <div class="footer-tag clearfix">
-				                    #foreach($articleTag in $article.Tags)
-				                    <span class="label label-success olx-tag">
-					                    <a rel="tag" title="查看 $articleTag.TagName 标签" href="${virtualPath}archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
-				                    </span>
-				                    #end
-			                    </div> 
-                                <div class="btn-group article-btn-group">
-                                    #if ($!nextArticle)
-                                    <a class="btn btn-default" href="${virtualPath}archives/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">上一篇</a>
-                                    #end
-                                    #if ($!prevArticle)
-                                    <a class="btn btn-default" href="${virtualPath}archives/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">下一篇</a>
-                                    #end
-                                </div>
-		                    </div>
-		                    <div class="alert alert-success article-alert">
-                                <p>版权所属：洪荒世界</p>
-                                <p>原文地址：http://www.foreworld.net/archives/${article.Id}.html</p>
-                                <p>转载时必须以链接形式注明原始出处及本声明。</p>
-                            </div>
                             <div>
 			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/twitter.png"></a>
 			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/qqwb.png"></a>
@@ -83,69 +35,7 @@
 			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/baidu.png"></a>
 		                    </div>
 	                    </div>				
-                    </div>	
-                    
-                    <div class="col-sm-12 col-md-12">
-                        <div class="alert alert-danger love-alert">
-                            <div class="glyphicon glyphicon-heart"></div> 您可能也喜欢
-                        </div>	
-                        <div class="col-md-4">
-                            <div class="thumbnail love-thumbnail">
-                                <div class="caption">
-                                    <p class="post-related-title">
-                                        <a title="Zanblog 2.0.7（稳定版）更新" rel="bookmark" href="#">RCP 中 RetargetAction 的实现</a>
-                                    </p>
-                                    <p class="post-related-content">HI，赞友们，Zanblog在2个月之后终于又迎来了更新，此前因为我们自身工作比较忙的缘故，迟迟未推出新版本，非常抱歉。 让我们一起看看 2.0.7 稳定版所做的变...</p>
-                                    <p>
-                                        <a class="btn btn-danger pull-right read-more" title="详细阅读 Zanblog 2.0.7（稳定版）更新" href="#">阅读全文</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail love-thumbnail">
-                                <div class="caption">
-                                    <p class="post-related-title">
-                                        <a title="Zanblog 2.0.7（稳定版）更新" rel="bookmark" href="#">显示或隐藏工具栏</a>
-                                    </p>
-                                    <p class="post-related-content">HI，赞友们，Zanblog在2个月之后终于又迎来了更新，此前因为我们自身工作比较忙的缘故，迟迟未推出新版本，非常抱歉。 让我们一起看看 2.0.7 稳定版所做的变...</p>
-                                    <p>
-                                        <a class="btn btn-danger pull-right read-more" title="详细阅读 Zanblog 2.0.7（稳定版）更新" href="#">阅读全文</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="thumbnail love-thumbnail">
-                                <div class="caption">
-                                    <p class="post-related-title">
-                                        <a title="Zanblog 2.0.7（稳定版）更新" rel="bookmark" href="#">RCP上下文敏感帮助功能实现</a>
-                                    </p>
-                                    <p class="post-related-content">HI，赞友们，Zanblog在2个月之后终于又迎来了更新，此前因为我们自身工作比较忙的缘故，迟迟未推出新版本，非常抱歉。 让我们一起看看 2.0.7 稳定版所做的变...</p>
-                                    <p>
-                                        <a class="btn btn-danger pull-right read-more" title="详细阅读 Zanblog 2.0.7（稳定版）更新" href="#">阅读全文</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>     
-                                     
-                    <div id="comments" class="col-sm-12 col-md-12">
-                        <div id="comments_info">
-                            <div>
-                                <button class="btn btn-primary" type="button"><span>69</span>条评论</button>
-                                <button class="btn btn-default" type="button"><span>1</span>条新浪微博</button>
-                            </div>
-                            <div>
-                                <a class="a-default" href="javascript:;">最新</a>
-                                <a class="a-default" href="javascript:;">最早</a>
-                                <a class="a-active" href="javascript:;">最热</a>
-                            </div>
-                        </div>
-                        <ul id="comment_posts">
-                            <li class="comment-post"></li>
-                        </ul>
-                    </div>              
+                    </div>
 				</div>
 				
 				<div class="col-sm-12 col-md-4">
@@ -200,7 +90,7 @@
 
 					<div id="qrcode">
 						<figure>
-							<img src="${virtualPath}userData/${article.ArticleAuthor}/qrcode/${article.Id}.png" alt="二维码">
+							<img src="${virtualPath}asset/images/archive.png" alt="二维码" title="档案馆">
 						</figure>
 					</div>
 				</div>				
