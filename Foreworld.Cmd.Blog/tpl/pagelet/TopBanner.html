@@ -4,6 +4,10 @@
 #elseif("archives" == ${moduleName})
     #set($indexActiveClass = "")
     #set($archivesActiveClass = " class='active'")
+#elseif("category" == ${moduleName})
+    #set($indexActiveClass = "")
+    #set($archivesActiveClass = "")
+    #set($categoryActiveClass = " active")
 #end
 <div id="banner" class="navbar navbar-inverse navbar-fixed-top" role="banner">
 	<div class="container">
@@ -22,7 +26,7 @@
 				<li${indexActiveClass}>
 					<a href="${virtualPath}index.html">首页</a>
 				</li>
-				<li class="dropdown">
+				<li class="dropdown${categoryActiveClass}">
 					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">分类 <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 			            #parse('pagelet/TopNavCategory.html');
