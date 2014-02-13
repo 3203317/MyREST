@@ -55,7 +55,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("virtualPath", string.Empty);
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
-            vltCtx.Put("btitle", "FOREWORLD 洪荒");
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
@@ -122,8 +121,8 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("moduleName", "archives");
             vltCtx.Put("virtualPath", "../");
 
-            vltCtx.Put("title", "FOREWORLD 洪荒 - " + article.ArticleTitle);
-            vltCtx.Put("btitle", "FOREWORLD 洪荒");
+            vltCtx.Put("title", "FOREWORLD 洪荒");
+            vltCtx.Put("atitle", article.ArticleTitle);
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
@@ -157,8 +156,8 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("moduleName", "archives");
             vltCtx.Put("virtualPath", string.Empty);
 
-            vltCtx.Put("title", "FOREWORLD 洪荒 - 档案馆");
-            vltCtx.Put("btitle", "FOREWORLD 洪荒");
+            vltCtx.Put("title", "FOREWORLD 洪荒");
+            vltCtx.Put("atitle", "档案馆");
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
