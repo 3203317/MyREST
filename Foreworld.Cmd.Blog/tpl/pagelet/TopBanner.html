@@ -1,13 +1,23 @@
 ﻿#if("index" == ${moduleName})
     #set($indexActiveClass = " class='active'")
     #set($archivesActiveClass = "")
+    #set($categoryActiveClass = "")
+    #set($tagActiveClass = "")
 #elseif("archives" == ${moduleName})
     #set($indexActiveClass = "")
     #set($archivesActiveClass = " class='active'")
+    #set($categoryActiveClass = "")
+    #set($tagActiveClass = "")
 #elseif("category" == ${moduleName})
     #set($indexActiveClass = "")
     #set($archivesActiveClass = "")
     #set($categoryActiveClass = " active")
+    #set($tagActiveClass = "")
+#elseif("tag" == ${moduleName})
+    #set($indexActiveClass = "")
+    #set($archivesActiveClass = "")
+    #set($categoryActiveClass = "")
+    #set($tagActiveClass = " class='active'")
 #end
 <div id="banner" class="navbar navbar-inverse navbar-fixed-top" role="banner">
 	<div class="container">
@@ -32,7 +42,7 @@
 			            #parse('pagelet/TopNavCategory.html');
 					</ul>
 				</li>
-				<li>
+				<li${tagActiveClass}>
 					<a href="javascript:;">标签</a>
 				</li>
 				<li>

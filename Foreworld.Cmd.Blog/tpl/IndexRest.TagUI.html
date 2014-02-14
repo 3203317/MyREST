@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		#parse('pagelet/IndexHeader.html');
+	</head>
+	<body>
+		#parse('pagelet/TopBanner.html');
+
+		<header id="header"></header>
+
+		<section class="container">
+			<div class="row">
+				<div id="articleIntros" class="col-sm-12 col-md-8">
+					<div class="alert alert-info">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong>[置顶]</strong> $topMessage
+					</div>
+                    <div class="olx-article clearfix">	                    
+	                    <div class="article-content">
+                            <ol class="breadcrumb">
+                                <li><div class="glyphicon glyphicon-home"></div> <a href="${virtualPath}index.html">首页</a></li>
+                                <li class="active">${tagName}</li>
+                            </ol>
+		                    
+		                    <div class="content-article">
+                                
+			                    <div class="alert olx-alert clearfix">
+			                        <p>2013年</p>
+			                    </div>
+		                    </div>
+                            <div>
+			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/twitter.png"></a>
+			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/qqwb.png"></a>
+			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/sinawb.png"></a>
+			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/baidu.png"></a>
+		                    </div>
+	                    </div>				
+                    </div>
+				</div>
+				
+				<div class="col-sm-12 col-md-4">
+
+					<div class="panel panel-default olx-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">热门文章</h3>
+						</div>
+						<div class="panel-body">
+							<ul class="list-group olx-list-group">
+							    #foreach($top10ViewNum in $top10ViewNums)	
+							    <li class="list-group-item">					
+							        <span class="badge">$top10ViewNum.ViewNums</span>
+								    <a href="${virtualPath}archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								        <div>$top10ViewNum.ArticleTitle</div>
+                                    </a>						        	
+								</li>
+								#end
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-default olx-panel">
+						<div class="panel-heading">
+							<h3 class="panel-title">最新评论</h3>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+							    #foreach($comment in $top10Comments)
+								<a href="${virtualPath}archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
+								#end
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel panel-default olx-panel">
+						<div class="panel-heading">
+							<ul class="nav nav-pills olx-nav-pills">
+								<li class="active"><a href="javascript:;">常用链接</a></li>
+								<li><a href="javascript:;">友情链接</a></li>
+							</ul>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+							    #foreach($usefulLink in $usefulLinks)
+								<a target="_blank" href="$usefulLink.linkUrl" title="$usefulLink.linkName" class="list-group-item olx-list-group-item">$usefulLink.linkName</a>
+								#end
+							</div>
+						</div>
+					</div>
+
+					<div id="qrcode">
+						<figure>
+							<img src="${virtualPath}asset/images/archive.png" alt="二维码" title="档案馆">
+						</figure>
+					</div>
+				</div>				
+			</div>
+		</section>
+
+        #parse('pagelet/IndexFooter.html');
+
+        #parse('pagelet/IndexBackTop.html');
+
+        #parse('pagelet/IndexJs.html');
+
+		<!-- Own -->
+		<script type="text/javascript" src="${virtualPath}article/article.js"></script>
+
+	</body>
+</html>
