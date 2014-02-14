@@ -62,19 +62,27 @@
 				                    </span>
 				                    #end
 			                    </div> 
-                                <div class="btn-group article-btn-group">
+                                #*<div class="btn-group article-btn-group">
                                     #if ($!nextArticle)
                                     <a class="btn btn-default" href="${virtualPath}archives/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">上一篇</a>
                                     #end
                                     #if ($!prevArticle)
                                     <a class="btn btn-default" href="${virtualPath}archives/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">下一篇</a>
                                     #end
-                                </div>
+                                </div>*#
 		                    </div>
 		                    <div class="alert alert-success article-alert">
-                                <p>版权所属：洪荒世界</p>
-                                <p>原文地址：http://www.foreworld.net/archives/${article.Id}.html</p>
+                                <p>版权所属：<a href="http://www.foreworld.net/">洪荒世界</a></p>
+                                <p>原文地址：<a href="http://www.foreworld.net/archives/${article.Id}.html" title="${article.ArticleTitle}">http://www.foreworld.net/archives/${article.Id}.html</a></p>
                                 <p>转载时必须以链接形式注明原始出处及本声明。</p>
+                            </div>
+		                    <div class="alert alert-success article-alert" style="margin-top:0">
+                                #if ($!nextArticle)
+                                <p>上篇：<a href="${virtualPath}archives/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">${nextArticle.ArticleTitle}</a></p>
+                                #end
+                                #if ($!prevArticle)
+                                <p>下篇：<a href="${virtualPath}archives/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">${prevArticle.ArticleTitle}</a></p>
+                                #end
                             </div>
                             <div>
 			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/twitter.png"></a>
