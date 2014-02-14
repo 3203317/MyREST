@@ -54,6 +54,7 @@
 		                        #end
 			                    <div class="alert olx-alert clearfix">$article.ArticleContent</div>
 		                    </div>
+                            #if ($!article.Tags)
 		                    <div class="content-footer article-footer">
 			                    <div class="footer-tag clearfix">
 				                    #foreach($articleTag in $article.Tags)
@@ -71,6 +72,7 @@
                                     #end
                                 </div>*#
 		                    </div>
+                            #end
 		                    <div class="alert alert-success article-alert">
                                 <p>版权所属：<a href="http://www.foreworld.net/">洪荒世界</a></p>
                                 <p>原文地址：<a href="http://www.foreworld.net/archives/${article.Id}.html" title="${article.ArticleTitle}">http://www.foreworld.net/archives/${article.Id}.html</a></p>

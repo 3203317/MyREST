@@ -66,6 +66,8 @@ namespace Foreworld.Cmd.Blog.Model
         {
             get
             {
+                if (null == ArticleTag || 0 == ArticleTag.Trim().Length) return null;
+
                 string[] tags = ArticleTag.Trim().Split(',');
 
                 List<Tag> list = new List<Tag>();
