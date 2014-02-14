@@ -78,10 +78,10 @@
                             </div>
 		                    <div class="alert alert-success article-alert" style="margin-top:0">
                                 #if ($!nextArticle)
-                                <p>上篇：<a href="${virtualPath}archives/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">${nextArticle.ArticleTitle}</a></p>
+                                <p>上篇：<a href="${virtualPath}archives/${nextArticle.Id}.html" title="创建于 ${nextArticle.PostTime}">${nextArticle.ArticleTitle}</a></p>
                                 #end
                                 #if ($!prevArticle)
-                                <p>下篇：<a href="${virtualPath}archives/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">${prevArticle.ArticleTitle}</a></p>
+                                <p>下篇：<a href="${virtualPath}archives/${prevArticle.Id}.html" title="创建于 ${prevArticle.PostTime}">${prevArticle.ArticleTitle}</a></p>
                                 #end
                             </div>
                             <div>
