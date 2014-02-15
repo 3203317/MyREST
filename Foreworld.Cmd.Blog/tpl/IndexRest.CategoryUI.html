@@ -15,29 +15,19 @@
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>[置顶]</strong> $topMessage
 					</div>
-                    <div class="olx-article clearfix">	                    
-	                    <div class="article-content">
-                            <ol class="breadcrumb">
-                                <li><div class="glyphicon glyphicon-home"></div> <a href="${virtualPath}index.html">首页</a></li>
-                                <li class="active">${categoryName}</li>
-                            </ol>
-		                    
-		                    <div class="content-article">
-                                
-			                    <div class="alert olx-alert clearfix">
-			                        <p>2013年</p>
-			                    </div>
-		                    </div>
-                            <div>
-			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/twitter.png"></a>
-			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/qqwb.png"></a>
-			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/sinawb.png"></a>
-			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/baidu.png"></a>
-		                    </div>
-	                    </div>				
-                    </div>
+					<section class="slider">
+						<div class="flexslider">
+							<ul class="slides">
+							    #foreach($topMark in $topMarks)
+								<li>
+									<a href="${virtualPath}archives/${topMark.Id}.html"><img src="${virtualPath}userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
+								</li>
+								#end
+							</ul>
+						</div>
+					</section>
+		            #parse('pagelet/ArticleIntros.html');
 				</div>
-				
 				<div class="col-sm-12 col-md-4">
 
 					<div class="panel panel-default olx-panel">
@@ -49,7 +39,7 @@
 							    #foreach($top10ViewNum in $top10ViewNums)	
 							    <li class="list-group-item">					
 							        <span class="badge">$top10ViewNum.ViewNums</span>
-								    <a href="${virtualPath}archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								    <a href="archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
 								        <div>$top10ViewNum.ArticleTitle</div>
                                     </a>						        	
 								</li>
@@ -65,7 +55,7 @@
 						<div class="panel-body">
 							<div class="list-group">
 							    #foreach($comment in $top10Comments)
-								<a href="${virtualPath}archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
+								<a href="archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
 								#end
 							</div>
 						</div>
@@ -90,10 +80,14 @@
 
 					<div id="qrcode">
 						<figure>
-							<img src="${virtualPath}asset/images/archive.png" alt="二维码" title="档案馆">
+							<img src="${virtualPath}asset/images/foreworld.png" alt="二维码" title="洪荒世界">
 						</figure>
 					</div>
-				</div>				
+				</div>
+
+				<div class="col-sm-12 col-md-8">
+					<a id="loadMore" href="javascript:;" data-current-page="1" class="btn btn-block olx-btn">加载更多...</a>
+				</a>
 			</div>
 		</section>
 
@@ -104,7 +98,7 @@
         #parse('pagelet/IndexJs.html');
 
 		<!-- Own -->
-		<script type="text/javascript" src="${virtualPath}article/article.js"></script>
+		<script type="text/javascript" src="${virtualPath}index/index.js"></script>
 
 	</body>
 </html>

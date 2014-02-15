@@ -20,7 +20,7 @@
 							<ul class="slides">
 							    #foreach($topMark in $topMarks)
 								<li>
-									<a href="archives/${topMark.Id}.html"><img src="userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
+									<a href="${virtualPath}archives/${topMark.Id}.html"><img src="${virtualPath}userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
 								</li>
 								#end
 							</ul>
