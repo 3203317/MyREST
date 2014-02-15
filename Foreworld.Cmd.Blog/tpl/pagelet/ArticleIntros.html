@@ -10,13 +10,13 @@
 	<div class="article-content">
 		<div class="content-title">
 			<h3>
-				<a href="archives/${article.Id}.html">$article.ArticleTitle</a>
+				<a href="${virtualPath}archives/${article.Id}.html">$article.ArticleTitle</a>
 			</h3>
 		</div>
 		<div class="content-tag">
 			<span class="label label-success olx-label">
 				<span class="glyphicon glyphicon-tag"></span>
-				<a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
+				<a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="${virtualPath}archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
 			</span>
 			<span class="label label-success olx-label">
 				<span class="glyphicon glyphicon-user"></span>
@@ -32,8 +32,8 @@
 		<div class="content-article">
             #if("" != ${article.ArticleImage})
 			<figure class="thumbnail clearfix">
-				<a href="archives/${article.Id}.html">
-					<img src="userData/${article.ArticleAuthor}/${article.ArticleImage}" alt="userData/${article.ArticleAuthor}/${article.ArticleImage}">
+				<a href="${virtualPath}archives/${article.Id}.html">
+					<img src="${virtualPath}userData/${article.ArticleAuthor}/${article.ArticleImage}" alt="${virtualPath}userData/${article.ArticleAuthor}/${article.ArticleImage}">
 				</a>
 			</figure>
 		    #end
@@ -43,11 +43,11 @@
 			<div class="footer-tag clearfix">
 				#foreach($articleTag in $article.Tags)
 				<span class="label label-success olx-tag">
-					<a rel="tag" title="查看 $articleTag.TagName 标签" href="archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
+					<a rel="tag" title="查看 $articleTag.TagName 标签" href="${virtualPath}archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
 				</span>
 				#end
 			</div>
-			<a class="btn btn-danger pull-right" title="详细阅读 $article.ArticleTitle" href="archives/${article.Id}.html">
+			<a class="btn btn-danger pull-right" title="详细阅读 $article.ArticleTitle" href="${virtualPath}archives/${article.Id}.html">
 				阅读全文
 				<span class="badge">$article.ViewNumsToFormat</span>
 			</a>

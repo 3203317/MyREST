@@ -34,5 +34,18 @@ namespace Foreworld.Cmd.Blog.Service.Impl
             List<Category> list = _categoryDao.queryAll(null, sort, null);
             return list;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Category FindByName(string @name)
+        {
+            Category search = new Category();
+            search.CategoryName = @name;
+            Category category = _categoryDao.query(search);
+            return category;
+        }
     }
 }

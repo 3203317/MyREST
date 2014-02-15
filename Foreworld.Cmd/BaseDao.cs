@@ -82,9 +82,9 @@ namespace Foreworld.Cmd
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="search"></param>
         /// <returns></returns>
-        public T query(T @entity)
+        public T query(T search)
         {
             string __sql = string.Empty;
 
@@ -93,7 +93,7 @@ namespace Foreworld.Cmd
 
             foreach (PropertyInfo __propInfo_3 in _propInfos)
             {
-                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(@entity, null);
+                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(search, null);
 
                 if (null != __objVal_4)
                 {
@@ -133,24 +133,24 @@ namespace Foreworld.Cmd
 
                             if (!(__propVal_6 is System.DBNull))
                             {
-                                _type.GetProperty(__propInfo_5.Name).SetValue(@entity, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
+                                _type.GetProperty(__propInfo_5.Name).SetValue(search, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
                             }
                         }
                     }
                     else
                     {
-                        @entity = default(T);
+                        search = default(T);
                     }
                 }
                 else
                 {
-                    @entity = default(T);
+                    search = default(T);
                 }
             }
             catch (Exception @ex)
             {
                 _log.Error(@ex.Message);
-                @entity = default(T);
+                search = default(T);
             }
             finally
             {
@@ -161,7 +161,7 @@ namespace Foreworld.Cmd
                 }
             }
 
-            return @entity;
+            return search;
         }
 
         public T query(string @id)

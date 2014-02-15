@@ -16,6 +16,9 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("主键", Id = true, Length = 32, Nullable = false, Unique = true, MySqlDbType = MySqlDbType.VarChar)]
         public String Id { get; set; }
 
+        [Column("类型Id", Length = 32, Nullable = false, MySqlDbType = MySqlDbType.VarChar)]
+        public String CategoryId { get; set; }
+
         [Column("文章标题")]
         public String ArticleTitle { get; set; }
 

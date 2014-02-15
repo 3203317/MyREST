@@ -38,6 +38,24 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="categoryId"></param>
+        /// <param name="pagination"></param>
+        /// <returns></returns>
+        public List<Article> FindArticlesByCateId(string categoryId, Pagination @pagination)
+        {
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Article.POST_TIME, "DESC");
+
+            Article search = new Article();
+            search.CategoryId = categoryId;
+
+            List<Article> list = _articleDao.queryAll(@pagination, sort, search);
+            return list;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public Article FindById(string @id)

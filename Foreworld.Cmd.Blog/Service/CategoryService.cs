@@ -9,5 +9,7 @@ namespace Foreworld.Cmd.Blog.Service
     public interface CategoryService : IService
     {
         List<Category> GetCategorys();
+
+        Category FindByName(string @name);
     }
 }
