@@ -81,7 +81,7 @@ namespace Foreworld.Cmd.Blog.Rest
         /// <param name="parameter"></param>
         /// <returns></returns>
         [Resource(Public = true)]
-        public ResultMapper LoadMoreUI(Parameter @parameter)
+        public ResultMapper MoreIndexUI(Parameter @parameter)
         {
             string dataStr = GetDataStr(@parameter);
             Pagination pagination = JavaScriptConvert.DeserializeObject<Pagination>(dataStr);
