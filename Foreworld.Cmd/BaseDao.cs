@@ -84,63 +84,64 @@ namespace Foreworld.Cmd
         /// </summary>
         /// <param name="search"></param>
         /// <returns></returns>
-        public T query(T search)
+        public T query(S search)
         {
-            string __sql = string.Empty;
+            string sql = string.Empty;
 
-            List<MySqlParameter> __sps = new List<MySqlParameter>();
-            MySqlParameter __sp = null;
+            List<MySqlParameter> sps = new List<MySqlParameter>();
 
-            foreach (PropertyInfo __propInfo_3 in _propInfos)
+            foreach (PropertyInfo propInfo_3 in _propInfos)
             {
-                var __objVal_4 = _type.GetProperty(__propInfo_3.Name).GetValue(search, null);
+                var objVal_4 = _type.GetProperty(propInfo_3.Name).GetValue(search, null);
 
-                if (null != __objVal_4)
+                if (null != objVal_4)
                 {
-                    __sql += " AND " + __propInfo_3.Name + "=?" + __propInfo_3.Name;
-                    object[] __obj_5 = __propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
-                    ColumnAttribute __colAttr_5 = (ColumnAttribute)__obj_5[0];
+                    sql += " AND " + propInfo_3.Name + "=?" + propInfo_3.Name;
+                    object[] obj_5 = propInfo_3.GetCustomAttributes(typeof(ColumnAttribute), false);
+                    ColumnAttribute colAttr_5 = (ColumnAttribute)obj_5[0];
 
-                    __sp = new MySqlParameter("?" + __propInfo_3.Name, __colAttr_5.MySqlDbType, __colAttr_5.Length);
-                    __sp.Value = __objVal_4;
-                    __sps.Add(__sp);
+                    MySqlParameter sp_5 = new MySqlParameter("?" + propInfo_3.Name, colAttr_5.MySqlDbType, colAttr_5.Length);
+                    sp_5.Value = objVal_4;
+                    sps.Add(sp_5);
                 }
             }
 
-            if (!string.Empty.Equals(__sql))
+            if (0 < sql.Length)
             {
-                __sql = " WHERE 1=1" + __sql;
+                sql = " WHERE 1=1" + sql;
             }
 
-            __sql = _querySql + __sql;
+            sql = _querySql + sql;
 
             try
             {
-                DataRow dr_3 = MySqlHelper.ExecuteDataRow(ConnectionString, __sql, __sps.ToArray());
+                DataRow dr_3 = MySqlHelper.ExecuteDataRow(ConnectionString, sql, sps.ToArray());
                 if (null != dr_3)
                 {
+                    T t_4 = new T();
+
                     foreach (PropertyInfo __propInfo_5 in _propInfos)
                     {
                         object __propVal_6 = dr_3[__propInfo_5.Name];
 
                         if (!(__propVal_6 is System.DBNull))
                         {
-                            _type.GetProperty(__propInfo_5.Name).SetValue(search, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
+                            _type.GetProperty(__propInfo_5.Name).SetValue(t_4, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
                         }
                     }
+
+                    return t_4;
                 }
                 else
                 {
-                    search = default(T);
+                    return default(T);
                 }
             }
             catch (Exception @ex)
             {
                 _log.Error(@ex.Message);
-                search = default(T);
+                return default(T);
             }
-
-            return search;
         }
 
         public T query(string @id)

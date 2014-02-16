@@ -7,7 +7,7 @@ namespace Foreworld.Cmd
 {
     public interface IDao<T, S>
     {
-        T query(T @entity);
+        T query(S @search);
 
         T query(string @id);
 
