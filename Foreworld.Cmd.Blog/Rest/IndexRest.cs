@@ -89,6 +89,7 @@ namespace Foreworld.Cmd.Blog.Rest
 
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("articles", _articleService.FindArticles(pagination));
+            vltCtx.Put("virtualPath", string.Empty);
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
