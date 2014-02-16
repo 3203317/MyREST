@@ -114,32 +114,19 @@ namespace Foreworld.Cmd
 
             __sql = _querySql + __sql;
 
-            DataSet __ds = null;
             try
             {
-                __ds = MySqlHelper.ExecuteDataset(ConnectionString, __sql, __sps.ToArray());
-
-                if (null != __ds)
+                DataRow dr_3 = MySqlHelper.ExecuteDataRow(ConnectionString, __sql, __sps.ToArray());
+                if (null != dr_3)
                 {
-                    DataRowCollection __rows_3 = __ds.Tables[0].Rows;
-
-                    if (1 == __rows_3.Count)
+                    foreach (PropertyInfo __propInfo_5 in _propInfos)
                     {
-                        DataRow __row_4 = __rows_3[0];
+                        object __propVal_6 = dr_3[__propInfo_5.Name];
 
-                        foreach (PropertyInfo __propInfo_5 in _propInfos)
+                        if (!(__propVal_6 is System.DBNull))
                         {
-                            object __propVal_6 = __row_4[__propInfo_5.Name];
-
-                            if (!(__propVal_6 is System.DBNull))
-                            {
-                                _type.GetProperty(__propInfo_5.Name).SetValue(search, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
-                            }
+                            _type.GetProperty(__propInfo_5.Name).SetValue(search, __propVal_6 is System.DateTime ? __propVal_6.ToString() : __propVal_6, null);
                         }
-                    }
-                    else
-                    {
-                        search = default(T);
                     }
                 }
                 else
@@ -151,14 +138,6 @@ namespace Foreworld.Cmd
             {
                 _log.Error(@ex.Message);
                 search = default(T);
-            }
-            finally
-            {
-                if (null != __ds)
-                {
-                    __ds.Clear();
-                    __ds.Dispose();
-                }
             }
 
             return search;
