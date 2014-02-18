@@ -62,7 +62,7 @@ namespace Foreworld.Cmd.Blog.Model
             get { return double.Parse(ViewNums.ToString()).ToString("#,#"); }
         }
 
-        [Column("文章标签")]
+        [Column("文章标签", MySqlDbType = MySqlDbType.VarChar, Length = 32)]
         public String ArticleTag { get; set; }
 
         public List<Tag> Tags

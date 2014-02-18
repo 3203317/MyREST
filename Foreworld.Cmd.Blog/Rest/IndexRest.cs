@@ -291,6 +291,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("articles", _articleService.FindArticlesByTagName(tagName, pagination));
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
+            vltCtx.Put("topMarks", _articleService.GetTopMarks());
             vltCtx.Put("top10ViewNums", _articleService.GetTop10ViewNums());
 
             HtmlObject htmlObj = new HtmlObject();
