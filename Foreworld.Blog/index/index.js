@@ -19,7 +19,7 @@
         var data = { data: JSON.stringify({ Current: currentPage }) };
         
         $.ajax({
-			url: $().olxUtilRandomUrl("index/more"),
+			url: $().olxUtilRandomUrl($that.data("url")),
 			type: "GET",
 			dataType: "html",
 			data: data

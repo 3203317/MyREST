@@ -86,7 +86,7 @@
 				</div>
 
 				<div class="col-sm-12 col-md-8">
-					<a id="loadMore" href="javascript:;" data-current-page="1" class="btn btn-block olx-btn">加载更多...</a>
+					<a id="loadMore" href="javascript:;" data-current-page="1" class="btn btn-block olx-btn" data-url="${virtualPath}archives/category/${categoryName}/more">加载更多...</a>
 				</a>
 			</div>
 		</section>
@@ -98,43 +98,7 @@
         #parse('pagelet/IndexJs.html');
 
 		<!-- Own -->
-		<script type="text/javascript">
-		    $(document).ready(function(){
-	            console.log("Hello, World!");
-
-	            $(".flexslider").flexslider({
-		            animation: "slide"
-	            });
-
-	            $("#qrcode").pin({
-		            minWidth: 940,
-		            top: 60
-	            })
-            	
-	            $("#loadMore").click(function(){
-                    var that = this;
-                    var $that = $(that);
-                    var text = $that.text();
-                    $that.text("努力加载中...");
-                    var currentPage = $that.data("current-page") + 1;
-                    var data = { data: JSON.stringify({ Current: currentPage }) };
-                    
-                    $ .ajax({
-			            url: $().olxUtilRandomUrl("${virtualPath}archives/category/${categoryName}/more"),
-			            type: "GET",
-			            dataType: "html",
-			            data: data
-		            }).done(function(responseText) {
-		                if("" != $ .trim(responseText)){		    
-                            $that.data("current-page", currentPage);		    
-			                $("#articleIntros").append(responseText);
-		                }			
-		            }).complete(function(){
-                        $that.text(text);
-		            });
-	            });
-		    });
-		</script>
+		<script type="text/javascript" src="${virtualPath}index/index.js"></script>
 
 	</body>
 </html>
