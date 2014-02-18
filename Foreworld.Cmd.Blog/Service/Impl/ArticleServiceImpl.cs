@@ -61,10 +61,10 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public List<Article> FindArticlesByTagName(string tagName, Pagination @pagination)
         {
-            string sql = "SELECT * FROM F_ARTICLE  WHERE ArticleTag like ?ArticleTag ORDER BY PostTime DESC";
+            string sql = "SELECT * FROM F_ARTICLE  WHERE upper(ArticleTag) like ?ArticleTag ORDER BY PostTime DESC";
 
             Article article = new Article();
-            article.ArticleTag = "%," + tagName + ",%";
+            article.ArticleTag = "%," + tagName.ToUpper() + ",%";
 
             List<Article> list = _articleDao.queryAll(sql, article, @pagination);
             return list;
