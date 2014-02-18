@@ -232,6 +232,42 @@ namespace Foreworld.Cmd.Blog.Rest
         /// <param name="parameter"></param>
         /// <returns></returns>
         [Resource(Public = true)]
+        public ResultMapper MoreCategoryUI(Parameter @parameter)
+        {
+            HttpRequest request = @parameter.HttpContext.Request;
+            string categoryName = request.QueryString["categoryName"];
+
+            Category category = _categoryService.FindByName(categoryName);
+
+            if (null == category)
+            {
+                return null;
+            }
+
+            string dataStr = GetDataStr(@parameter);
+            Pagination pagination = JavaScriptConvert.DeserializeObject<Pagination>(dataStr);
+            pagination.PageSize = 10;
+
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("articles", _articleService.FindArticlesByCateId(category.Id, pagination));
+            vltCtx.Put("virtualPath", "../../");
+
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate();
+            htmlObj.Context = vltCtx;
+
+            ResultMapper mapper = new ResultMapper();
+            mapper.Data = htmlObj;
+            mapper.Success = true;
+            return mapper;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        [Resource(Public = true)]
         public ResultMapper TagUI(Parameter @parameter)
         {
             HttpRequest request = @parameter.HttpContext.Request;
