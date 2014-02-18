@@ -56,6 +56,24 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="tagName"></param>
+        /// <param name="pagination"></param>
+        /// <returns></returns>
+        public List<Article> FindArticlesByTagName(string tagName, Pagination @pagination)
+        {
+            string sql = "SELECT * FROM F_ARTICLE  WHERE ArticleTag like ?ArticleTag ORDER BY PostTime DESC";
+
+            Article article = new Article();
+            article.ArticleTag = "%," + tagName + ",%";
+
+            List<Article> list = _articleDao.queryAll(sql, article, @pagination);
+            return list;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public Article FindById(string @id)
@@ -105,12 +123,16 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public Article FindNextById(string @id)
         {
-            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime<(SELECT PostTime FROM F_ARTICLE WHERE ID = ?Id) ORDER BY PostTime DESC LIMIT 1";
+            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime<(SELECT PostTime FROM F_ARTICLE WHERE ID = ?Id) ORDER BY PostTime DESC";
 
             Article article = new Article();
             article.Id = @id;
 
-            List<Article> list = _articleDao.queryAll(sql, article);
+            Pagination pagination = new Pagination();
+            pagination.Current = 0;
+            pagination.PageSize = 1;
+
+            List<Article> list = _articleDao.queryAll(sql, article, pagination);
             if (null == list || 0 == list.Count) return null;
 
             article = list[0];
@@ -124,12 +146,16 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public Article FindPrevById(string @id)
         {
-            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime>(SELECT PostTime FROM F_ARTICLE WHERE ID = ?Id) ORDER BY PostTime LIMIT 1";
+            string sql = "SELECT * FROM F_ARTICLE WHERE PostTime>(SELECT PostTime FROM F_ARTICLE WHERE ID = ?Id) ORDER BY PostTime";
 
             Article article = new Article();
             article.Id = @id;
 
-            List<Article> list = _articleDao.queryAll(sql, article);
+            Pagination pagination = new Pagination();
+            pagination.Current = 0;
+            pagination.PageSize = 1;
+
+            List<Article> list = _articleDao.queryAll(sql, article, pagination);
             if (null == list || 0 == list.Count) return null;
 
             article = list[0];

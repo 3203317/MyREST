@@ -12,6 +12,8 @@ namespace Foreworld.Cmd.Blog.Service
 
         List<Article> FindArticlesByCateId(string categoryId, Pagination @pagination);
 
+        List<Article> FindArticlesByTagName(string tagName, Pagination @pagination);
+
         List<Article> GetTopMarks();
 
         List<Article> GetTop10ViewNums();

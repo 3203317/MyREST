@@ -285,8 +285,9 @@ namespace Foreworld.Cmd
         /// </summary>
         /// <param name="querySql"></param>
         /// <param name="search"></param>
+        /// <param name="pagination"></param>
         /// <returns></returns>
-        public List<T> queryAll(string @querySql, S @search)
+        public List<T> queryAll(string @querySql, S @search, Pagination @pagination)
         {
             LogInfo __logInfo = new LogInfo();
 
@@ -316,6 +317,11 @@ namespace Foreworld.Cmd
 #endif
                     }
                 }
+            }
+
+            if (null != @pagination)
+            {
+                __sql += " LIMIT " + (@pagination.Current - 1) * @pagination.PageSize + "," + @pagination.PageSize;
             }
 
 #if DEBUG
