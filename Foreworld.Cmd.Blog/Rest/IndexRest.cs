@@ -273,6 +273,10 @@ namespace Foreworld.Cmd.Blog.Rest
             HttpRequest request = @parameter.HttpContext.Request;
             string tagName = request.QueryString["tagName"];
 
+            Pagination pagination = new Pagination();
+            pagination.PageSize = 10;
+            pagination.Current = 1;
+
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("moduleName", "tag");
             vltCtx.Put("virtualPath", "../../");
@@ -284,6 +288,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
+            vltCtx.Put("articles", _articleService.FindArticlesByTagName(tagName, pagination));
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
             vltCtx.Put("top10ViewNums", _articleService.GetTop10ViewNums());
