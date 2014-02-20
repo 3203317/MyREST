@@ -37,7 +37,7 @@
                                                 #foreach($article in $archiveChild.Articles)
                                                 <p>
                                                     ${article.PostTime_Day}日:
-                                                    <a target="_blank" title="创建于 $article.PostTime_Time" href="${virtualPath}archives/${article.Id}.html">${article.ArticleTitle}</a>
+                                                    <a title="创建于 $article.PostTime_Time" href="${virtualPath}archives/${article.Id}.html">${article.ArticleTitle}</a>
                                                     <span class="badge">${article.ViewNumsToFormat}</span>
                                                 </p>
                                                 #end
