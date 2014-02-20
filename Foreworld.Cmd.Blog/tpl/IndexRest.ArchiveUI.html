@@ -21,8 +21,9 @@
                                 <li><div class="glyphicon glyphicon-home"></div> <a href="${virtualPath}index.html">首页</a></li>
                                 <li class="active">档案馆</li>
                             </ol>		                    
-		                    <div class="olx-archives">
-                                <h3>2013年</h3>                                
+		                    <div class="olx-archives">		                        
+                                #foreach($archive in $archives)
+                                <h3>${archive.Y4}年</h3>                                
                                 <div class="panel-group olx-accordion">
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
@@ -55,6 +56,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                #end
 		                    </div>
                             <div>
 			                    <a href="javascript:;"><img src="${virtualPath}asset/images/16x16/twitter.png"></a>

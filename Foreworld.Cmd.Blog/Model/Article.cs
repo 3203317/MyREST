@@ -34,6 +34,11 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("发布时间", MySqlDbType = MySqlDbType.Datetime)]
         public String PostTime { get; set; }
 
+        public string PostTime_Year
+        {
+            get { return Convert.ToDateTime(PostTime).Year.ToString(); }
+        }
+
         public string PostTime_Month
         {
             get { return Convert.ToDateTime(PostTime).Month.ToString().PadLeft(2, '0'); }

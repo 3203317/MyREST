@@ -8,6 +8,6 @@ namespace Foreworld.Cmd.Blog.Service
 {
     public interface ArchiveService : IService
     {
-
+        List<Archive> Archives();
     }
 }
