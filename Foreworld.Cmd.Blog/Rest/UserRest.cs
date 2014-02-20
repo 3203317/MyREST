@@ -22,18 +22,10 @@ namespace Foreworld.Cmd.Blog.Rest
     public class UserRest : BaseRest
     {
         private CategoryService _categoryService;
-        private ArticleService _articleService;
-        private CommentService _commentService;
-        private LinkService _linkService;
-        private ArchiveService _archiveService;
 
         public UserRest()
         {
             _categoryService = new CategoryServiceImpl();
-            _articleService = new ArticleServiceImpl();
-            _commentService = new CommentServiceImpl();
-            _linkService = new LinkServiceImpl();
-            _archiveService = new ArchiveServiceImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(UserRest));
@@ -46,10 +38,6 @@ namespace Foreworld.Cmd.Blog.Rest
         [Resource(Public = true)]
         public ResultMapper LoginUI(Parameter @parameter)
         {
-            Pagination pagination = new Pagination();
-            pagination.PageSize = 10;
-            pagination.Current = 1;
-
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("moduleName", "index");
             vltCtx.Put("virtualPath", "../");
@@ -59,11 +47,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
-            vltCtx.Put("articles", _articleService.FindArticles(pagination));
-            vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
-            vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
-            vltCtx.Put("topMarks", _articleService.GetTopMarks());
-            vltCtx.Put("top10ViewNums", _articleService.GetTop10ViewNums());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
