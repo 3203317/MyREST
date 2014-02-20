@@ -32,31 +32,19 @@
                                                 <a href="#collapse${archive.Y4}${archiveChild.M2}" data-parent="#accordion" data-toggle="collapse">${archiveChild.M2}月 （${archiveChild.Articles.Count}篇文章）</a>
                                             </h4>
                                         </div>
-                                    </div>
-                                    #end
-                                    #*<div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a href="#collapse201312" data-parent="#accordion" data-toggle="collapse"> 12 月( 1篇文章)</a>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a href="#collapse201307" data-parent="#accordion" data-toggle="collapse"> 12 月( 1篇文章)</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse201307" class="panel-collapse collapse">
+                                        <div id="collapse${archive.Y4}${archiveChild.M2}" class="panel-collapse collapse">
                                             <div class="panel-body">
+                                                #foreach($article in $archiveChild.Articles)
                                                 <p>
-                                                    26日:
-                                                    <a class="archivesPostList" href="http://www.yeahzan.com/zanblog/archives/298.html">Zanblog V1.0.2 改动</a>
-                                                    <span class="badge">28</span>
+                                                    ${article.PostTime_Day}日:
+                                                    <a target="_blank" title="创建于 $article.PostTime_Time" href="${virtualPath}archives/${article.Id}.html">${article.ArticleTitle}</a>
+                                                    <span class="badge">${article.ViewNumsToFormat}</span>
                                                 </p>
+                                                #end
                                             </div>
                                         </div>
-                                    </div>*#
+                                    </div>
+                                    #end
                                 </div>
                                 #end
 		                    </div>
