@@ -35,7 +35,45 @@ namespace Foreworld.Cmd.Blog.Service.Impl
 
             foreach (Article article_3 in articles)
             {
-                if (0 == list.Count)
+                /* 记录总数 */
+                if (0 < list.Count)
+                {
+                    /* 获取最后一条记录年 */
+                    Archive archive_4 = list[list.Count - 1];
+
+                    if (article_3.PostTime_Year == archive_4.Y4)
+                    {
+                        /* 获取最后一条记录月 */
+                        ArchiveChild archiveChild_5 = archive_4.ArchiveChildren[archive_4.ArchiveChildren.Count - 1];
+
+                        if (article_3.PostTime_Month == archiveChild_5.M2)
+                        {
+                            archiveChild_5.Articles.Add(article_3);
+                        }
+                        else
+                        {
+                            /* 添加月 */
+                            ArchiveChild archiveChild_6 = new ArchiveChild();
+                            archiveChild_6.M2 = article_3.PostTime_Month;
+                            archive_4.ArchiveChildren.Add(archiveChild_6);
+
+                            archiveChild_6.Articles.Add(article_3);
+                        }
+                    }
+                    else
+                    {
+                        Archive archive_5 = new Archive();
+                        archive_5.Y4 = article_3.PostTime_Year;
+                        list.Add(archive_5);
+
+                        ArchiveChild archiveChild_5 = new ArchiveChild();
+                        archiveChild_5.M2 = article_3.PostTime_Month;
+                        archive_5.ArchiveChildren.Add(archiveChild_5);
+
+                        archiveChild_5.Articles.Add(article_3);
+                    }
+                }
+                else
                 {
                     /* 添加年 */
                     Archive archive_4 = new Archive();
@@ -48,20 +86,6 @@ namespace Foreworld.Cmd.Blog.Service.Impl
                     archive_4.ArchiveChildren.Add(archiveChild_4);
 
                     archiveChild_4.Articles.Add(article_3);
-                }
-                else
-                {
-                    Archive archive_4 = list[list.Count - 1];
-
-                    if (article_3.PostTime_Year == archive_4.Y4)
-                    {
-                    }
-                    else
-                    {
-                        Archive archive_5 = new Archive();
-                        archive_5.Y4 = article_3.PostTime_Year;
-                        list.Add(archive_5);
-                    }
                 }
             }
 
