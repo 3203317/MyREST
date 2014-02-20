@@ -8,6 +8,11 @@ namespace Foreworld.Cmd.Blog.Model
     {
         public String Y4 { get; set; }
 
-        public List<ArchiveChild> ArchiveChildren { get; set; }
+        private List<ArchiveChild> _archiveChildren = new List<ArchiveChild>();
+
+        public List<ArchiveChild> ArchiveChildren
+        {
+            get { return _archiveChildren; }
+        }
     }
 }

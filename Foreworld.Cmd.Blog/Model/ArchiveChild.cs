@@ -6,8 +6,13 @@ namespace Foreworld.Cmd.Blog.Model
 {
     public class ArchiveChild
     {
-        public Int32? M2 { get; set; }
+        public String M2 { get; set; }
 
-        public List<Article> Articles { get; set; }
+        private List<Article> _articles = new List<Article>();
+
+        public List<Article> Articles
+        {
+            get { return _articles; }
+        }
     }
 }

@@ -25,14 +25,16 @@
                                 #foreach($archive in $archives)
                                 <h3>${archive.Y4}年</h3>                                
                                 <div class="panel-group olx-accordion">
+                                    #foreach($archiveChild in $archive.ArchiveChildren)
                                     <div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
-                                                <a href="#collapse201312" data-parent="#accordion" data-toggle="collapse"> 12 月( 1篇文章)</a>
+                                                <a href="#collapse${archive.Y4}${archiveChild.M2}" data-parent="#accordion" data-toggle="collapse">${archiveChild.M2}月 （${archiveChild.Articles.Count}篇文章）</a>
                                             </h4>
                                         </div>
                                     </div>
-                                    <div class="panel panel-default">
+                                    #end
+                                    #*<div class="panel panel-default">
                                         <div class="panel-heading">
                                             <h4 class="panel-title">
                                                 <a href="#collapse201312" data-parent="#accordion" data-toggle="collapse"> 12 月( 1篇文章)</a>
@@ -54,7 +56,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>*#
                                 </div>
                                 #end
 		                    </div>
