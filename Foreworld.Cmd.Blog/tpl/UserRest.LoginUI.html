@@ -2,6 +2,15 @@
 <html lang="zh-CN">
 	<head>
 		#parse('pagelet/IndexHeader.html');
+		<style>
+		    #footer 
+		    {
+		    	position:fixed;
+		    	left:0;
+		    	bottom:0;
+		    	width:100%;
+		    }
+		</style>
 	</head>
 	<body>
 		#parse('pagelet/TopBanner.html');
@@ -32,12 +41,9 @@
 
         #parse('pagelet/IndexFooter.html');
 
-        #parse('pagelet/IndexBackTop.html');
-
         #parse('pagelet/IndexJs.html');
 
 		<!-- Own -->
-		<script type="text/javascript" src="${virtualPath}index/index.js"></script>
 
 	</body>
 </html>
