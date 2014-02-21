@@ -23,7 +23,7 @@
                             </ol>
 		                    <div class="content-title">
 			                    <h3>
-				                    <a href="${virtualPath}archives/${article.Id}.html">$article.ArticleTitle</a>
+				                    <a href="${virtualPath}archive/${article.Id}.html">$article.ArticleTitle</a>
 			                    </h3>
 		                    </div>
 		                    <div class="content-tag">
@@ -31,7 +31,7 @@
 			                    </span>
 			                    <span class="label label-success olx-label">
 				                    <span class="glyphicon glyphicon-tag"></span>
-				                    <a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="${virtualPath}archives/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
+				                    <a rel="category tag" title="查看 $article.ArticleAuthor 中的全部文章" href="${virtualPath}archive/author/${article.ArticleAuthor}">$article.ArticleAuthor</a>
 			                    </span>
 			                    <span class="label label-success olx-label">
 				                    <span class="glyphicon glyphicon-user"></span>
@@ -59,31 +59,31 @@
 			                    <div class="footer-tag clearfix">
 				                    #foreach($articleTag in $article.Tags)
 				                    <span class="label label-success olx-tag">
-					                    <a rel="tag" title="查看 $articleTag.TagName 标签" href="${virtualPath}archives/tag/${articleTag.TagName}">$articleTag.TagName</a>
+					                    <a rel="tag" title="查看 $articleTag.TagName 标签" href="${virtualPath}archive/tag/${articleTag.TagName}">$articleTag.TagName</a>
 				                    </span>
 				                    #end
 			                    </div> 
                                 #*<div class="btn-group article-btn-group">
                                     #if ($!nextArticle)
-                                    <a class="btn btn-default" href="${virtualPath}archives/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">上一篇</a>
+                                    <a class="btn btn-default" href="${virtualPath}archive/${nextArticle.Id}.html" title="${nextArticle.ArticleTitle}">上一篇</a>
                                     #end
                                     #if ($!prevArticle)
-                                    <a class="btn btn-default" href="${virtualPath}archives/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">下一篇</a>
+                                    <a class="btn btn-default" href="${virtualPath}archive/${prevArticle.Id}.html" title="${prevArticle.ArticleTitle}">下一篇</a>
                                     #end
                                 </div>*#
 		                    </div>
                             #end
 		                    <div class="alert alert-success article-alert">
                                 <p>版权所属：<a href="http://www.foreworld.net/">洪荒世界</a></p>
-                                <p>原文地址：<a href="${virtualPath}archives/${article.Id}.html" title="${article.ArticleTitle}">http://www.foreworld.net/archives/${article.Id}.html</a></p>
+                                <p>原文地址：<a href="${virtualPath}archive/${article.Id}.html" title="${article.ArticleTitle}">http://www.foreworld.net/archive/${article.Id}.html</a></p>
                                 <p>转载时必须以链接形式注明原始出处及本声明。</p>
                             </div>
 		                    <div class="alert alert-success article-alert" style="margin-top:0">
                                 #if ($!nextArticle)
-                                <p>上篇：<a href="${virtualPath}archives/${nextArticle.Id}.html" title="创建于 ${nextArticle.PostTime}">${nextArticle.ArticleTitle}</a></p>
+                                <p>上篇：<a href="${virtualPath}archive/${nextArticle.Id}.html" title="创建于 ${nextArticle.PostTime}">${nextArticle.ArticleTitle}</a></p>
                                 #end
                                 #if ($!prevArticle)
-                                <p>下篇：<a href="${virtualPath}archives/${prevArticle.Id}.html" title="创建于 ${prevArticle.PostTime}">${prevArticle.ArticleTitle}</a></p>
+                                <p>下篇：<a href="${virtualPath}archive/${prevArticle.Id}.html" title="创建于 ${prevArticle.PostTime}">${prevArticle.ArticleTitle}</a></p>
                                 #end
                             </div>
                             <div>
@@ -169,7 +169,7 @@
 							    #foreach($top10ViewNum in $top10ViewNums)	
 							    <li class="list-group-item">					
 							        <span class="badge">$top10ViewNum.ViewNums</span>
-								    <a href="${virtualPath}archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								    <a href="${virtualPath}archive/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
 								        <div>$top10ViewNum.ArticleTitle</div>
                                     </a>						        	
 								</li>
@@ -185,7 +185,7 @@
 						<div class="panel-body">
 							<div class="list-group">
 							    #foreach($comment in $top10Comments)
-								<a href="${virtualPath}archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
+								<a href="${virtualPath}archive/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
 								#end
 							</div>
 						</div>

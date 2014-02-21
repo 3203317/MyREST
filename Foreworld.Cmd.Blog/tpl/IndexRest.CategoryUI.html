@@ -20,7 +20,7 @@
 							<ul class="slides">
 							    #foreach($topMark in $topMarks)
 								<li>
-									<a href="${virtualPath}archives/${topMark.Id}.html"><img src="${virtualPath}userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
+									<a href="${virtualPath}archive/${topMark.Id}.html"><img src="${virtualPath}userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
 								</li>
 								#end
 							</ul>
@@ -39,7 +39,7 @@
 							    #foreach($top10ViewNum in $top10ViewNums)	
 							    <li class="list-group-item">					
 							        <span class="badge">$top10ViewNum.ViewNums</span>
-								    <a href="${virtualPath}archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								    <a href="${virtualPath}archive/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
 								        <div>$top10ViewNum.ArticleTitle</div>
                                     </a>						        	
 								</li>
@@ -55,7 +55,7 @@
 						<div class="panel-body">
 							<div class="list-group">
 							    #foreach($comment in $top10Comments)
-								<a href="${virtualPath}archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
+								<a href="${virtualPath}archive/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
 								#end
 							</div>
 						</div>
@@ -86,7 +86,7 @@
 				</div>
 
 				<div class="col-sm-12 col-md-8">
-					<a id="loadMore" href="javascript:;" data-current-page="1" class="btn btn-block olx-btn" data-url="${virtualPath}archives/category/${categoryName}/more">加载更多...</a>
+					<a id="loadMore" href="javascript:;" data-current-page="1" class="btn btn-block olx-btn" data-url="${virtualPath}archive/category/${categoryName}/more">加载更多...</a>
 				</div>
 			</div>
 		</section>

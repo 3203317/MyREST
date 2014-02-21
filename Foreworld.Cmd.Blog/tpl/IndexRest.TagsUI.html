@@ -42,7 +42,7 @@
 							    #foreach($top10ViewNum in $top10ViewNums)	
 							    <li class="list-group-item">					
 							        <span class="badge">$top10ViewNum.ViewNums</span>
-								    <a href="${virtualPath}archives/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
+								    <a href="${virtualPath}archive/${top10ViewNum.Id}.html" title="$top10ViewNum.ArticleTitle">
 								        <div>$top10ViewNum.ArticleTitle</div>
                                     </a>						        	
 								</li>
@@ -58,7 +58,7 @@
 						<div class="panel-body">
 							<div class="list-group">
 							    #foreach($comment in $top10Comments)
-								<a href="${virtualPath}archives/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
+								<a href="${virtualPath}archive/${comment.ArticleId}.html#$comment.Id" class="list-group-item olx-text-ellipsis">$comment.Content</a>
 								#end
 							</div>
 						</div>
