@@ -58,7 +58,7 @@ namespace Foreworld.Cmd.Blog.Rest
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("description", "个人博客");
-            vltCtx.Put("keywords", "Bootstrap3");
+            vltCtx.Put("keywords", ",首页,Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("articles", _articleService.FindArticles(pagination));
@@ -127,7 +127,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("atitle", article.ArticleTitle);
             vltCtx.Put("description", "个人博客," + article.ArticleTitle);
-            vltCtx.Put("keywords", article.ArticleTag + "Bootstrap3");
+            vltCtx.Put("keywords", (0 == article.ArticleTag.Length ? "," : article.ArticleTag) + "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
@@ -162,7 +162,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("atitle", "档案馆");
             vltCtx.Put("description", "个人博客");
-            vltCtx.Put("keywords", "Bootstrap3");
+            vltCtx.Put("keywords", ",档案馆,Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
@@ -210,7 +210,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("atitle", categoryName);
             vltCtx.Put("categoryName", categoryName);
             vltCtx.Put("description", "个人博客");
-            vltCtx.Put("keywords", "Bootstrap3");
+            vltCtx.Put("keywords", ",Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("articles", _articleService.FindArticlesByCateId(category.Id, pagination));
@@ -288,7 +288,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("atitle", tagName);
             vltCtx.Put("tagName", tagName);
             vltCtx.Put("description", "个人博客");
-            vltCtx.Put("keywords", "Bootstrap3");
+            vltCtx.Put("keywords", ",Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("articles", _articleService.FindArticlesByTagName(tagName, pagination));
