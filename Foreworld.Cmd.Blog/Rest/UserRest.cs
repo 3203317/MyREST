@@ -43,6 +43,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("virtualPath", "../");
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
+            vltCtx.Put("atitle", "登陆");
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", "Bootstrap3");
             vltCtx.Put("categorys", _categoryService.GetCategorys());

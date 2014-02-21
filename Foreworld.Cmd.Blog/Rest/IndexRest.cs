@@ -126,8 +126,8 @@ namespace Foreworld.Cmd.Blog.Rest
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("atitle", article.ArticleTitle);
-            vltCtx.Put("description", "个人博客");
-            vltCtx.Put("keywords", "Bootstrap3");
+            vltCtx.Put("description", "个人博客," + article.ArticleTitle);
+            vltCtx.Put("keywords", article.ArticleTag + "Bootstrap3");
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("categorys", _categoryService.GetCategorys());
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
