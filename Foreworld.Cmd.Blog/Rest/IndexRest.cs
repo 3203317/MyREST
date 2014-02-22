@@ -157,7 +157,7 @@ namespace Foreworld.Cmd.Blog.Rest
         {
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("moduleName", "archives");
-            vltCtx.Put("virtualPath", string.Empty);
+            vltCtx.Put("virtualPath", "../");
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("atitle", "档案馆");
@@ -346,7 +346,7 @@ namespace Foreworld.Cmd.Blog.Rest
         {
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("moduleName", "tag");
-            vltCtx.Put("virtualPath", "../");
+            vltCtx.Put("virtualPath", "../../");
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
             vltCtx.Put("atitle", "标签");
