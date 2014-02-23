@@ -49,6 +49,7 @@ namespace Foreworld.Rest
                         _vltEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
                         _vltEngine.SetProperty(RuntimeConstants.FILE_RESOURCE_LOADER_CACHE, true);
                         _vltEngine.SetProperty("file.resource.loader.modificationCheckInterval", (Int64)30);
+                        _vltEngine.SetProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, HttpContext.Current.Server.MapPath("~/App_Data/"));
                         _vltEngine.Init();
                     }
                 }
