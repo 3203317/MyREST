@@ -61,7 +61,9 @@
     <Compile Include="Dao\Impl\CategoryDaoImpl.cs" />
     <Compile Include="Dao\Impl\CommentDaoImpl.cs" />
     <Compile Include="Dao\Impl\LinkDaoImpl.cs" />
+    <Compile Include="Dao\Impl\TagDaoImpl.cs" />
     <Compile Include="Dao\LinkDao.cs" />
+    <Compile Include="Dao\TagDao.cs" />
     <Compile Include="Model\Archive.cs" />
     <Compile Include="Model\ArchiveChild.cs" />
     <Compile Include="Model\Article.cs" />
@@ -81,7 +83,9 @@
     <Compile Include="Service\Impl\CategoryServiceImpl.cs" />
     <Compile Include="Service\Impl\CommentServiceImpl.cs" />
     <Compile Include="Service\Impl\LinkServiceImpl.cs" />
+    <Compile Include="Service\Impl\TagServiceImpl.cs" />
     <Compile Include="Service\LinkService.cs" />
+    <Compile Include="Service\TagService.cs" />
     <Compile Include="Test\TestCategory.cs" />
     <Compile Include="Validator\CommonValidator.cs" />
   </ItemGroup>
