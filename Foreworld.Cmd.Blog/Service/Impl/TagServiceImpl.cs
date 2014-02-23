@@ -27,7 +27,11 @@ namespace Foreworld.Cmd.Blog.Service.Impl
         /// <returns></returns>
         public List<Tag> GetTags()
         {
-            return null;
+            Dictionary<string, string> sort = new Dictionary<string, string>();
+            sort.Add(Tag.TAG_NAME, "ASC");
+
+            List<Tag> list = _tagDao.queryAll(null, sort, null);
+            return list;
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Foreworld.Cmd.Blog.Rest
         private CommentService _commentService;
         private LinkService _linkService;
         private ArchiveService _archiveService;
+        private TagService _tagService;
 
         public IndexRest()
         {
@@ -36,6 +37,7 @@ namespace Foreworld.Cmd.Blog.Rest
             _commentService = new CommentServiceImpl();
             _linkService = new LinkServiceImpl();
             _archiveService = new ArchiveServiceImpl();
+            _tagService = new TagServiceImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(IndexRest));
@@ -357,6 +359,7 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
             vltCtx.Put("top10ViewNums", _articleService.GetTop10ViewNums());
+            vltCtx.Put("tags", _tagService.GetTags());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
