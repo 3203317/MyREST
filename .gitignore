@@ -218,4 +218,4 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 Foreworld.Blog/asset/css/olx/olx.css
-*.html
+Foreworld.Blog/App_Data/pagelet/*.html
