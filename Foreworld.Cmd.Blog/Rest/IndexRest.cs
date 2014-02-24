@@ -170,7 +170,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
             vltCtx.Put("top10ViewNums", _articleService.GetTop10ViewNums());
-            vltCtx.Put("archives", _archiveService.GetArchives());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();

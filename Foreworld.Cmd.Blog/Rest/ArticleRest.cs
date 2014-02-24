@@ -25,16 +25,21 @@ namespace Foreworld.Cmd.Blog.Rest
     public class ArticleRest : BaseRest
     {
         private TagService _tagService;
+        private ArchiveService _archiveService;
 
         public ArticleRest()
         {
             _tagService = new TagServiceImpl();
+            _archiveService = new ArchiveServiceImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(ArticleRest));
 
-        [Resource(Public = true)]
-        public ResultMapper Add(Parameter @parameter)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateHtml1(Parameter @parameter)
         {
             HttpContext httpContext = @parameter.HttpContext;
 
@@ -60,6 +65,45 @@ namespace Foreworld.Cmd.Blog.Rest
                 sw.Flush();
                 sw.Close();
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateHtml2(Parameter @parameter)
+        {
+            HttpContext httpContext = @parameter.HttpContext;
+
+            VelocityEngine _vltEngine = new VelocityEngine();
+            _vltEngine.SetProperty(RuntimeConstants.INPUT_ENCODING, "utf-8");
+            _vltEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
+            _vltEngine.Init();
+
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "../");
+            vltCtx.Put("archives", _archiveService.GetArchives());
+
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate("pagelet.ArchiveList");
+            htmlObj.Context = vltCtx;
+
+            StringWriter vltWriter = new StringWriter();
+            _vltEngine.Evaluate(htmlObj.Context, vltWriter, null, htmlObj.Template);
+
+            using (StreamWriter sw = new StreamWriter(httpContext.Server.MapPath("~/App_Data/pagelet/archiveList.html"), false, Encoding.UTF8, 200))
+            {
+                sw.Write(vltWriter);
+                sw.Flush();
+                sw.Close();
+            }
+        }
+
+        [Resource(Public = true)]
+        public ResultMapper Add(Parameter @parameter)
+        {
+            CreateHtml1(@parameter);
+            CreateHtml2(@parameter);
 
             ResultMapper mapper = new ResultMapper();
             mapper.Success = true;
