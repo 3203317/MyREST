@@ -41,7 +41,7 @@ namespace Foreworld.Cmd
         /// </summary>
         /// <param name="templateName"></param>
         /// <returns></returns>
-        private string GetVltTemplate(string templateName)
+        protected string GetVltTemplate(string templateName)
         {
             string resultStr = string.Empty;
             Stream stream = this.GetType().Assembly.GetManifestResourceStream(this.GetType().Assembly.GetName().Name + ".tpl." + templateName + ".html");

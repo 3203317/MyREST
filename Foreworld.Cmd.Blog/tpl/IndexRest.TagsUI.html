@@ -23,26 +23,7 @@
                             </ol>		                    
 		                    <div class="olx-archives">		                        
                                 <div class="panel-group olx-accordion">
-                                    #foreach($tag in $tags)
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title">
-                                                <a href="#collapse${tag.Id}" data-parent="#accordion" data-toggle="collapse">${tag.TagName} (${tag.TagCount}篇文章)</a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse${tag.Id}" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                #foreach($article in $archiveChild.Articles)
-                                                <p>
-                                                    ${article.PostTime_Day}日:
-                                                    <a title="创建于 $article.PostTime_Time" href="${virtualPath}archive/${article.Id}.html">${article.ArticleTitle}</a>
-                                                    <span class="badge">${article.ViewNumsToFormat}</span>
-                                                </p>
-                                                #end
-                                            </div>
-                                        </div>
-                                    </div>
-                                    #end
+                                    #include("pagelet/tagList.html")
                                 </div>
 		                    </div>
                             <div>
