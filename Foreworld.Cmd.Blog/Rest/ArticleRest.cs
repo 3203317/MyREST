@@ -44,6 +44,7 @@ namespace Foreworld.Cmd.Blog.Rest
             _vltEngine.Init();
 
             IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "../../");
             vltCtx.Put("tags", _tagService.GetTags());
 
             HtmlObject htmlObj = new HtmlObject();
@@ -52,7 +53,6 @@ namespace Foreworld.Cmd.Blog.Rest
 
             StringWriter vltWriter = new StringWriter();
             _vltEngine.Evaluate(htmlObj.Context, vltWriter, null, htmlObj.Template);
-
 
             using (StreamWriter sw = new StreamWriter(httpContext.Server.MapPath("~/App_Data/pagelet/tagList.html"), false, Encoding.UTF8, 200))
             {

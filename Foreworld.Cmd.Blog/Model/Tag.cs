@@ -19,5 +19,12 @@ namespace Foreworld.Cmd.Blog.Model
 
         [Column("标签数量")]
         public Int32? TagCount { get; set; }
+
+        private List<Article> _articles = new List<Article>();
+
+        public List<Article> Articles
+        {
+            get { return _articles; }
+        }
     }
 }
