@@ -26,6 +26,7 @@ namespace Foreworld.Cmd.Blog.Rest
     {
         private TagService _tagService;
         private ArchiveService _archiveService;
+        private ArticleService _articleService;
 
         private static volatile VelocityEngine _vltEngine;
         private static object _syncObj = new Object();
@@ -34,7 +35,7 @@ namespace Foreworld.Cmd.Blog.Rest
         {
             _tagService = new TagServiceImpl();
             _archiveService = new ArchiveServiceImpl();
-
+            _articleService = new ArticleServiceImpl();
             Init();
         }
 
@@ -79,7 +80,7 @@ namespace Foreworld.Cmd.Blog.Rest
         }
 
         /// <summary>
-        /// 
+        /// 标签
         /// </summary>
         /// <param name="parameter"></param>
         private void CreateTagList(Parameter @parameter)
@@ -96,7 +97,24 @@ namespace Foreworld.Cmd.Blog.Rest
         }
 
         /// <summary>
-        /// 
+        /// 热门文章
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateTop10ViewNums(Parameter @parameter)
+        {
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "/");
+            vltCtx.Put("top10ViewNums", _articleService.GetTop10ViewNums());
+
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate("pagelet.Top10ViewNums");
+            htmlObj.Context = vltCtx;
+
+            CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/top10ViewNums.html");
+        }
+
+        /// <summary>
+        /// 档案馆
         /// </summary>
         /// <param name="parameter"></param>
         private void CreateArchiveList(Parameter @parameter)
@@ -124,6 +142,7 @@ namespace Foreworld.Cmd.Blog.Rest
         {
             CreateHtmlDelegate createHtml = new CreateHtmlDelegate(CreateTagList);
             createHtml += CreateArchiveList;
+            createHtml += CreateTop10ViewNums;
             createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();
