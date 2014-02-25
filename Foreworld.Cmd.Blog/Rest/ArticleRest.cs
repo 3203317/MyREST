@@ -139,7 +139,7 @@ namespace Foreworld.Cmd.Blog.Rest
         private void CreateTop10Comments(Parameter @parameter)
         {
             IContext vltCtx = new VelocityContext();
-            vltCtx.Put("virtualPath", "../");
+            vltCtx.Put("virtualPath", "/");
             vltCtx.Put("top10Comments", _commentService.GetTop10Comments());
 
             HtmlObject htmlObj = new HtmlObject();
