@@ -99,11 +99,14 @@ namespace Foreworld.Cmd.Blog.Rest
             }
         }
 
+        delegate void CreateHtml(Parameter @parameter);
+
         [Resource(Public = true)]
         public ResultMapper Add(Parameter @parameter)
         {
-            CreateHtml1(@parameter);
-            CreateHtml2(@parameter);
+            CreateHtml createHtml = new CreateHtml(CreateHtml1);
+            createHtml += new CreateHtml(CreateHtml2);
+            createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();
             mapper.Success = true;
