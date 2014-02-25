@@ -105,7 +105,7 @@ namespace Foreworld.Cmd.Blog.Rest
         public ResultMapper Add(Parameter @parameter)
         {
             CreateHtml createHtml = new CreateHtml(CreateHtml1);
-            createHtml += new CreateHtml(CreateHtml2);
+            createHtml += CreateHtml2;
             createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();
