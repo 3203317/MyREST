@@ -28,6 +28,7 @@ namespace Foreworld.Cmd.Blog.Rest
         private ArchiveService _archiveService;
         private ArticleService _articleService;
         private CommentService _commentService;
+        private CategoryService _categoryService;
 
         private static volatile VelocityEngine _vltEngine;
         private static object _syncObj = new Object();
@@ -38,6 +39,7 @@ namespace Foreworld.Cmd.Blog.Rest
             _archiveService = new ArchiveServiceImpl();
             _articleService = new ArticleServiceImpl();
             _commentService = new CommentServiceImpl();
+            _categoryService = new CategoryServiceImpl();
             Init();
         }
 
@@ -149,6 +151,23 @@ namespace Foreworld.Cmd.Blog.Rest
             CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/top10Comments.html");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateTopNavCategory(Parameter @parameter)
+        {
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "/");
+            vltCtx.Put("categorys", _categoryService.GetCategorys());
+
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate("pagelet.TopNavCategory");
+            htmlObj.Context = vltCtx;
+
+            CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/topNavCategory.html");
+        }
+
         delegate void CreateHtmlDelegate(Parameter @parameter);
 
         /// <summary>
@@ -163,6 +182,7 @@ namespace Foreworld.Cmd.Blog.Rest
             createHtml += CreateArchiveList;
             createHtml += CreateTop10ViewNums;
             createHtml += CreateTop10Comments;
+            createHtml += CreateTopNavCategory;
             createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();
