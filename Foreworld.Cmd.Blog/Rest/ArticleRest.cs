@@ -27,10 +27,32 @@ namespace Foreworld.Cmd.Blog.Rest
         private TagService _tagService;
         private ArchiveService _archiveService;
 
+        private static volatile VelocityEngine _vltEngine;
+        private static object _syncObj = new Object();
+
         public ArticleRest()
         {
             _tagService = new TagServiceImpl();
             _archiveService = new ArchiveServiceImpl();
+
+            Init();
+        }
+
+        private void Init()
+        {
+            if (null == _vltEngine)
+            {
+                lock (_syncObj)
+                {
+                    if (null == _vltEngine)
+                    {
+                        _vltEngine = new VelocityEngine();
+                        _vltEngine.SetProperty(RuntimeConstants.INPUT_ENCODING, "utf-8");
+                        _vltEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
+                        _vltEngine.Init();
+                    }
+                }
+            }
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(ArticleRest));
@@ -39,27 +61,16 @@ namespace Foreworld.Cmd.Blog.Rest
         /// 
         /// </summary>
         /// <param name="parameter"></param>
-        private void CreateHtml1(Parameter @parameter)
+        /// <param name="htmlObj"></param>
+        /// <param name="fileName"></param>
+        private void CreateHtml(Parameter @parameter, HtmlObject htmlObj, string fileName)
         {
             HttpContext httpContext = @parameter.HttpContext;
-
-            VelocityEngine _vltEngine = new VelocityEngine();
-            _vltEngine.SetProperty(RuntimeConstants.INPUT_ENCODING, "utf-8");
-            _vltEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
-            _vltEngine.Init();
-
-            IContext vltCtx = new VelocityContext();
-            vltCtx.Put("virtualPath", "../../");
-            vltCtx.Put("tags", _tagService.GetTags());
-
-            HtmlObject htmlObj = new HtmlObject();
-            htmlObj.Template = GetVltTemplate("pagelet.TagList");
-            htmlObj.Context = vltCtx;
 
             StringWriter vltWriter = new StringWriter();
             _vltEngine.Evaluate(htmlObj.Context, vltWriter, null, htmlObj.Template);
 
-            using (StreamWriter sw = new StreamWriter(httpContext.Server.MapPath("~/App_Data/pagelet/tagList.html"), false, Encoding.UTF8, 200))
+            using (StreamWriter sw = new StreamWriter(httpContext.Server.MapPath(fileName), false, Encoding.UTF8, 200))
             {
                 sw.Write(vltWriter);
                 sw.Flush();
@@ -71,15 +82,25 @@ namespace Foreworld.Cmd.Blog.Rest
         /// 
         /// </summary>
         /// <param name="parameter"></param>
-        private void CreateHtml2(Parameter @parameter)
+        private void CreateTagList(Parameter @parameter)
         {
-            HttpContext httpContext = @parameter.HttpContext;
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "../../");
+            vltCtx.Put("tags", _tagService.GetTags());
 
-            VelocityEngine _vltEngine = new VelocityEngine();
-            _vltEngine.SetProperty(RuntimeConstants.INPUT_ENCODING, "utf-8");
-            _vltEngine.SetProperty(RuntimeConstants.OUTPUT_ENCODING, "utf-8");
-            _vltEngine.Init();
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate("pagelet.TagList");
+            htmlObj.Context = vltCtx;
 
+            CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/tagList.html");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateArchiveList(Parameter @parameter)
+        {
             IContext vltCtx = new VelocityContext();
             vltCtx.Put("virtualPath", "../");
             vltCtx.Put("archives", _archiveService.GetArchives());
@@ -88,24 +109,21 @@ namespace Foreworld.Cmd.Blog.Rest
             htmlObj.Template = GetVltTemplate("pagelet.ArchiveList");
             htmlObj.Context = vltCtx;
 
-            StringWriter vltWriter = new StringWriter();
-            _vltEngine.Evaluate(htmlObj.Context, vltWriter, null, htmlObj.Template);
-
-            using (StreamWriter sw = new StreamWriter(httpContext.Server.MapPath("~/App_Data/pagelet/archiveList.html"), false, Encoding.UTF8, 200))
-            {
-                sw.Write(vltWriter);
-                sw.Flush();
-                sw.Close();
-            }
+            CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/archiveList.html");
         }
 
-        delegate void CreateHtml(Parameter @parameter);
+        delegate void CreateHtmlDelegate(Parameter @parameter);
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         [Resource(Public = true)]
         public ResultMapper Add(Parameter @parameter)
         {
-            CreateHtml createHtml = new CreateHtml(CreateHtml1);
-            createHtml += CreateHtml2;
+            CreateHtmlDelegate createHtml = new CreateHtmlDelegate(CreateTagList);
+            createHtml += CreateArchiveList;
             createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();
