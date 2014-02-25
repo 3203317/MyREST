@@ -29,6 +29,7 @@ namespace Foreworld.Cmd.Blog.Rest
         private ArticleService _articleService;
         private CommentService _commentService;
         private CategoryService _categoryService;
+        private LinkService _linkService;
 
         private static volatile VelocityEngine _vltEngine;
         private static object _syncObj = new Object();
@@ -40,6 +41,7 @@ namespace Foreworld.Cmd.Blog.Rest
             _articleService = new ArticleServiceImpl();
             _commentService = new CommentServiceImpl();
             _categoryService = new CategoryServiceImpl();
+            _linkService = new LinkServiceImpl();
             Init();
         }
 
@@ -185,6 +187,23 @@ namespace Foreworld.Cmd.Blog.Rest
             CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/topMarks.html");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateUsefulLinks(Parameter @parameter)
+        {
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "/");
+            vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
+
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate("pagelet.UsefulLinks");
+            htmlObj.Context = vltCtx;
+
+            CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/usefulLinks.html");
+        }
+
         delegate void CreateHtmlDelegate(Parameter @parameter);
 
         /// <summary>
@@ -201,6 +220,7 @@ namespace Foreworld.Cmd.Blog.Rest
             createHtml += CreateTop10Comments;
             createHtml += CreateTopNavCategory;
             createHtml += CreateTopMarks;
+            createHtml += CreateUsefulLinks;
             createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();
