@@ -25,19 +25,11 @@ namespace Foreworld.Cmd.Blog.Rest
     {
         private CategoryService _categoryService;
         private ArticleService _articleService;
-        private CommentService _commentService;
-        private LinkService _linkService;
-        private ArchiveService _archiveService;
-        private TagService _tagService;
 
         public IndexRest()
         {
             _categoryService = new CategoryServiceImpl();
             _articleService = new ArticleServiceImpl();
-            _commentService = new CommentServiceImpl();
-            _linkService = new LinkServiceImpl();
-            _archiveService = new ArchiveServiceImpl();
-            _tagService = new TagServiceImpl();
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(IndexRest));
