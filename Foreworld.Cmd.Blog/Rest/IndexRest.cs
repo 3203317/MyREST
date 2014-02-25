@@ -64,7 +64,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("articles", _articleService.FindArticles(pagination));
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
-            vltCtx.Put("topMarks", _articleService.GetTopMarks());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
@@ -206,7 +205,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("articles", _articleService.FindArticlesByCateId(category.Id, pagination));
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
-            vltCtx.Put("topMarks", _articleService.GetTopMarks());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
@@ -281,7 +279,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("topMessage", "欢迎您。今天是" + DateTime.Now.ToString("yyyy年MM月dd日") + "。");
             vltCtx.Put("articles", _articleService.FindArticlesByTagName(tagName, pagination));
             vltCtx.Put("usefulLinks", _linkService.GetUsefulLinks());
-            vltCtx.Put("topMarks", _articleService.GetTopMarks());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();

@@ -168,6 +168,23 @@ namespace Foreworld.Cmd.Blog.Rest
             CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/topNavCategory.html");
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        private void CreateTopMarks(Parameter @parameter)
+        {
+            IContext vltCtx = new VelocityContext();
+            vltCtx.Put("virtualPath", "/");
+            vltCtx.Put("topMarks", _articleService.GetTopMarks());
+
+            HtmlObject htmlObj = new HtmlObject();
+            htmlObj.Template = GetVltTemplate("pagelet.TopMarks");
+            htmlObj.Context = vltCtx;
+
+            CreateHtml(@parameter, htmlObj, "~/App_Data/pagelet/topMarks.html");
+        }
+
         delegate void CreateHtmlDelegate(Parameter @parameter);
 
         /// <summary>
@@ -183,6 +200,7 @@ namespace Foreworld.Cmd.Blog.Rest
             createHtml += CreateTop10ViewNums;
             createHtml += CreateTop10Comments;
             createHtml += CreateTopNavCategory;
+            createHtml += CreateTopMarks;
             createHtml(@parameter);
 
             ResultMapper mapper = new ResultMapper();

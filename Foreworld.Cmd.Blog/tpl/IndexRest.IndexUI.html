@@ -15,17 +15,7 @@
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<strong>[置顶]</strong> $topMessage
 					</div>
-					<section class="slider">
-						<div class="flexslider">
-							<ul class="slides">
-							    #foreach($topMark in $topMarks)
-								<li>
-									<a href="${virtualPath}archive/${topMark.Id}.html"><img src="${virtualPath}userData/${topMark.ArticleAuthor}/${topMark.ArticleImage}" alt="${topMark.ArticleTitle}"/></a>
-								</li>
-								#end
-							</ul>
-						</div>
-					</section>
+					#include("pagelet/topMarks.html")
 		            #parse('pagelet/ArticleIntros.html');
 				</div>
 				<div class="col-sm-12 col-md-4">
