@@ -5,7 +5,7 @@
 			<a href="#collapse${tag.Id}" data-parent="#accordion" data-toggle="collapse">${tag.TagName} (${tag.Articles.Count}篇文章)</a>
 		</h4>
 	</div>
-	<div id="collapse${tag.Id}" class="panel-collapse collapse">
+	<div id="collapse${tag.Id}" class="panel-collapse collapse in">
 		<div class="panel-body">
 			#foreach($article in $tag.Articles)
 			<p>
