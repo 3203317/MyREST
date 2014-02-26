@@ -11,10 +11,7 @@
 		<section class="container">
 			<div class="row">
 				<div id="articleIntros" class="col-sm-12 col-md-8">
-					<div class="alert alert-info">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong>[置顶]</strong> $topMessage
-					</div>
+		            #parse('pagelet/TopMessage.html');
 					#include("pagelet/topMarks.html")
 		            #parse('pagelet/ArticleIntros.html');
 				</div>
