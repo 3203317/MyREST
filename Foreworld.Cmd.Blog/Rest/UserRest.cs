@@ -39,7 +39,7 @@ namespace Foreworld.Cmd.Blog.Rest
         public ResultMapper LoginUI(Parameter @parameter)
         {
             IContext vltCtx = new VelocityContext();
-            vltCtx.Put("moduleName", "index");
+            vltCtx.Put("moduleName", "");
             vltCtx.Put("virtualPath", "../");
 
             vltCtx.Put("title", "FOREWORLD 洪荒");
