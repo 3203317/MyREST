@@ -46,7 +46,6 @@ namespace Foreworld.Cmd.Blog.Rest
             vltCtx.Put("atitle", "登陆");
             vltCtx.Put("description", "个人博客");
             vltCtx.Put("keywords", ",登陆,Bootstrap3");
-            vltCtx.Put("categorys", _categoryService.GetCategorys());
 
             HtmlObject htmlObj = new HtmlObject();
             htmlObj.Template = GetVltTemplate();
