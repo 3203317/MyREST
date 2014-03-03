@@ -460,35 +460,28 @@ a:hover {
 			overflow: hidden;
 			padding: 0;
 			width: 100%;
+			display: block;
 
-			>div:after {  
-				clear: both;
-				content: ".";
-				display: block;
-				height: 0;
-				visibility: hidden;
-			}
-
-			>div {
-				padding: 10px;
+			.ds-post-self {
 				border-top: 1px solid rgba(255, 255, 255, 0.7);
+				padding: 10px;
 				position: relative;
 
-				.comment-avatar {
+				.ds-avatar {
 					background-color: #FFFFFF;
 					border-radius: 3px;
 					box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 					float: left;
 					position: relative;
 
-					>a {
+					a {
 						background-color: rgba(0, 0, 0, 0);
 						color: #777777;
 						cursor: pointer;
 						text-decoration: none;
 						transition: color 0.15s linear 0s;
 
-						>img {
+						img {
 							border-radius: 3px;
 							box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
 							display: block;
@@ -499,21 +492,21 @@ a:hover {
 					}
 				}
 
-				.comment-body {
+				.ds-comment-body {
 					padding-left: 60px;
 
-					.body-header {
-						padding-top: 1px;
+					.ds-comment-header {
+						line-height: 1;
 
-						>a {
+						.ds-user-name {
 							font-size: 13px;
 							margin-right: 8px;
 							background-color: rgba(0, 0, 0, 0);
-							color: #DD3322 !important;
 							cursor: pointer;
 							text-decoration: none;
 							transition: color 0.15s linear 0s;
 
+							color: #DD3322 !important;
 						}
 					}
 
@@ -526,28 +519,36 @@ a:hover {
 						text-indent: 0;
 					}
 
-					>div:last-child {
+					.ds-comment-footer {
+						line-height: 1.5em;
 
-						>span {
+						.ds-time {
 							color: #999999;
 							font-size: 12px;
 							margin-right: 8px;
-							display: inline;
 						}
 
-						>a {
+						a {
+							color: #999999;
+							font-size: 12px;
+							margin: 0 6px 0 0;
+							padding: 0 6px 0 0;
 							background-color: rgba(0, 0, 0, 0);
 							cursor: pointer;
 							text-decoration: none;
 							transition: color 0.15s linear 0s;
-							margin: 0 6px 0 0;
-							padding: 0 6px 0 0;
-							color: #999999;
-							font-size: 12px;
 						}
 					}
-				}	
+				}
 			}
+
+			.ds-post-self:after {
+				clear: both;
+				content: ".";
+				display: block;
+				height: 0;
+				visibility: hidden;			
+			}			
 		}
 	}
 }
