@@ -551,6 +551,202 @@ a:hover {
 			}			
 		}
 	}
+
+	.ds-login-buttons {
+		border-top: 1px solid rgba(0, 0, 0, 0.13);
+		padding: 10px 0 6px;
+		position: relative;
+		width: 100%;
+
+		>p {
+			clear: none;
+			text-indent: 0;
+			float: left;
+			line-height: 24px;
+			margin: 0;
+		}
+
+		.ds-social-links {
+			float: left;
+
+			li {
+				background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+				margin: 0;
+				padding: 0;
+
+				float: left;
+				height: 16px;
+				margin: 0 0 0 6px;
+				padding: 4px 0;
+				width: 54px;
+			}
+		}
+	}
+	.ds-login-buttons:after {
+		clear: both;
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
+
+
+	.ds-replybox {
+		font-size: 12px;
+		margin: 8px 0;
+		padding: 0 0 0 60px;
+		position: relative;
+		width: auto;
+		z-index: 3;
+
+		>a {
+			border-radius: 3px;
+			box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+			float: left;
+
+			background-color: rgba(0, 0, 0, 0);
+			color: #777777;
+			cursor: pointer;
+			text-decoration: none;
+			transition: color 0.15s linear 0s;
+
+			left: 0;
+			position: absolute;
+			top: 0;
+
+			img {
+				border-radius: 3px;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+				display: block;
+				max-width: none;
+
+				height: 50px;
+				margin: 0;
+				visibility: visible;
+				width: 50px;
+			}
+		}
+
+		>form {
+			.ds-textarea-wrapper {
+				-moz-border-bottom-colors: none;
+				-moz-border-left-colors: none;
+				-moz-border-right-colors: none;
+				-moz-border-top-colors: none;
+				background: url("http://static.duoshuo.com/images/bg_sprites.png") repeat-x scroll 0 -90px #FFFFFF;
+				border-color: #CCCCCC #CCCCCC -moz-use-text-color;
+				border-image: none;
+				border-style: solid solid none;
+				border-width: 1px 1px medium;
+				overflow: hidden;
+				padding-right: 20px;
+				position: relative;
+
+				>textarea {
+					box-shadow: none;
+					color: #999999;
+					margin: 0;
+					overflow: auto;
+					padding: 10px;
+					resize: none;
+					width: 100%;
+
+					border: medium none;
+					display: block;
+					font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+					font-size: 13px;
+					line-height: 20px;
+				}
+
+				.ds-hidden-text {
+					left: 10px;
+					position: absolute;
+					right: 10px;
+					top: 0;
+					visibility: hidden;
+					word-wrap: break-word;
+				}
+			}
+			.ds-rounded-top {
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+			}
+
+			.ds-post-toolbar {
+				box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+				position: relative;
+				width: 100%;
+
+				.ds-post-options {
+					-moz-border-bottom-colors: none;
+					-moz-border-left-colors: none;
+					-moz-border-right-colors: none;
+					-moz-border-top-colors: none;
+					border-bottom-left-radius: 3px;
+					border-color: #CCCCCC -moz-use-text-color #AAAAAA #CCCCCC;
+					border-image: none;
+					border-style: solid none solid solid;
+					border-width: 1px medium 1px 1px;
+					height: 30px;
+					margin-right: 100px;
+					position: relative;
+
+					background: url("http://static.duoshuo.com/images/bg_sprites.png") repeat-x scroll 0 -60px rgba(0, 0, 0, 0);
+				}
+
+				.ds-post-button {
+					cursor: pointer;
+					margin: 0;
+					padding: 0;
+				
+					background: none repeat scroll 0 0 #D9534F !important;
+					border-color: #D9534F !important;
+					color: #FFFFFF !important;
+					height: 30px !important;
+					text-shadow: none !important;
+
+					-moz-border-bottom-colors: none;
+					-moz-border-left-colors: none;
+					-moz-border-right-colors: none;
+					-moz-border-top-colors: none;
+					background-color: #E6E6E6;
+					background-image: linear-gradient(#FCFCFC, #FCFCFC 25%, #E6E6E6);
+					background-repeat: no-repeat;
+					border-bottom-right-radius: 3px;
+					border-color: #CCCCCC #CCCCCC #AAAAAA;
+					border-image: none;
+					border-style: solid;
+					border-width: 1px;
+					box-shadow: 0 0 1px #FFFFFF inset;
+					color: #555555;
+					font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+					font-size: 14px;
+					font-weight: bold;
+					height: 32px;
+					position: absolute;
+					right: 0;
+					text-align: center;
+					text-shadow: 0 1px 0 #FFFFFF;
+					top: 0;
+					transition: all 0.15s linear 0s;
+					width: 100px;
+				}
+
+				.ds-toolbar-buttons {
+					left: 6px;
+					position: absolute;
+					top: 5px;
+				}
+			}
+		}
+	}
+	.ds-replybox:after {
+		clear: both;
+		content: ".";
+		display: block;
+		height: 0;
+		visibility: hidden;
+	}
 }
 
 #qrcode {
