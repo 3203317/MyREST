@@ -650,17 +650,66 @@ a:hover {
 
 		.ds-social-links {
 			float: left;
+			width: 306px;
 
-			li {
+			ul {  
+				display: block;
+				list-style: none outside none;
 				background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
 				margin: 0;
 				padding: 0;
 
-				float: left;
-				height: 16px;
-				margin: 0 0 0 6px;
-				padding: 4px 0;
-				width: 54px;
+				li {
+					display: block;
+					list-style: none outside none;
+					background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+					float: left;
+					height: 16px;
+					margin: 0 0 0 6px;
+					padding: 4px 0;
+					width: 54px;
+
+					.ds-service-link {
+						background: url("http://static.duoshuo.com/images/service-icons-color.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+						display: block;
+						height: 16px !important;
+						line-height: 16px;
+						overflow: hidden;
+						padding-left: 20px;
+					}
+
+					a {
+						padding-right: 3px;
+						vertical-align: middle;
+						background-color: rgba(0, 0, 0, 0);
+						color: #777777;
+						cursor: pointer;
+						text-decoration: none;
+						transition: color 0.15s linear 0s;
+					}
+
+					.ds-weibo {
+						background-position: 0 0;
+					}
+
+					.ds-qq {
+						background-position: 0 -192px;
+					}
+
+					.ds-renren {
+						background-position: 0 -32px;
+					}
+
+					.ds-douban {
+						background-position: 0 -96px;
+					}
+
+					.ds-more-services {
+						color: #DD3322 !important;
+						display: block;
+						line-height: 16px;
+					}
+				}
 			}
 		}
 	}
