@@ -25,11 +25,11 @@ namespace Foreworld.Cmd.Blog.Model
         [Column("文章介绍")]
         public String ArticleIntro { get; set; }
 
-        [Column("文章内容")]
-        public String ArticleContent { get; set; }
-
         [Column("文章作者")]
         public String ArticleAuthor { get; set; }
+
+        [Column("文章内容")]
+        public String ArticleContent { get; set; }
 
         [Column("发布时间", MySqlDbType = MySqlDbType.Datetime)]
         public String PostTime { get; set; }
